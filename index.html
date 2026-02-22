@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Nakamura Portfolio</title>
-
 <style>
 body{
    margin:0;
@@ -19,6 +18,80 @@ body{
   background-attachment: fixed;
   color:white;
 }
+   <style>
+  body{
+    margin:0;
+    background:
+      linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+      url("ここを画像ファイル名に") ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  }
+
+  .container{
+    max-width: 900px;
+    padding: 28px 18px;
+  }
+
+  .card{
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 18px;
+    margin: 14px 0;
+    backdrop-filter: blur(4px);
+  }
+
+  .section-title{
+    margin: 0 0 10px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+
+  .skills-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 720px){
+    .skills-grid{ grid-template-columns: 1fr; }
+  }
+
+  .skill-box{
+    padding: 12px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .skill-box h3{
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+
+  .skill-box ul{
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.90);
+  }
+
+  .note{
+    margin-top: 12px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+
+  /* 背景を“下にずらす”用（顔ドアップ回避とか） */
+  /* 数字を大きくするほど下がる */
+  .bg-down{
+    background-position: center 70%;
+  }
+</style>
   
 </style>
   
