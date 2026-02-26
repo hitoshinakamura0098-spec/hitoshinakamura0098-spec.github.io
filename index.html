@@ -91,55 +91,23 @@ body{
     background-position: center 70%;
   }
 
-   <script>
-const canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
+   /* 星空canvasを表示するための土台 */
+body { position: relative; }
 
-canvas.style.position = "fixed";
-canvas.style.top = 0;
-canvas.style.left = 0;
-canvas.style.zIndex = "-1";
-
-const ctx = canvas.getContext("2d");
-
-let stars = [];
-
-function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
-
-for(let i=0;i<120;i++){
-  stars.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*1.5,
-    v:Math.random()*0.3
-  });
+/* 星空canvasは「背景より上・文字より下」に置く */
+#starfield{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="white";
-
-  for(let s of stars){
-    ctx.beginPath();
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fill();
-
-    s.y += s.v;
-    if(s.y>canvas.height){
-      s.y = 0;
-      s.x = Math.random()*canvas.width;
-    }
-  }
-
-  requestAnimationFrame(draw);
+/* 文字やカードを星より上にする（重要） */
+.container, .card, h1, h2, p, a, div{
+  position: relative;
+  z-index: 1;
 }
-draw();
-</script>
+
 </style>
    
 </head>
