@@ -1,184 +1,220 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Nakamura Portfolio</title>
-<head>
-<meta charset="UTF-8">
-<title>Nakamura Portfolio</title>
-<style>
-   h1{
-  font-size: 72px;
-  letter-spacing: 4px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-  .container{
-    max-width: 900px;
-    padding: 28px 18px;
-  }
-body{
-  margin:0;
-  margin-left:8%;
-  margin-right:8%;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nakamura Portfolio</title>
 
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("irasuto1.PNG");
+  <style>
+    h1{
+      font-size: 72px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
 
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+    .container{
+      max-width: 900px;
+      padding: 28px 18px;
+      margin: 0 auto;
+    }
 
-  color:white;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
-}
-   
+    body{
+      margin:0;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("irasuto1.PNG");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
 
-  .card{
-    background: rgba(0,0,0,0.45);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 18px 18px;
-    margin: 14px 0;
-    backdrop-filter: blur(4px);
-  }
+      color:white;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+      position: relative;
+    }
 
-  .section-title{
-    margin: 0 0 10px;
-    font-size: 22px;
-    letter-spacing: 0.5px;
-  }
+    .card{
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+      backdrop-filter: blur(4px);
+    }
 
-  .skills-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
+    .section-title{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
 
-  @media (max-width: 720px){
-    .skills-grid{ grid-template-columns: 1fr; }
-  }
+    .skills-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-  .skill-box{
-    padding: 12px 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.10);
-  }
+    @media (max-width: 720px){
+      h1{ font-size: 46px; }
+      .skills-grid{ grid-template-columns: 1fr; }
+    }
 
-  .skill-box h3{
-    margin: 0 0 8px;
-    font-size: 16px;
-  }
+    .skill-box{
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
 
-  .skill-box ul{
-    margin: 0;
-    padding-left: 18px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.90);
-  }
+    .skill-box h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
 
-  .note{
-    margin-top: 12px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-  }
+    .skill-box ul{
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.90);
+    }
 
-  /* 背景を“下にずらす”用（顔ドアップ回避とか） */
-  /* 数字を大きくするほど下がる */
-  .bg-down{
-    background-position: center 70%;
-  }
+    .note{
+      margin-top: 12px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+    }
 
-   /* 星空canvasを表示するための土台 */
-body { position: relative; }
+    /* 背景を下にずらしたい場合は body に class="bg-down" を付ける */
+    .bg-down{
+      background-position: center 70%;
+    }
 
-/* 星空canvasは「背景より上・文字より下」に置く */
-#starfield{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
+    /* 星空canvasは「背景より上・文字より下」 */
+    #starfield{
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-/* 文字やカードを星より上にする（重要） */
-.container, .card, h1, h2, p, a, div{
-  position: relative;
-  z-index: 1;
-}
+    /* 文字やカードを星より上に */
+    .container, .card, h1, h2, p, a, div{
+      position: relative;
+      z-index: 1;
+    }
 
-</style>
-   
+    a{ color:#4ea1ff; text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+  </style>
 </head>
-   
-<body>
 
-  <h1>NAKAMURA HITOSHI</h1>
-   
-<div style="margin-top:15px; font-size:18px;">
-  <a href="mailto:hitoshinakamura0098@gmail.com" 
-     style="text-decoration:none; color:#4ea1ff;">
-    ✉️ hitoshinakamura0098@gmail.com
-  </a>
-</div>
-   
+<body>
+  <!-- 星空（不要ならこのcanvasと下のscriptを削除OK） -->
+  <canvas id="starfield"></canvas>
+
+  <div class="container">
+    <h1>NAKAMURA HITOSHI</h1>
+
+    <div style="margin-top:15px; font-size:18px;">
+      <a href="mailto:hitoshinakamura0098@gmail.com">✉️ hitoshinakamura0098@gmail.com</a>
+    </div>
+
     <p class="note">
       製造現場で培った改善・継続・実装力を活かして運用＆開発どちらにも対応できるエンジニアを目指しています。
     </p>
- 
-  <div class="card">
-    <h2 class="section-title">GitHub</h2>
-    <a href="https://github.com/hitoshinakamura0098-spec"
-       target="_blank" 
-       style="text-decoration:none; font-size:18px; color:#4ea1ff;">
-      🐙 GitHubはこちら</a>
+
+    <div class="card">
+      <h2 class="section-title">GitHub</h2>
+      <a href="https://github.com/hitoshinakamura0098-spec" target="_blank" rel="noopener noreferrer">
+        🐙 GitHubはこちら
+      </a>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python（CLIツール制作・基礎ロジック）</li>
+            <li>HTML / CSS（ポートフォリオ制作）</li>
+            <li>Git / GitHub（コード管理・公開）</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>IT / Technical Base</h3>
+          <ul>
+            <li>PCセットアップ・環境構築</li>
+            <li>基本的なコマンドライン操作</li>
+            <li>トラブル切り分け・自己解決</li>
+            <li>ノマド的リモート作業環境有</li>
+            <li>iCloud / GitHub / AI / etc... ツール連携運用可</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Hardware / Field Experience</h3>
+          <ul>
+            <li>製造現場経験（組立・改造・塗装）</li>
+            <li>工場責任者＆現場リーダー経験（指導・品質・安全・改善）</li>
+            <li>軽＆重工具全般使用経験</li>
+            <li>機械・塗装・基礎科学の構造理解</li>
+            <li>物理的作業＆IT作業の両立</li>
+            <li>長時間運用＆夜勤耐性</li>
+          </ul>
+        </div>
+   
+        <div class="skill-box">
+          <h3>Learning Now</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>Linux基礎</li>
+            <li>ITインフラ・運用監視（案件待ち）</li>
+            <li>基本情報技術者（学習中）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2 class="section-title">Skills</h2>
+  <script>
+    // シンプルな星空（軽量版）
+    const canvas = document.getElementById("starfield");
+    const ctx = canvas.getContext("2d");
+    let w, h, stars;
 
-   
+    function resize(){
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      const count = Math.floor((w * h) / 18000); // 画面サイズに応じて
+      stars = Array.from({length: count}, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.6 + 0.2,
+        a: Math.random() * 0.7 + 0.2,
+        v: Math.random() * 0.25 + 0.05
+      }));
+    }
 
-    <div class="skills-grid">
-      <div class="skill-box">
-        <h3>Programming</h3>
-        <ul>
-          <li>Python（ CLIツール制作・基礎ロジック ）</li>
-          <li>HTML / CSS（ ポートフォリオ制作 ）</li>
-          <li>Git / GitHub（ コード管理・公開 ）</li>
-        </ul>
-      </div>
+    function tick(){
+      ctx.clearRect(0, 0, w, h);
+      for(const s of stars){
+        s.y += s.v;
+        if(s.y > h) { s.y = -5; s.x = Math.random() * w; }
+        ctx.globalAlpha = s.a;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
 
-      <div class="skill-box">
-        <h3>IT / Technical Base</h3>
-        <ul>
-          <li>PCセットアップ・環境構築</li>
-          <li>基本的なコマンドライン操作</li>
-          <li>トラブル切り分け・自己解決</li>
-           <li>ノマド的リモート作業環境有</li>
-          <li>iCloud / GitHub / AI / etc...ツール連携運用可</li>
-        </ul>
-      </div>
-
-      <div class="skill-box">
-        <h3>Hardware / Field Experience</h3>
-        <ul>
-          <li>製造現場経験 ( 組立・改造・塗装 )</li>
-           <li>工場責任者＆現場リーダー経験（ 指導・品質・安全・改善 ）</li>
-          <li>軽＆重工具全般使用経験</li>
-         <li>機械・塗装・基礎科学の構造理解</li>
-          <li>物理的作業＆IT作業の両立</li>
-          <li>長時間運用＆夜勤耐性</li>
-        </ul>
-      </div>
-
-      <div class="skill-box">
-        <h3>Learning Now</h3>
-        <ul>
-          <li>JavaScript</li>
-          <li>Linux基礎</li>
-          <li>ITインフラ・運用監視 ( 案件待ち ) </li>
-          <li>基本情報技術者（ 学習中 ）</li>
-        </ul>
-      </div>
+    window.addEventListener("resize", resize);
+    resize();
+    tick();
+  </script>
+</body>
+</html>
