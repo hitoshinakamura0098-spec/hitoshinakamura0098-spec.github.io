@@ -6,38 +6,6 @@
   <title>Nakamura Portfolio</title>
 
   <style>
-    h1{
-      font-size: 72px;
-      letter-spacing: 4px;
-      font-weight: 700;
-      margin: 20px 0 10px;
-    }
-    .container{
-      width： min（1200px, 94vw); /* 画面に合わせつつ最大1200p */
-      padding: 28px 18px;
-      margin: 0 auto;
-      max-width: 900px;
-      @media (max-width: 600px)
-    }
-
-  h1{
-    font-size: 36px;
-    letter-spacing: 2px;
-  }
-
-  h2{
-    font-size: 22px;
-  }
-
-  li{
-    font-size: 15px;
-  }
-
-  .container{
-    padding:16px;
-  }
-}
-    }
     body{
       margin:0;
       background:
@@ -46,10 +14,22 @@
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
-
       color:white;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
       position: relative;
+    }
+
+    h1{
+      font-size: 72px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+    }
+
+    .container{
+      width: min(1200px, 94vw);
+      padding: 28px 18px;
+      margin: 0 auto;
     }
 
     .card{
@@ -76,6 +56,7 @@
     @media (max-width: 720px){
       h1{ font-size: 46px; }
       .skills-grid{ grid-template-columns: 1fr; }
+      .container{ padding: 16px; }
     }
 
     .skill-box{
@@ -103,12 +84,6 @@
       line-height: 1.7;
     }
 
-    /* 背景を下にずらしたい場合は body に class="bg-down" を付ける */
-    .bg-down{
-      background-position: center 70%;
-    }
-
-    /* 星空canvasは「背景より上・文字より下」 */
     #starfield{
       position: fixed;
       inset: 0;
@@ -116,7 +91,6 @@
       pointer-events: none;
     }
 
-    /* 文字やカードを星より上に */
     .container, .card, h1, h2, p, a, div{
       position: relative;
       z-index: 1;
@@ -128,7 +102,6 @@
 </head>
 
 <body>
-  <!-- 星空（不要ならこのcanvasと下のscriptを削除OK） -->
   <canvas id="starfield"></canvas>
 
   <div class="container">
@@ -184,7 +157,7 @@
             <li>長時間運用＆夜勤耐性</li>
           </ul>
         </div>
-   
+
         <div class="skill-box">
           <h3>Learning Now</h3>
           <ul>
@@ -199,7 +172,6 @@
   </div>
 
   <script>
-    // シンプルな星空（軽量版）
     const canvas = document.getElementById("starfield");
     const ctx = canvas.getContext("2d");
     let w, h, stars;
@@ -207,7 +179,7 @@
     function resize(){
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-      const count = Math.floor((w * h) / 18000); // 画面サイズに応じて
+      const count = Math.floor((w * h) / 18000);
       stars = Array.from({length: count}, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
