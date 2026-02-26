@@ -98,6 +98,33 @@
 
     a{ color:#4ea1ff; text-decoration:none; }
     a:hover{ text-decoration: underline; }
+.hero-title {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+
+    animation: blurFade 2s ease forwards;
+}
+
+@keyframes blurFade {
+    0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translateY(30px);
+    }
+    60% {
+        opacity: 1;
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
   </style>
 </head>
 
