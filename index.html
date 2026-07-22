@@ -4,244 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nakamura Portfolio</title>
-
-  <style>
-    body{
-      margin:0;
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url("irasuto1.PNG");
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      color:white;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
-      position: relative;
-    }
-
-    h1{
-      font-size: 72px;
-      letter-spacing: 4px;
-      font-weight: 700;
-      margin: 20px 0 10px;
-    }
-
-    .container{
-      width: min(1200px, 94vw);
-      padding: 28px 18px;
-      margin: 0 auto;
-    }
-
-    .card{
-      background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 18px;
-      margin: 14px 0;
-      backdrop-filter: blur(4px);
-    }
-
-    .section-title{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: 0.5px;
-    }
-
-    .skills-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media (max-width: 720px){
-      h1{ font-size: 46px; }
-      .skills-grid{ grid-template-columns: 1fr; }
-      .container{ padding: 16px; }
-    }
-
-    .skill-box{
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .skill-box h3{
-      margin: 0 0 8px;
-      font-size: 16px;
-    }
-
-    .skill-box ul{
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.90);
-    }
-
-    .note{
-      margin-top: 12px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.7;
-    }
-
-    #starfield{
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .container, .card, h1, h2, p, a, div{
-      position: relative;
-      z-index: 1;
-    }
-
-    a{ color:#4ea1ff; text-decoration:none; }
-    a:hover{ text-decoration: underline; }
-.hero-title {
-    font-size: 64px;
-    font-weight: bold;
-    letter-spacing: 4px;
-
-    opacity: 0;
-    filter: blur(8px);
-    transform: translateY(20px);
-
-    animation: blurFade 2s ease forwards;
-}
-
-@keyframes blurFade {
-    0% {
-        opacity: 0;
-        filter: blur(12px);
-        transform: translateY(30px);
-    }
-    60% {
-        opacity: 1;
-        filter: blur(2px);
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
-    }
-   }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <canvas id="starfield"></canvas>
+  <canvas id="bgNet"></canvas>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">HITOSHI NAKAMURA</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="learning.html">Learning</a>
+      <a href="achievements.html">Achievements</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>HITOSHI NAKAMURA</h1>
+
+      <div style="margin-top:8px; font-size:17px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px;">
+        <a href="tel:08022905252" style="display:inline-flex; align-items:center; gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" style="flex-shrink:0;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.21z"/></svg>080-2290-5252</a>
+        <a href="mailto:hitoshinakamura0098@gmail.com">✉️ hitoshinakamura0098@gmail.com</a>
+      </div>
+
+      <p class="hero-note">
+        システムエンジニアとして、組み込み現場でソフトを担当しています。システムのソフト・インフラ・クラウド分野の運用保守、障害解析、AWS運用構築、オンプレミス構築に従事。また設計補助、開発補助、PM補助を通じて要件整理、技術調査、資料作成、進捗管理支援、AIを活用した設計支援や業務改善、設計、開発、自動化など幅広く対応できるエンジニアを目指しています。
+      </p>
+    </div>
+  </section>
 
   <div class="container">
-    <h1 class="hero-title">NAKAMURA HITOSHI</h1>
-
-    <div style="margin-top:15px; font-size:18px;">
-      <a href="mailto:hitoshinakamura0098@gmail.com">✉️ hitoshinakamura0098@gmail.com</a>
+    <div class="card">
+      <h2 class="section-title">Project 技美 - Engineering AI & Systems Research Lab -</h2>
+      <p class="note">
+        Project 技美は、エンジニアリング、AI、自動化、社会システムを横断する個人研究・開発プロジェクトです。
+      </p>
+      <p class="note">
+        ログ監視、障害解析、運用自動化、複数AIによる設計支援など、実務課題を想定したツールの開発・検証に取り組んでいます。
+      </p>
+      <p class="note">
+        同時に、脳オルガノイドと人工知能を組み合わせたSynthetic Biological Intelligence、マインドアップロードの中間アーキテクチャ、AIガバナンス、分散型社会設計、招き猫アルゴリズムなど、既存分野の境界を越えた独自研究を進めています。
+      </p>
+      <p class="note" style="margin-bottom:0;">
+        技術を単体で評価するのではなく、人間、AI、組織、社会制度を一つのシステムとして捉え、実装可能性、安全性、持続可能性の観点から検討することを目的としています。
+      </p>
     </div>
 
-    <p class="note">
-      製造現場で培った課題発見・改善・継続実行力を基盤に、ログ解析・運用・自動化まで対応できる実装志向エンジニアを目指しています。
-    </p>
-
-    <div class="card">
-       <h2 class="section-title">Project 技美 - Engineering & Automation Lab -</h2>
-        <p>個人R&Dとしてログ監視やAI活用による自動化といった実務課題を想定したツールの開発＆検証を行っています。
-        </p>
-        <p>複数AI会議による最適化の加速とエンジニアの協働作業による小規模自動化環境の構築を研究中です。
-        </p>
     <div class="card">
       <h2 class="section-title">GitHub</h2>
       <a href="https://github.com/hitoshinakamura0098-spec" target="_blank" rel="noopener noreferrer">
         🐙 GitHubはこちら
       </a>
     </div>
-
-    <div class="card">
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Programming</h3>
-          <ul>
-            <li>COBOL / Background
-            <li>Python（CLIツール制作・基礎ロジック）</li>
-            <li>HTML / CSS（ポートフォリオ制作）</li>
-            <li>Git / GitHub（コード管理・公開）</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>IT / Technical Base</h3>
-          <ul>
-            <li>PCセットアップ・環境構築</li>
-            <li>基本的なコマンドライン操作</li>
-            <li>トラブル切り分け・自己解決</li>
-            <li>ノマド的リモート作業環境有</li>
-            <li>iCloud / GitHub / AI / etc... ツール連携運用可</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>Hardware / Field Experience</h3>
-          <ul>
-            <li>製造現場経験（組立・改造・塗装）</li>
-            <li>工場責任者＆現場リーダー経験（指導・品質・安全・改善）</li>
-            <li>軽＆重工具全般使用経験</li>
-            <li>機械・塗装・基礎科学の構造理解</li>
-            <li>物理的作業＆IT作業の両立</li>
-            <li>長時間運用＆夜勤耐性</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>Learning Now</h3>
-          <ul>
-            <li>JavaScript</li>
-            <li>Linux基礎</li>
-            <li>SQL基礎</li>
-              <li>AWS/CLF基礎</li>
-            <li>基本情報技術者</li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <script>
-    const canvas = document.getElementById("starfield");
-    const ctx = canvas.getContext("2d");
-    let w, h, stars;
-
-    function resize(){
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-      const count = Math.floor((w * h) / 18000);
-      stars = Array.from({length: count}, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.6 + 0.2,
-        a: Math.random() * 0.7 + 0.2,
-        v: Math.random() * 0.25 + 0.05
-      }));
-    }
-
-    function tick(){
-      ctx.clearRect(0, 0, w, h);
-      for(const s of stars){
-        s.y += s.v;
-        if(s.y > h) { s.y = -5; s.x = Math.random() * w; }
-        ctx.globalAlpha = s.a;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-      }
-      requestAnimationFrame(tick);
-    }
-
-    window.addEventListener("resize", resize);
-    resize();
-    tick();
-  </script>
+  <script src="particles.js"></script>
 </body>
 </html>

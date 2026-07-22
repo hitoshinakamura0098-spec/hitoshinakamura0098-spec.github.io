@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Nakamura Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <canvas id="bgNet"></canvas>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">HITOSHI NAKAMURA</a>
+      <a href="index.html">Home</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="learning.html">Learning</a>
+      <a href="achievements.html">Achievements</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="page-title">Technical Skills</h2>
+    <p class="page-lead">クリックすると詳細が見られます。</p>
+
+    <div class="card">
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Cloud</h3>
+          <ul class="badge-list clickable cat-cloud">
+            <li data-icon="icons/amazonec2.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築業務でEC2インスタンスの設計・IAM設定・CloudWatch監視と組み合わせた運用を担当。">AWS EC2</li>
+            <li data-icon="icons/amazonses.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="メール遅延障害調査でSESイベント解析を実施。送信ログの追跡と遅延原因の切り分けに使用。">SES</li>
+            <li data-icon="icons/awslambda.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="メール遅延障害調査でLambdaログ解析を担当。処理フローのトレースに活用。">Lambda</li>
+            <li data-icon="icons/amazonsqs.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWSインフラ構成の一部としてキューイング処理の理解・調査に使用。">SQS</li>
+            <li data-icon="icons/amazonroute53.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でRoute53によるDNS・メール認証設定(SPF/DKIM/DMARC)を担当。">Route53</li>
+            <li data-icon="icons/amazoncloudwatch.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="障害調査・AWS構築の両方でCloudWatch解析による運用監視・原因追跡を実施。">CloudWatch</li>
+            <li data-icon="icons/amazonaws.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でCloudTrailによる操作ログ監査・トレーサビリティ確保を担当。">CloudTrail</li>
+            <li data-icon="icons/amazoniam.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でIAM設定を担当。権限管理とセキュリティ設計に従事。">IAM</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Infrastructure</h3>
+          <ul class="badge-list clickable cat-infra">
+            <li data-icon="icons/linux.svg" data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="オンプレ構築(現在進行中)でLinux導入を担当。">Linux</li>
+            <li data-icon="icons/windows.svg" data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="Windows Server環境の構築・運用経験。">Windows Server</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="Route53でのメール認証設定・障害調査でのドメイン確認に使用。">DNS</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でのMicrosoft受信遅延切り分けに使用。">SMTP</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でDMARC導入を担当。">DMARC</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でSPF設定を担当。">SPF</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でDKIM設定を担当。">DKIM</li>
+            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="ネットワーク調査・トラブル切り分けの基礎知識として活用。">TCP/IP</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Development</h3>
+          <ul class="badge-list clickable cat-dev">
+            <li data-icon="icons/csharp.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="保守開発でC#コード解析・障害原因調査を担当。">C#</li>
+            <li data-icon="icons/python.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="個人R&D「Project 技美」でCLIツール制作・ログ監視自動化に使用。">Python</li>
+            <li data-icon="icons/html5.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="このポートフォリオサイトの制作に使用。">HTML / CSS</li>
+            <li data-icon="icons/github.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="コード管理・ポートフォリオ公開に使用。">Git / GitHub</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>AI</h3>
+          <ul class="badge-list clickable cat-ai">
+            <li data-icon="icons/openai.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="設計支援・障害解析・資料作成などAI活用エンジニアリングで日常的に使用。">ChatGPT</li>
+            <li data-icon="icons/githubcopilot.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="コードレビュー・実装支援に活用。">GitHub Copilot</li>
+            <li data-icon="icons/anthropic.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="複数AI会議による最適化・協働作業の研究(Project 技美)で活用。">Claude</li>
+            <li data-cat="AI" data-color="var(--c-ai)" data-desc="AIツールを実務課題に適用するための設計スキル。">Prompt Engineering</li>
+            <li data-cat="AI" data-color="var(--c-ai)" data-desc="複数AIを組み合わせた小規模自動化環境の構築を研究中。">AI Workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
+      <div id="modalIcon"></div>
+      <h3 id="modalName"></h3>
+      <span class="modal-cat" id="modalCat"></span>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('modalOverlay');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalName = document.getElementById('modalName');
+    const modalCat = document.getElementById('modalCat');
+    const modalDesc = document.getElementById('modalDesc');
+
+    document.querySelectorAll('.badge-list.clickable li').forEach(function(li){
+      li.addEventListener('click', function(){
+        const icon = li.dataset.icon;
+        const color = li.dataset.color || '';
+        modalIcon.innerHTML = icon
+          ? '<span class="badge-icon-lg" style="--icon:url(\'' + icon + '\'); --modal-color:' + color + '"></span>'
+          : '';
+        modalName.textContent = li.textContent.trim();
+        modalCat.textContent = li.dataset.cat || '';
+        modalDesc.textContent = li.dataset.desc || '';
+        overlay.classList.add('open');
+      });
+    });
+
+    function closeModal(){ overlay.classList.remove('open'); }
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
+  </script>
+  <script src="particles.js"></script>
+</body>
+</html>
