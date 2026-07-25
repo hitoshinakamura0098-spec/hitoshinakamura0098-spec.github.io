@@ -394,3 +394,82 @@ a:hover{ text-decoration: underline; }
 }
 
 canvas#starfield{ display:none; }
+
+/* Maneki-neko clicker */
+.clicker-wrap{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.maneki-cat{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+  transition: transform 0.1s ease;
+}
+
+.maneki-cat img{
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.maneki-cat:hover{ transform: translateY(-2px); }
+.maneki-cat:active{ transform: translateY(1px) scale(0.97); }
+
+.maneki-cat.bounce{
+  animation: catBounce 0.4s ease;
+}
+
+@keyframes catBounce{
+  0%{ transform: scale(1) rotate(0deg); }
+  35%{ transform: scale(1.08) rotate(-4deg); }
+  70%{ transform: scale(0.98) rotate(2deg); }
+  100%{ transform: scale(1) rotate(0deg); }
+}
+
+.clicker-info{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.clicker-count{
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.clicker-count span{ color: var(--accent); }
+
+.clicker-message{
+  color: var(--text-sub);
+  font-size: 15px;
+}
+
+.coin-particle{
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #c99a2e;
+  text-shadow: 0 0 4px rgba(255,211,92,0.8);
+  animation: coinFloat 0.9s ease-out forwards;
+}
+
+@keyframes coinFloat{
+  0%{
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(0, 0) scale(0.8);
+  }
+  100%{
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--dx), -70px) scale(1.1);
+  }
+}
