@@ -60,5 +60,33 @@
     spawnCoin(x, y);
   });
 
+  const appealToggle = document.getElementById('manekiAppealToggle');
+  const appealChoices = document.getElementById('manekiAppealChoices');
+  const appealResult = document.getElementById('manekiAppealResult');
+
+  if (appealToggle && appealChoices && appealResult){
+    appealToggle.addEventListener('click', () => {
+      appealResult.textContent = '';
+      appealChoices.hidden = !appealChoices.hidden;
+    });
+
+    appealChoices.querySelectorAll('.appeal-btn').forEach((b) => {
+      b.addEventListener('click', () => {
+        const action = b.dataset.action;
+        appealChoices.hidden = true;
+
+        if (action === 'clear'){
+          count = 0;
+          localStorage.setItem(STORAGE_KEY, '0');
+          render();
+          appealResult.textContent = '';
+        } else if (action === 'set5000'){
+          appealResult.textContent = 'この申請は却下されました';
+          setTimeout(() => { appealResult.textContent = ''; }, 2200);
+        }
+      });
+    });
+  }
+
   render();
 })();
