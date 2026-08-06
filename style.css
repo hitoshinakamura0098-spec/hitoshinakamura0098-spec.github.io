@@ -188,6 +188,34 @@ h1.crt-title{
   opacity: 0.9;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-toggle{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.music-toggle:hover{
+  opacity: 1;
+}
+
+#ytPlayer{
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0.01;
+  pointer-events: none;
 }
 
 .page-title{
