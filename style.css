@@ -505,6 +505,26 @@ canvas#starfield{ display:none; }
   border-color: rgba(47,111,237,0.4);
 }
 
+.admin-label{
+  display: block;
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 14px 0 4px;
+}
+
+.admin-input{
+  width: 100%;
+  max-width: 560px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.6);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
 .blog-post{
   margin: 0 0 16px;
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Admin | Nakamura Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <canvas id="bgNet"></canvas>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">HITOSHI NAKAMURA</a>
+      <a href="blog.html">← Blogに戻る</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="page-title">Blog Admin</h2>
+    <p class="page-lead">ここで書いた内容がそのままBlogページに公開されます。GitHubトークンはこの端末のブラウザにのみ保存されます。</p>
+
+    <div class="card">
+      <h3 class="section-title" style="font-size:16px;">GitHubトークン</h3>
+      <p class="note" style="margin-top:-4px;">
+        GitHubの Settings → Developer settings → Personal access tokens で、このリポジトリへの
+        <strong>Contents: Read and write</strong> 権限を持つトークンを発行して貼り付けてください。
+      </p>
+      <input type="password" id="ghToken" placeholder="ghp_..." style="width:100%; max-width:480px; padding:10px 12px; border-radius:8px; border:1px solid var(--card-border); background:rgba(255,255,255,0.6); font-family:monospace;" />
+    </div>
+
+    <div class="card">
+      <h3 class="section-title" style="font-size:16px;">新規投稿</h3>
+
+      <label class="admin-label">日付</label>
+      <input type="date" id="postDate" class="admin-input" />
+
+      <label class="admin-label">タイトル</label>
+      <input type="text" id="postTitle" class="admin-input" placeholder="投稿タイトル" />
+
+      <label class="admin-label">タグ(カンマ区切り、省略可)</label>
+      <input type="text" id="postTags" class="admin-input" placeholder="雑記, AWS" />
+
+      <label class="admin-label">本文(数式は $...$ / $$...$$ で書けます)</label>
+      <textarea id="postBody" class="admin-input" rows="8" placeholder="本文を書く"></textarea>
+
+      <label class="admin-label">画像ファイル名(省略可、事前にリポジトリに置いてください)</label>
+      <input type="text" id="postImage" class="admin-input" placeholder="例: photo1.jpg" />
+
+      <label class="admin-label">動画URL(YouTube等) または 動画ファイル名(省略可)</label>
+      <input type="text" id="postVideo" class="admin-input" placeholder="例: https://youtu.be/xxxxx" />
+
+      <label class="admin-label">音声ファイル名(省略可)</label>
+      <input type="text" id="postAudio" class="admin-input" placeholder="例: track1.mp3" />
+
+      <button id="publishBtn" class="appeal-btn" style="margin-top:16px; padding:10px 22px; font-size:14px;">公開する</button>
+      <div id="publishStatus" class="note" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
