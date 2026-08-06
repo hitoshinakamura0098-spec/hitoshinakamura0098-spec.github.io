@@ -505,6 +505,62 @@ canvas#starfield{ display:none; }
   border-color: rgba(47,111,237,0.4);
 }
 
+.blog-post{
+  margin: 0 0 16px;
+}
+
+.blog-date{
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--text-sub);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.blog-media-img{
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  margin-top: 14px;
+  border: 1px solid var(--card-border);
+}
+
+.blog-video-wrap{
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  margin-top: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.blog-video-wrap iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.blog-media-video{
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  margin-top: 14px;
+  border: 1px solid var(--card-border);
+}
+
+.blog-media-audio{
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 14px;
+}
+
 .appeal-result{
   margin-top: 6px;
   font-size: 12px;
