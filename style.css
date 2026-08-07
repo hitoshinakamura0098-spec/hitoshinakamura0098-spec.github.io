@@ -7,6 +7,7 @@
   --card-border: rgba(31,37,48,0.08);
   --nav-bg: rgba(255,255,255,0.85);
   --accent: #2f6fed;
+  --overlay-opacity: 0.38;
 
   --c-cloud: #2f6fed;
   --c-infra: #16a34a;
@@ -15,6 +16,14 @@
   --c-learn: #0891b2;
   --c-aieng: #4338ca;
   --c-research: #db2777;
+}
+
+:root[data-theme="light"]{
+  --overlay-opacity: 0.15;
+}
+
+:root[data-theme="dark"]{
+  --overlay-opacity: 0.6;
 }
 
 *{ box-sizing: border-box; }
@@ -43,8 +52,9 @@ body::after{
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(8,11,20,0.38);
+  background: rgba(8,11,20,var(--overlay-opacity));
   z-index: -1;
+  transition: background 0.25s ease;
 }
 
 #bgNet{
@@ -88,6 +98,15 @@ body::after{
   margin-right: auto;
   color: var(--text-main);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .site-nav a{
@@ -196,17 +215,84 @@ h1.crt-title{
 .music-toggle{
   background: none;
   border: none;
-  padding: 0;
+  padding: 6px;
+  margin-left: -6px;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.85;
-  transition: opacity 0.15s ease;
+  color: var(--text-sub);
+  transition: all 0.15s ease;
 }
 
 .music-toggle:hover{
-  opacity: 1;
+  background: rgba(47,111,237,0.08);
+  color: var(--accent);
+}
+
+.settings-wrap{
+  position: relative;
+  display: inline-flex;
+}
+
+.settings-panel{
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  z-index: 20;
+}
+
+.settings-panel[hidden]{
+  display: none;
+}
+
+.settings-label{
+  display: block;
+  font-size: 12px;
+  color: var(--text-sub);
+  margin: 0 0 6px;
+}
+
+.settings-label:not(:first-child){
+  margin-top: 14px;
+}
+
+.settings-slider{
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.theme-switch{
+  display: flex;
+  gap: 8px;
+}
+
+.theme-btn{
+  flex: 1;
+  padding: 6px 0;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(31,37,48,0.04);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.theme-btn:hover{
+  border-color: rgba(47,111,237,0.4);
+}
+
+.theme-btn.active{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
 }
 
 #ytPlayer{

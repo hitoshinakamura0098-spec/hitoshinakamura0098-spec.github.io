@@ -1,4 +1,4 @@
-const BLOG_POSTS = [
+window.BLOG_POSTS = [
   {
     date: '2026-08-06',
     title: 'ブログ始めました',

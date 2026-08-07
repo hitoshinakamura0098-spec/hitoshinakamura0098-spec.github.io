@@ -85,7 +85,7 @@
       const fileData = await getRes.json();
       const currentContent = b64DecodeUnicode(fileData.content);
 
-      const marker = 'const BLOG_POSTS = [';
+      const marker = 'window.BLOG_POSTS = [';
       const idx = currentContent.indexOf(marker);
       if (idx === -1) throw new Error('posts.js の構造を認識できませんでした。');
 
