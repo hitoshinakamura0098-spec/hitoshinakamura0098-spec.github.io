@@ -39,7 +39,11 @@ body{
 body::before{
   content: "";
   position: fixed;
-  inset: -20px;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  height: calc(100vh + 40px);
+  height: calc(100svh + 40px);
   background-image: url("hero-bg.jpg");
   background-size: cover;
   background-position: center 20%;
@@ -51,7 +55,11 @@ body::before{
 body::after{
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100svh;
   background: rgba(8,11,20,var(--overlay-opacity));
   z-index: -1;
   transition: background 0.25s ease;
@@ -59,7 +67,11 @@ body::after{
 
 #bgNet{
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100svh;
   z-index: 0;
   pointer-events: none;
 }
