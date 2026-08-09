@@ -28,6 +28,10 @@
         <div id="settingsPanel" class="settings-panel" hidden>
           <label class="settings-label">再生中の曲</label>
           <div id="trackName" class="settings-track">-</div>
+          <div class="seek-wrap">
+            <input type="range" id="seekBar" min="0" max="100" value="0" step="0.1" class="settings-slider" />
+            <div class="seek-time"><span id="seekCurrent">0:00</span> / <span id="seekDuration">0:00</span></div>
+          </div>
           <select id="trackSelect" class="settings-select">
             <option value="BkOr0QOOrkc">flying</option>
             <option value="S1jkbpwSXx4">星屑パレット</option>

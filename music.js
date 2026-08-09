@@ -6,6 +6,7 @@ const ICON_OFF = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentC
 let ytPlayer = null;
 let ytReady = false;
 let wantsPlay = false;
+let seekInterval = null;
 
 function setIcon(playing){
   const btn = document.getElementById('musicToggle');
@@ -14,22 +15,75 @@ function setIcon(playing){
   btn.setAttribute('aria-label', playing ? 'BGMを停止' : 'BGMを再生');
 }
 
-function updateTrackName(){
-  const trackEl = document.getElementById('trackName');
+function currentTrackLabel(){
   const trackSelect = document.getElementById('trackSelect');
-  if (!trackEl || !ytPlayer) return;
-
+  if (!ytPlayer) return '-';
   const data = ytPlayer.getVideoData();
   const videoId = data && data.video_id;
   let label = '-';
-
   if (trackSelect && videoId){
     const opt = Array.from(trackSelect.options).find((o) => o.value === videoId);
     if (opt) label = opt.text;
   }
   if (label === '-' && data && data.title) label = data.title;
+  return label;
+}
 
-  trackEl.textContent = label;
+function updateTrackName(){
+  const trackEl = document.getElementById('trackName');
+  if (!trackEl || !ytPlayer) return;
+
+  const label = currentTrackLabel();
+  let span = trackEl.querySelector('span');
+  if (!span){
+    trackEl.innerHTML = '';
+    span = document.createElement('span');
+    trackEl.appendChild(span);
+  }
+  span.textContent = label;
+  span.classList.remove('marquee');
+  span.style.animation = 'none';
+  span.style.position = 'static';
+
+  requestAnimationFrame(() => {
+    const containerWidth = trackEl.clientWidth;
+    const textWidth = span.scrollWidth;
+
+    if (textWidth > containerWidth && containerWidth > 0){
+      const distance = textWidth + containerWidth;
+      span.style.position = 'absolute';
+      span.style.left = '0';
+      span.style.setProperty('--marquee-start', containerWidth + 'px');
+      span.style.setProperty('--marquee-end', (-textWidth) + 'px');
+      span.style.animation = `marqueeMove ${Math.max(6, distance / 40)}s linear infinite`;
+      span.classList.add('marquee');
+    }
+  });
+}
+
+function formatTime(sec){
+  sec = Math.max(0, Math.floor(sec || 0));
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+function startSeekTracking(){
+  const bar = document.getElementById('seekBar');
+  const curEl = document.getElementById('seekCurrent');
+  const durEl = document.getElementById('seekDuration');
+  if (!bar) return;
+
+  if (seekInterval) clearInterval(seekInterval);
+  seekInterval = setInterval(() => {
+    if (!ytPlayer || bar.dataset.dragging === '1') return;
+    const dur = ytPlayer.getDuration() || 0;
+    const cur = ytPlayer.getCurrentTime() || 0;
+    bar.max = dur;
+    bar.value = cur;
+    if (curEl) curEl.textContent = formatTime(cur);
+    if (durEl) durEl.textContent = formatTime(dur);
+  }, 500);
 }
 
 function onYouTubeIframeAPIReady(){
@@ -48,6 +102,7 @@ function onYouTubeIframeAPIReady(){
         ytReady = true;
         setIcon(false);
         updateTrackName();
+        startSeekTracking();
         const savedVolume = localStorage.getItem('bgmVolume');
         ytPlayer.setVolume(savedVolume !== null ? parseInt(savedVolume, 10) : 50);
         if (wantsPlay) ytPlayer.playVideo();
@@ -63,6 +118,7 @@ function onYouTubeIframeAPIReady(){
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('musicToggle');
   const trackSelect = document.getElementById('trackSelect');
+  const seekBar = document.getElementById('seekBar');
 
   if (trackSelect){
     const savedTrack = localStorage.getItem('bgmTrackId') || DEFAULT_VIDEO_ID;
@@ -76,6 +132,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       ytPlayer.loadVideoById(newId);
       setTimeout(updateTrackName, 500);
+    });
+  }
+
+  if (seekBar){
+    seekBar.addEventListener('input', () => {
+      seekBar.dataset.dragging = '1';
+      const curEl = document.getElementById('seekCurrent');
+      if (curEl) curEl.textContent = formatTime(parseFloat(seekBar.value));
+    });
+    seekBar.addEventListener('change', () => {
+      if (ytPlayer) ytPlayer.seekTo(parseFloat(seekBar.value), true);
+      seekBar.dataset.dragging = '0';
     });
   }
 

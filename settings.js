@@ -8,6 +8,9 @@
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     panel.hidden = !panel.hidden;
+    if (!panel.hidden && typeof window.updateTrackName === 'function'){
+      window.updateTrackName();
+    }
   });
 
   document.addEventListener('click', (e) => {

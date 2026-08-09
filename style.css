@@ -321,7 +321,35 @@ h1.crt-title{
   color: var(--text-main);
   line-height: 1.4;
   padding: 6px 0;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 20px;
+}
+
+.settings-track span{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes marqueeMove{
+  from { transform: translateX(var(--marquee-start, 100%)); }
+  to { transform: translateX(var(--marquee-end, -100%)); }
+}
+
+.seek-wrap{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--card-border);
+}
+
+.seek-time{
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-top: 2px;
+  font-family: 'Courier New', monospace;
 }
 
 .settings-slider{
