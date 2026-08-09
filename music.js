@@ -16,9 +16,20 @@ function setIcon(playing){
 
 function updateTrackName(){
   const trackEl = document.getElementById('trackName');
+  const trackSelect = document.getElementById('trackSelect');
   if (!trackEl || !ytPlayer) return;
+
   const data = ytPlayer.getVideoData();
-  trackEl.textContent = (data && data.title) ? data.title : '-';
+  const videoId = data && data.video_id;
+  let label = '-';
+
+  if (trackSelect && videoId){
+    const opt = Array.from(trackSelect.options).find((o) => o.value === videoId);
+    if (opt) label = opt.text;
+  }
+  if (label === '-' && data && data.title) label = data.title;
+
+  trackEl.textContent = label;
 }
 
 function onYouTubeIframeAPIReady(){
@@ -60,14 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     trackSelect.addEventListener('change', () => {
       const newId = trackSelect.value;
       localStorage.setItem('bgmTrackId', newId);
+      wantsPlay = true;
       if (!ytReady || !ytPlayer) return;
 
-      const wasPlaying = ytPlayer.getPlayerState() === YT.PlayerState.PLAYING;
-      if (wasPlaying){
-        ytPlayer.loadVideoById(newId);
-      } else {
-        ytPlayer.cueVideoById(newId);
-      }
+      ytPlayer.loadVideoById(newId);
       setTimeout(updateTrackName, 500);
     });
   }
