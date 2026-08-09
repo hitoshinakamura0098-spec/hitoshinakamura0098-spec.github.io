@@ -329,6 +329,17 @@ h1.crt-title{
   accent-color: var(--accent);
 }
 
+.settings-select{
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.8);
+  color: var(--text-main);
+  font-size: 13px;
+}
+
 .theme-switch{
   display: flex;
   gap: 8px;
@@ -347,6 +358,15 @@ h1.crt-title{
 
 .theme-btn:hover{
   border-color: rgba(47,111,237,0.4);
+}
+
+.settings-note{
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--card-border);
+  font-size: 11px;
+  color: var(--text-sub);
+  line-height: 1.5;
 }
 
 .theme-btn.active{
