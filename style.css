@@ -319,12 +319,12 @@ h1.crt-title{
 .settings-track{
   font-size: 13px;
   color: var(--text-main);
-  line-height: 1.4;
-  padding: 6px 0;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 6px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  height: 20px;
 }
 
 .settings-track span{
