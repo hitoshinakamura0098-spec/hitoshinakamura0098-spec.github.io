@@ -316,6 +316,14 @@ h1.crt-title{
   margin-top: 14px;
 }
 
+.settings-track{
+  font-size: 13px;
+  color: var(--text-main);
+  line-height: 1.4;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
 .settings-slider{
   width: 100%;
   accent-color: var(--accent);
@@ -689,6 +697,17 @@ canvas#starfield{ display:none; }
   font-family: inherit;
   font-size: 14px;
   resize: vertical;
+}
+
+.achv-item{
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  color: var(--text-main);
+}
+
+.achv-item:hover{
+  color: var(--accent);
 }
 
 .blog-post{

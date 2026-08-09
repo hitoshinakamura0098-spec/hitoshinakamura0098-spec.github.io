@@ -27,6 +27,11 @@ function onYouTubeIframeAPIReady(){
       onReady: () => {
         ytReady = true;
         setIcon(false);
+        const trackEl = document.getElementById('trackName');
+        if (trackEl){
+          const data = ytPlayer.getVideoData();
+          trackEl.textContent = (data && data.title) ? data.title : '-';
+        }
         const savedVolume = localStorage.getItem('bgmVolume');
         ytPlayer.setVolume(savedVolume !== null ? parseInt(savedVolume, 10) : 50);
         if (wantsPlay) ytPlayer.playVideo();
