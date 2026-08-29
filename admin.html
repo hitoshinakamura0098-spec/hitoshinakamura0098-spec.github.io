@@ -27,7 +27,7 @@
         GitHubの Settings → Developer settings → Personal access tokens で、このリポジトリへの
         <strong>Contents: Read and write</strong> 権限を持つトークンを発行して貼り付けてください。
       </p>
-      <input type="password" id="ghToken" placeholder="ghp_..." style="width:100%; max-width:480px; padding:10px 12px; border-radius:8px; border:1px solid var(--card-border); background:rgba(255,255,255,0.6); font-family:monospace;" />
+      <input type="password" id="ghToken" placeholder="github_pat_..." style="width:100%; max-width:480px; padding:10px 12px; border-radius:8px; border:1px solid var(--card-border); background:rgba(255,255,255,0.6); font-family:monospace;" />
     </div>
 
     <div class="card">
@@ -45,7 +45,16 @@
       <label class="admin-label">本文(数式は $...$ / $$...$$ で書けます)</label>
       <textarea id="postBody" class="admin-input" rows="8" placeholder="本文を書く"></textarea>
 
-      <label class="admin-label">画像ファイル名(省略可、事前にリポジトリに置いてください)</label>
+      <label class="admin-label">記事画像(省略可)</label>
+      <input type="file" id="postImageFile" class="admin-input" accept="image/*" />
+      <p class="note" style="margin-top:-4px;">iPhoneの写真ライブラリまたはカメラから選べます。長辺1600pxのWebP画像に自動変換して保存します。</p>
+      <div id="postImagePreviewWrap" hidden style="margin:10px 0 14px;">
+        <img id="postImagePreview" alt="選択した画像のプレビュー" style="display:block; max-width:100%; max-height:320px; border-radius:10px; border:1px solid var(--card-border); object-fit:contain;" />
+        <div id="postImageInfo" class="note" style="margin-top:6px;"></div>
+        <button type="button" id="clearImageBtn" class="appeal-btn" style="margin-top:8px; padding:7px 14px; font-size:12px;">画像選択を解除</button>
+      </div>
+
+      <label class="admin-label">既存画像のファイル名またはURL(省略可)</label>
       <input type="text" id="postImage" class="admin-input" placeholder="例: photo1.jpg" />
 
       <label class="admin-label">動画URL(YouTube等) または 動画ファイル名(省略可)</label>
