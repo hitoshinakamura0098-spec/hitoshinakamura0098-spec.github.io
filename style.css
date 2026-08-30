@@ -853,3 +853,12 @@ canvas#starfield{ display:none; }
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* Render text divider markers as responsive rules instead of fixed-width glyphs. */
+.blog-text-divider{
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 0.45em 0 0.75em;
+  border-top: 1px solid var(--card-border);
+}
