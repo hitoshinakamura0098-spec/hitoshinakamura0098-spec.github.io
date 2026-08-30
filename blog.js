@@ -98,8 +98,8 @@
         <div class="blog-date">${escapeHtml(p.date)}</div>
         <h2 class="section-title">${escapeHtml(p.title)}</h2>
         ${tags ? `<ul class="badge-list cat-learn" style="margin-bottom:10px;">${tags}</ul>` : ''}
+        ${needsToggle ? `<button type="button" class="blog-read-more" aria-expanded="false" aria-controls="${bodyId}">続きを読む ↓</button>` : ''}
         <div id="${bodyId}" class="note blog-body${needsToggle ? '' : ' is-expanded'}">${bodyHtml(body)}</div>
-        ${needsToggle ? `<button type="button" class="blog-read-more" aria-expanded="false" aria-controls="${bodyId}">続きを読む</button>` : ''}
         ${mediaHtml(p)}
       </article>
     `;
@@ -134,7 +134,7 @@
     const expanded = button.getAttribute('aria-expanded') === 'true';
     body.classList.toggle('is-expanded', !expanded);
     button.setAttribute('aria-expanded', String(!expanded));
-    button.textContent = expanded ? '続きを読む' : '閉じる';
+    button.textContent = expanded ? '続きを読む ↓' : '収納する ↑';
 
     if (expanded){
       button.closest('.blog-post').scrollIntoView({ block: 'start', behavior: 'smooth' });
