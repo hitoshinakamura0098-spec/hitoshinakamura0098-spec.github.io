@@ -925,15 +925,22 @@ canvas#starfield{ display:none; }
 }
 
 .blog-read-more{
-  display: inline-flex;
+  position: sticky;
+  top: 72px;
+  z-index: 5;
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: max-content;
   min-height: 40px;
-  margin-top: 12px;
-  padding: 8px 16px;
+  margin: 0 0 10px auto;
+  padding: 8px 14px;
   border-radius: 10px;
   color: var(--accent);
   font-weight: 700;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(31,37,48,0.10);
 }
 
 .blog-read-more:active,
