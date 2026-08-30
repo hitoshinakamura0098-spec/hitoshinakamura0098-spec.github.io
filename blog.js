@@ -14,6 +14,24 @@
     return m ? `https://www.youtube.com/embed/${m[1]}` : null;
   }
 
+  function escapeHtml(value){
+    const entities = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return String(value == null ? '' : value).replace(/[&<>"']/g, (char) => entities[char]);
+  }
+
+  function bodyHtml(value){
+    return escapeHtml(value).replace(
+      /━{5,}/g,
+      '<span class="blog-text-divider" aria-hidden="true"></span>'
+    );
+  }
+
   function mediaHtml(p){
     let html = '';
 
@@ -42,7 +60,7 @@
         <div class="blog-date">${p.date}</div>
         <h2 class="section-title">${p.title}</h2>
         ${tags ? `<ul class="badge-list cat-learn" style="margin-bottom:10px;">${tags}</ul>` : ''}
-        <p class="note" style="margin-bottom:0; white-space:pre-line;">${p.body}</p>
+        <p class="note" style="margin-bottom:0; white-space:pre-line;">${bodyHtml(p.body)}</p>
         ${mediaHtml(p)}
       </article>
     `;
