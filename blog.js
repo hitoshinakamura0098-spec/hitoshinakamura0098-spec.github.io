@@ -1,5 +1,6 @@
 (function(){
   const list = document.getElementById('blogList');
+  const filters = document.getElementById('blogFilters');
   if (!list || typeof BLOG_POSTS === 'undefined') return;
 
   const posts = [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -73,18 +74,72 @@
     return html;
   }
 
-  list.innerHTML = posts.map((p) => {
-    const tags = (p.tags || []).map((t) => `<li>${t}</li>`).join('');
+  const filterTags = [...new Set(posts.flatMap((p) => p.tags || []))];
+  const allFilters = ['すべて', ...filterTags];
+
+  if (filters){
+    filters.innerHTML = allFilters.map((tag, index) => `
+      <button
+        type="button"
+        class="blog-filter-btn${index === 0 ? ' is-active' : ''}"
+        data-filter-index="${index}"
+        aria-pressed="${index === 0 ? 'true' : 'false'}"
+      >${escapeHtml(tag)}</button>
+    `).join('');
+  }
+
+  list.innerHTML = posts.map((p, index) => {
+    const tags = (p.tags || []).map((t) => `<li>${escapeHtml(t)}</li>`).join('');
+    const body = String(p.body || '');
+    const needsToggle = body.length > 320 || body.split('\n').length > 8;
+    const bodyId = `blog-body-${index}`;
     return `
-      <article class="card blog-post">
-        <div class="blog-date">${p.date}</div>
-        <h2 class="section-title">${p.title}</h2>
+      <article class="card blog-post" data-post-index="${index}">
+        <div class="blog-date">${escapeHtml(p.date)}</div>
+        <h2 class="section-title">${escapeHtml(p.title)}</h2>
         ${tags ? `<ul class="badge-list cat-learn" style="margin-bottom:10px;">${tags}</ul>` : ''}
-        <p class="note" style="margin-bottom:0; white-space:pre-line;">${bodyHtml(p.body)}</p>
+        <div id="${bodyId}" class="note blog-body${needsToggle ? '' : ' is-expanded'}">${bodyHtml(body)}</div>
+        ${needsToggle ? `<button type="button" class="blog-read-more" aria-expanded="false" aria-controls="${bodyId}">続きを読む</button>` : ''}
         ${mediaHtml(p)}
       </article>
     `;
   }).join('');
+
+  if (filters){
+    filters.addEventListener('click', (event) => {
+      const button = event.target.closest('.blog-filter-btn');
+      if (!button) return;
+      const filterIndex = Number(button.dataset.filterIndex);
+      const selectedTag = filterIndex === 0 ? '' : filterTags[filterIndex - 1];
+
+      filters.querySelectorAll('.blog-filter-btn').forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
+      });
+
+      list.querySelectorAll('.blog-post').forEach((article) => {
+        const post = posts[Number(article.dataset.postIndex)];
+        article.hidden = Boolean(selectedTag) && !(post.tags || []).includes(selectedTag);
+      });
+    });
+  }
+
+  list.addEventListener('click', (event) => {
+    const button = event.target.closest('.blog-read-more');
+    if (!button) return;
+    const body = document.getElementById(button.getAttribute('aria-controls'));
+    if (!body) return;
+
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    body.classList.toggle('is-expanded', !expanded);
+    button.setAttribute('aria-expanded', String(!expanded));
+    button.textContent = expanded ? '続きを読む' : '閉じる';
+
+    if (expanded){
+      button.closest('.blog-post').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+  });
 
   if (window.renderMathInElement){
     renderMathInElement(list, {
