@@ -91,7 +91,7 @@
   list.innerHTML = posts.map((p, index) => {
     const tags = (p.tags || []).map((t) => `<li>${escapeHtml(t)}</li>`).join('');
     const body = String(p.body || '');
-    const needsToggle = body.length > 320 || body.split('\\n').length > 8;
+    const needsToggle = body.length > 320 || body.split('\n').length > 8;
     const bodyId = `blog-body-${index}`;
     return `
       <article class="card blog-post" data-post-index="${index}">
