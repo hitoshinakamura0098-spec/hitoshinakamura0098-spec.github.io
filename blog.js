@@ -96,7 +96,7 @@
     return `
       <article class="card blog-post" data-post-index="${index}">
         <div class="blog-date">${escapeHtml(p.date)}</div>
-        ${needsToggle ? `<button type="button" class="blog-read-more" aria-expanded="false" aria-controls="${bodyId}">READ MORE ▼</button>` : ''}
+        ${needsToggle ? `<button type="button" class="blog-read-more" aria-expanded="false" aria-controls="${bodyId}"><span class="blog-toggle-label">READ MORE</span><span class="blog-toggle-icon" aria-hidden="true">▼</span></button>` : ''}
         <h2 class="section-title">${escapeHtml(p.title)}</h2>
         ${tags ? `<ul class="badge-list cat-learn" style="margin-bottom:10px;">${tags}</ul>` : ''}
         <div id="${bodyId}" class="note blog-body${needsToggle ? '' : ' is-expanded'}">${bodyHtml(body)}</div>
@@ -134,7 +134,10 @@
     const expanded = button.getAttribute('aria-expanded') === 'true';
     body.classList.toggle('is-expanded', !expanded);
     button.setAttribute('aria-expanded', String(!expanded));
-    button.textContent = expanded ? 'READ MORE ▼' : 'CLOSE ▲';
+    const label = button.querySelector('.blog-toggle-label');
+    const icon = button.querySelector('.blog-toggle-icon');
+    if (label) label.textContent = expanded ? 'READ MORE' : 'CLOSE';
+    if (icon) icon.textContent = expanded ? '▼' : '▲';
 
     if (expanded){
       button.closest('.blog-post').scrollIntoView({ block: 'start', behavior: 'smooth' });
