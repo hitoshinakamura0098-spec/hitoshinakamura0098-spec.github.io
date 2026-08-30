@@ -25,8 +25,28 @@
     return String(value == null ? '' : value).replace(/[&<>"']/g, (char) => entities[char]);
   }
 
+  function linkifyText(value){
+    const text = String(value == null ? '' : value);
+    const pattern = /https?:\/\/[^\s]+/g;
+    let html = '';
+    let lastIndex = 0;
+    let match;
+
+    while ((match = pattern.exec(text)) !== null){
+      const rawUrl = match[0];
+      const trailing = (rawUrl.match(/[、。）」』】]+$/) || [''])[0];
+      const url = trailing ? rawUrl.slice(0, -trailing.length) : rawUrl;
+      html += escapeHtml(text.slice(lastIndex, match.index));
+      html += `<a class="blog-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url)}</a>`;
+      html += escapeHtml(trailing);
+      lastIndex = match.index + rawUrl.length;
+    }
+
+    return html + escapeHtml(text.slice(lastIndex));
+  }
+
   function bodyHtml(value){
-    return escapeHtml(value).replace(
+    return linkifyText(value).replace(
       /━{5,}/g,
       '<span class="blog-text-divider" aria-hidden="true"></span>'
     );
