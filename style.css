@@ -841,3 +841,15 @@ canvas#starfield{ display:none; }
     transform: translate(-50%, -50%) translate(var(--dx), -70px) scale(1.1);
   }
 }
+
+/* Keep long URLs and unbroken strings inside blog cards on mobile. */
+.blog-post,
+.blog-post .note{
+  min-width: 0;
+  max-width: 100%;
+}
+
+.blog-post .note{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
