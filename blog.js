@@ -47,7 +47,13 @@
   }
 
   function bodyHtml(value){
-    return linkifyText(value).replace(
+    const text = String(value == null ? '' : value);
+    const dividersAboveLabels = text.replace(
+      /^([^\n]*?\S)[ \t]+(━{5,})[ \t]*$/gm,
+      '$2\n$1'
+    );
+
+    return linkifyText(dividersAboveLabels).replace(
       /━{5,}/g,
       '<span class="blog-text-divider" aria-hidden="true"></span>'
     );
