@@ -608,6 +608,44 @@ a:hover{ text-decoration: underline; }
   cursor: pointer;
 }
 
+
+/* Achievements detail modal: keep long records readable on small screens */
+#achvModalOverlay{
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#achvModalOverlay .modal-box{
+  max-width: 760px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+#achvModalOverlay .modal-box p{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 720px){
+  #achvModalOverlay{
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  #achvModalOverlay .modal-box{
+    max-height: calc(100dvh - 24px);
+    padding: 22px 18px 20px;
+    margin: 0 auto;
+  }
+
+  #achvModalOverlay .modal-box h3{
+    padding-right: 34px;
+    font-size: 20px;
+  }
+}
+
 /* project 技美 card accent */
 .hero-note{
   color: rgba(244,246,251,0.88);
