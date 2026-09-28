@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills | Nakamura Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio-modern.css" />
 </head>
 
-<body>
+<body class="modern-page">
   <canvas id="bgNet"></canvas>
 
   <nav class="site-nav">
     <div class="nav-inner">
       <a class="brand" href="index.html"><img src="butterfly.png" alt="" class="brand-icon" />HITOSHI NAKAMURA</a>
       <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="research.html">Research</a>
-      <a href="learning.html">Learning</a>
-      <a href="blog.html">Blog</a>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="research.html">Research</a>
+        <a href="learning.html">Learning</a>
+        <a href="blog.html">Blog</a>
       </div>
       <button id="musicToggle" class="music-toggle" aria-label="BGMを再生"></button>
       <div id="ytPlayer"></div>
@@ -59,137 +60,142 @@
   </nav>
 
   <main id="appMain">
-  <div class="container">
-    <h2 class="page-title">Technical Skills / 技術</h2>
-    <p class="page-lead">クリックすると詳細が見られます。</p>
+    <div class="modern-shell">
+      <section class="modern-hero">
+        <div>
+          <p class="modern-kicker">TECHNICAL STACK</p>
+          <h1>Skills for<br />Real-world Impact.</h1>
+          <p class="hero-subtitle">クラウド、インフラ、保守開発、AI支援。単独の技術ではなく、障害解析から実装・運用までをつなぐための技術スタック。</p>
+        </div>
+        <div class="modern-hero-aside">
+          <div class="signal-line"></div>
+          <strong>FIELD-DRIVEN SKILLS</strong>
+          <p>「知っている技術」より、「実務で何に使ったか」が伝わるよう、用途と役割を中心に整理しています。</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Cloud</h3>
-          <ul class="badge-list clickable cat-cloud">
-            <li data-icon="icons/amazonec2.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築業務でEC2インスタンスの設計・IAM設定・CloudWatch監視と組み合わせた運用を担当。">AWS EC2</li>
-            <li data-icon="icons/amazonses.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="メール遅延障害調査でSESイベント解析を実施。送信ログの追跡と遅延原因の切り分けに使用。">SES</li>
-            <li data-icon="icons/awslambda.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="メール遅延障害調査でLambdaログ解析を担当。処理フローのトレースに活用。">Lambda</li>
-            <li data-icon="icons/amazonsqs.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWSインフラ構成の一部としてキューイング処理の理解・調査に使用。">SQS</li>
-            <li data-icon="icons/amazonroute53.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でRoute53によるDNS・メール認証設定(SPF/DKIM/DMARC)を担当。">Route53</li>
-            <li data-icon="icons/amazoncloudwatch.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="障害調査・AWS構築でCloudWatch解析、メトリクス監視、AlarmによるTimeout / Bounce通知設計に使用。">CloudWatch</li>
-            <li data-icon="icons/amazonaws.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でCloudTrailによる操作ログ監査・トレーサビリティ確保を担当。">CloudTrail</li>
-            <li data-icon="icons/amazoniam.svg" data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWS構築でIAM設定を担当。権限管理とセキュリティ設計に従事。">IAM</li>
-            <li data-cat="Cloud" data-color="var(--c-cloud)" data-desc="RDSコスト調査でdb.t4g.micro、CPUクレジット、InstanceUsage、ポーリング負荷などを確認し、費用増加要因の切り分けに使用。">Amazon RDS</li>
-            <li data-cat="Cloud" data-color="var(--c-cloud)" data-desc="AWSの費用分析でRDS利用料、Usage、RI / Savings Plans適用状況などの確認に使用。">AWS Cost Explorer</li>
-          </ul>
+      <section class="modern-section">
+        <div class="modern-section-head">
+          <div>
+            <p class="modern-section-label">CORE SKILLS</p>
+            <h2>Four Engineering Domains</h2>
+          </div>
+          <p class="modern-section-note">大量のバッジではなく、実務で使う4つの領域に集約。</p>
         </div>
 
-        <div class="skill-box">
-          <h3>Infrastructure</h3>
-          <ul class="badge-list clickable cat-infra">
-            <li data-icon="icons/linux.svg" data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="オンプレ構築(現在進行中)でLinux導入を担当。">Linux</li>
-            <li data-icon="icons/windows.svg" data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="Windows Server環境の構築・運用経験。">Windows Server</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="Route53でのメール認証設定・障害調査でのドメイン確認に使用。">DNS</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でのMicrosoft受信遅延切り分けに使用。">SMTP</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でDMARC導入を担当。">DMARC</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でSPF設定を担当。">SPF</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="メール遅延障害調査でDKIM設定を担当。">DKIM</li>
-            <li data-cat="Infrastructure" data-color="var(--c-infra)" data-desc="ネットワーク調査・トラブル切り分けの基礎知識として活用。">TCP/IP</li>
-          </ul>
-        </div>
+        <div class="skill-domain-grid">
+          <article class="skill-domain" style="--domain-color:#4f9df1;">
+            <div class="skill-domain-head">
+              <span class="skill-domain-icon"><img src="icons/amazonaws.svg" alt="" /></span>
+              <div><p class="modern-section-label">01 / CLOUD</p><h3>AWS &amp; Cloud Operations</h3></div>
+            </div>
+            <p>メール基盤、監視、コスト分析を中心にAWS運用・障害解析で使用。</p>
+            <div class="skill-lines">
+              <button class="skill-detail" type="button" data-title="AWS Core" data-cat="Cloud" data-detail="EC2、IAM、Route53、CloudTrailを含むAWS環境の構築・設定確認・運用で使用。">EC2 · IAM · Route53 · CloudTrail <span>Foundation</span></button>
+              <button class="skill-detail" type="button" data-title="Mail & Event Pipeline" data-cat="Cloud" data-detail="SES、Lambda、SQSをメール遅延障害のイベント解析・ログ追跡・処理フロー確認で使用。">SES · Lambda · SQS <span>Mail / Events</span></button>
+              <button class="skill-detail" type="button" data-title="CloudWatch" data-cat="Cloud" data-detail="ログ解析、メトリクス確認、Timeout / BounceのAlarm設計と共有メール通知の運用設計に使用。">CloudWatch <span>Observability</span></button>
+              <button class="skill-detail" type="button" data-title="RDS & Cost Explorer" data-cat="Cloud" data-detail="db.t4g.micro、CPUクレジット、InstanceUsage、ポーリング負荷、RI / Savings Plans適用状況などを確認し、コスト増加要因と請求差異を切り分け。">RDS · Cost Explorer <span>Cost Analysis</span></button>
+            </div>
+          </article>
 
-        <div class="skill-box">
-          <h3>Development</h3>
-          <ul class="badge-list clickable cat-dev">
-            <li data-icon="icons/csharp.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="保守開発でC#コード解析・障害原因調査を担当。">C#</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="ASP.NET Razorの.cshtmlを修正し、警告文の日本語・英語表記変更、ビルド、発行、デプロイ、ロールバック、HTMLエンコード不具合の切り分けと実装後テストまで実施。">ASP.NET Razor</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="メールテンプレートSQLの仕様確認と表示不具合の切り分けで使用。NULL / 空文字やアプリ変数側との責任範囲を確認。">SQL</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="C# / .NET保守改修でソリューション確認、ビルド、発行、デプロイ資材生成に使用。">Visual Studio</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="旧資材と新しい発行資材の差分確認、配置対象ファイルの切り分けに使用。">WinMerge</li>
-            <li data-icon="icons/python.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="個人R&D「Project 技美」でCLIツール制作・ログ監視自動化に使用。">Python</li>
-            <li data-icon="icons/html5.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="このポートフォリオサイトの制作に使用。">HTML / CSS</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="Razor画面の表示不具合切り分けでConsole出力、DOM確認、既存JavaScript処理の追跡、調査用コメント付与、実装後テストに使用。">JavaScript</li>
-            <li data-cat="Development" data-color="var(--c-dev)" data-desc="ブラウザF12のElements、Console、Network Responseを使い、サーバー応答からDOM反映までのどの層で値が変換されるかを切り分け。">Browser DevTools</li>
-            <li data-icon="icons/github.svg" data-cat="Development" data-color="var(--c-dev)" data-desc="コード管理・ポートフォリオ公開に使用。">Git / GitHub</li>
-          </ul>
-        </div>
+          <article class="skill-domain" style="--domain-color:#55d8d0;">
+            <div class="skill-domain-head">
+              <span class="skill-domain-icon"><img src="icons/linux.svg" alt="" /></span>
+              <div><p class="modern-section-label">02 / INFRASTRUCTURE</p><h3>Infrastructure &amp; Operations</h3></div>
+            </div>
+            <p>オンプレ構築、ネットワーク、メール認証、障害調査の基盤技術。</p>
+            <div class="skill-lines">
+              <button class="skill-detail" type="button" data-title="Linux / On-Prem" data-cat="Infrastructure" data-detail="Linux導入、BIOS / UEFI確認、仮想環境構築、オンプレ構成調査、手順書作成を担当。">Linux · On-Prem · Virtualization <span>Platform</span></button>
+              <button class="skill-detail" type="button" data-title="Networking" data-cat="Infrastructure" data-detail="ネットワーク調査、接続確認、DNS、TCP/IPを障害切り分けと構成確認に使用。">DNS · TCP/IP · Networking <span>Connectivity</span></button>
+              <button class="skill-detail" type="button" data-title="Mail Authentication" data-cat="Infrastructure" data-detail="SPF、DKIM、DMARCをSESメール配送の認証状態確認・設定・障害切り分けに使用。">SPF · DKIM · DMARC <span>Mail Security</span></button>
+              <button class="skill-detail" type="button" data-title="SMTP Analysis" data-cat="Infrastructure" data-detail="Microsoft受信遅延の切り分けでSMTP応答コード、451 / 421等を確認し、受信側制限と配送状態を分析。">SMTP · Delivery Analysis <span>Troubleshooting</span></button>
+            </div>
+          </article>
 
-        <div class="skill-box">
-          <h3>AI</h3>
-          <ul class="badge-list clickable cat-ai">
-            <li data-icon="icons/openai.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="設計支援・障害解析・資料作成などAI活用エンジニアリングで日常的に使用。">ChatGPT</li>
-            <li data-icon="icons/githubcopilot.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="コードレビュー・実装支援に活用。">GitHub Copilot</li>
-            <li data-icon="icons/anthropic.svg" data-cat="AI" data-color="var(--c-ai)" data-desc="複数AI会議による最適化・協働作業の研究(Project 技美)で活用。">Claude</li>
-            <li data-cat="AI" data-color="var(--c-ai)" data-desc="AIツールを実務課題に適用するための設計スキル。">Prompt Engineering</li>
-            <li data-cat="AI" data-color="var(--c-ai)" data-desc="複数AIを組み合わせた小規模自動化環境の構築を研究中。">AI Workflow</li>
-          </ul>
-        </div>
+          <article class="skill-domain" style="--domain-color:#8b7cff;">
+            <div class="skill-domain-head">
+              <span class="skill-domain-icon"><img src="icons/csharp.svg" alt="" /></span>
+              <div><p class="modern-section-label">03 / DEVELOPMENT</p><h3>Maintenance Development</h3></div>
+            </div>
+            <p>既存Webアプリの保守改修、発行、差分確認、表示不具合の切り分け。</p>
+            <div class="skill-lines">
+              <button class="skill-detail" type="button" data-title="C# / ASP.NET Razor" data-cat="Development" data-detail="C#コード解析、Razor (.cshtml) 修正、警告文の日本語・英語対応、発行、デプロイ、ロールバック、実装後テストを担当。">C# · ASP.NET Razor <span>Application</span></button>
+              <button class="skill-detail" type="button" data-title="JavaScript / DevTools" data-cat="Development" data-detail="Unexpected token等のJavaScript構文エラー、DOM反映、Console、Network Response、Elementsを用いて不具合層を切り分け。">JavaScript · Browser DevTools <span>Debugging</span></button>
+              <button class="skill-detail" type="button" data-title="SQL" data-cat="Development" data-detail="メールテンプレートSQLの仕様確認、NULL / 空文字条件、アプリ変数側との責任範囲の切り分けに使用。">SQL <span>Data / Logic</span></button>
+              <button class="skill-detail" type="button" data-title="Visual Studio / WinMerge / Git" data-cat="Development" data-detail="Visual Studioでビルド・Release発行、WinMergeで既存資材との差分確認、Git / GitHubで個人開発とポートフォリオ管理。">Visual Studio · WinMerge · Git <span>Release</span></button>
+            </div>
+          </article>
 
-        <div class="skill-box">
-          <h3>Embedded / Firmware</h3>
-          <ul class="badge-list clickable cat-learn">
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="組み込み現場でのソフトウェア複製・展開作業を担当。">ソフトウェアのコピー</li>
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="現場でのメディア(記録媒体)配置・管理を担当。">メディア配置</li>
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="現場での資材配置・管理を担当。">資材配置</li>
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="組み込み機器のファームウェア初期化作業を担当。">ファームウェア初期化</li>
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="配線・信号のルーティング作業を担当。">ルーティング</li>
-            <li data-cat="Embedded / Firmware" data-color="var(--c-learn)" data-desc="組み込み機器の実装・接続作業を担当。">組み込みと接続</li>
-          </ul>
+          <article class="skill-domain" style="--domain-color:#b58bff;">
+            <div class="skill-domain-head">
+              <span class="skill-domain-icon"><img src="icons/openai.svg" alt="" /></span>
+              <div><p class="modern-section-label">04 / AI &amp; AUTOMATION</p><h3>AI-assisted Engineering</h3></div>
+            </div>
+            <p>AIを答えの代替ではなく、仮説生成・レビュー・資料化・自動化支援として使用。</p>
+            <div class="skill-lines">
+              <button class="skill-detail" type="button" data-title="ChatGPT" data-cat="AI" data-detail="障害解析、設計補助、調査観点の整理、資料作成、コードレビュー等に使用。実環境のログや設定と突合して検証する運用を前提としている。">ChatGPT <span>Analysis / Docs</span></button>
+              <button class="skill-detail" type="button" data-title="GitHub Copilot" data-cat="AI" data-detail="コード確認、実装支援、既存処理の読み解きや修正案検討に活用。">GitHub Copilot <span>Coding</span></button>
+              <button class="skill-detail" type="button" data-title="Claude" data-cat="AI" data-detail="個人R&Dで複数AIの比較・協働作業の検証に使用。">Claude <span>R&D</span></button>
+              <button class="skill-detail" type="button" data-title="AI Workflow" data-cat="AI" data-detail="AIを設計、ログ分析、ドキュメント、コード確認、安全な自動化へ組み込む小規模ワークフローを研究・実践。">Prompt Engineering · AI Workflow <span>Automation</span></button>
+            </div>
+          </article>
         </div>
+      </section>
 
-        <div class="skill-box">
-          <h3>Background</h3>
-          <ul class="badge-list clickable cat-research">
-            <li data-cat="Background" data-color="var(--c-research)" data-desc="製造現場での工場責任者・現場リーダー経験。">工場責任者経験</li>
-            <li data-cat="Background" data-color="var(--c-research)" data-desc="長時間運用・夜勤対応が可能。">夜勤耐性</li>
-            <li data-cat="Background" data-color="var(--c-research)" data-desc="機械・塗装・基礎科学の構造理解。">基礎科学知識</li>
-            <li data-cat="Background" data-color="var(--c-research)" data-desc="情報科学部 情報科 卒業。">情報科学部情報科卒業</li>
-            <li data-cat="Background" data-color="var(--c-research)" data-desc="軽工具・重工具全般の使用経験。">工具全般使用経験</li>
-          </ul>
+      <section class="modern-section">
+        <div class="modern-section-head">
+          <div>
+            <p class="modern-section-label">EXPERIENCE LAYER</p>
+            <h2>Beyond the Stack</h2>
+          </div>
         </div>
+        <div class="experience-strip">
+          <div class="experience-card">
+            <h3>Embedded / Firmware</h3>
+            <p>ソフトウェア複製・展開、メディア配置、資材配置、ファームウェア初期化、ルーティング、組み込み機器接続。</p>
+            <div class="modern-tags"><span class="modern-tag">DEPLOYMENT</span><span class="modern-tag">DEVICE</span><span class="modern-tag">ROUTING</span></div>
+          </div>
+          <div class="experience-card">
+            <h3>Operations / Background</h3>
+            <p>製造現場の責任者・リーダー経験、工具使用、設備・機械への理解を、現在の障害解析や現場調整にも活用。</p>
+            <div class="modern-tags"><span class="modern-tag">OPERATIONS</span><span class="modern-tag">LEADERSHIP</span><span class="modern-tag">FIELD WORK</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
+        <span class="modal-cat" id="modalCat"></span>
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
       </div>
     </div>
-  </div>
 
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
-      <div id="modalIcon"></div>
-      <h3 id="modalName"></h3>
-      <span class="modal-cat" id="modalCat"></span>
-      <p id="modalDesc"></p>
-    </div>
-  </div>
+    <script>
+    (function(){
+      const overlay = document.getElementById('modalOverlay');
+      const modalName = document.getElementById('modalName');
+      const modalCat = document.getElementById('modalCat');
+      const modalDesc = document.getElementById('modalDesc');
+      if (!overlay) return;
 
-  <script>
-  (function(){
-    const overlay = document.getElementById('modalOverlay');
-    const modalIcon = document.getElementById('modalIcon');
-    const modalName = document.getElementById('modalName');
-    const modalCat = document.getElementById('modalCat');
-    const modalDesc = document.getElementById('modalDesc');
-
-    document.querySelectorAll('.badge-list.clickable li').forEach(function(li){
-      li.addEventListener('click', function(){
-        const icon = li.dataset.icon;
-        const color = li.dataset.color || '';
-        modalIcon.innerHTML = icon
-          ? '<span class="badge-icon-lg" style="--icon:url(\'' + icon + '\'); --modal-color:' + color + '"></span>'
-          : '';
-        modalName.textContent = li.textContent.trim();
-        modalCat.textContent = li.dataset.cat || '';
-        modalDesc.textContent = li.dataset.desc || '';
-        overlay.classList.add('open');
+      function closeModal(){ overlay.classList.remove('open'); }
+      document.querySelectorAll('.skill-detail').forEach(function(el){
+        el.addEventListener('click', function(){
+          modalName.textContent = el.dataset.title || '';
+          modalCat.textContent = el.dataset.cat || '';
+          modalDesc.textContent = el.dataset.detail || '';
+          overlay.classList.add('open');
+        });
       });
-    });
 
-    function closeModal(){ overlay.classList.remove('open'); }
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-    overlay.addEventListener('click', function(e){
-      if(e.target === overlay) closeModal();
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') closeModal();
-    });
-  })();
-  </script>
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+    })();
+    </script>
   </main>
 
   <script src="particles.js"></script>
