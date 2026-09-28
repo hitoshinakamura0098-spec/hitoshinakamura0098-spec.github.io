@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Nakamura Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio-modern.css" />
 </head>
 
-<body>
+<body class="showcase-page">
   <canvas id="bgNet"></canvas>
 
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html"><img src="butterfly.png" alt="" class="brand-icon" />HITOSHI NAKAMURA</a>
+  <nav class="showcase-nav">
+    <div class="showcase-nav-inner">
+      <a class="showcase-brand" href="index.html">
+        <span class="showcase-brand-mark">HN</span>
+        <span class="showcase-brand-name">HITOSHI NAKAMURA</span>
+      </a>
       <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="research.html">Research</a>
-      <a href="learning.html">Learning</a>
-      <a href="blog.html">Blog</a>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="research.html">Research</a>
+        <a href="learning.html">Learning</a>
+        <a href="blog.html">Blog</a>
       </div>
       <button id="musicToggle" class="music-toggle" aria-label="BGMを再生"></button>
       <div id="ytPlayer"></div>
@@ -59,55 +63,24 @@
   </nav>
 
   <main id="appMain">
-  <div class="container">
-    <h2 class="page-title">Research Outputs / 研究成果</h2>
-    <p class="page-lead">Project 技美で進めている独自研究の一覧です。成果物は順次公開予定です。</p>
-
-    <div class="card">
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Synthetic Biological Intelligence</h3>
-          <p class="note" style="margin:0 0 10px;">脳オルガノイドと人工知能を組み合わせた知能設計に関する研究。</p>
-          <ul class="badge-list cat-research">
-            <li>準備中</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>マインドアップロードの中間アーキテクチャ</h3>
-          <p class="note" style="margin:0 0 10px;">意識・記憶のデジタル移行における中間的な設計構造の検討。</p>
-          <ul class="badge-list cat-research">
-            <li>準備中</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>AIガバナンス</h3>
-          <p class="note" style="margin:0 0 10px;">AIの安全性・統治構造・運用ルールに関する設計研究。</p>
-          <ul class="badge-list cat-research">
-            <li>準備中</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>分散型社会設計</h3>
-          <p class="note" style="margin:0 0 10px;">中央集権に依らない社会システム・組織構造の検討。</p>
-          <ul class="badge-list cat-research">
-            <li>準備中</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>招き猫アルゴリズム</h3>
-          <p class="note" style="margin:0 0 10px;">独自アルゴリズムの研究。</p>
-          <ul class="badge-list cat-research">
-            <li>準備中</li>
-          </ul>
-        </div>
+    <div class="showcase-wrap">
+      <section class="showcase-page-hero">
+      <div class="showcase-page-hero-inner">
+        <p class="showcase-eyebrow">PROJECT 技美 / RESEARCH LAB</p>
+        <h1 class="showcase-page-title">Research Outputs</h1>
+        <p class="showcase-page-lead">Engineering、AI、自動化、社会設計を横断する個人研究。成果物は順次公開予定です。</p>
       </div>
+    </section>
+      <section class="showcase-section showcase-last-section">
+        <div class="research-grid">
+          <article class="research-card"><span class="research-no">01</span><p class="showcase-card-label">BIOLOGICAL INTELLIGENCE</p><h3>Synthetic Biological Intelligence</h3><p>脳オルガノイドと人工知能を組み合わせた知能設計に関する研究。</p><span class="status-chip">PREPARING</span></article>
+          <article class="research-card"><span class="research-no">02</span><p class="showcase-card-label">MIND ARCHITECTURE</p><h3>マインドアップロードの中間アーキテクチャ</h3><p>意識・記憶のデジタル移行における中間的な設計構造の検討。</p><span class="status-chip">PREPARING</span></article>
+          <article class="research-card"><span class="research-no">03</span><p class="showcase-card-label">AI GOVERNANCE</p><h3>AIガバナンス</h3><p>AIの安全性・統治構造・運用ルールに関する設計研究。</p><span class="status-chip">PREPARING</span></article>
+          <article class="research-card"><span class="research-no">04</span><p class="showcase-card-label">DISTRIBUTED SYSTEMS</p><h3>分散型社会設計</h3><p>中央集権に依らない社会システム・組織構造の検討。</p><span class="status-chip">PREPARING</span></article>
+          <article class="research-card"><span class="research-no">05</span><p class="showcase-card-label">EXPERIMENTAL ALGORITHM</p><h3>招き猫アルゴリズム</h3><p>独自アルゴリズムの研究とインタラクティブな実験。</p><span class="status-chip">PREPARING</span></article>
+        </div>
+      </section>
     </div>
-  </div>
-
   </main>
 
   <script src="particles.js"></script>

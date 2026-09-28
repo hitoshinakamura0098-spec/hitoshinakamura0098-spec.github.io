@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learning | Nakamura Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio-modern.css" />
 </head>
 
-<body>
+<body class="showcase-page">
   <canvas id="bgNet"></canvas>
 
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html"><img src="butterfly.png" alt="" class="brand-icon" />HITOSHI NAKAMURA</a>
+  <nav class="showcase-nav">
+    <div class="showcase-nav-inner">
+      <a class="showcase-brand" href="index.html">
+        <span class="showcase-brand-mark">HN</span>
+        <span class="showcase-brand-name">HITOSHI NAKAMURA</span>
+      </a>
       <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="research.html">Research</a>
-      <a href="learning.html">Learning</a>
-      <a href="blog.html">Blog</a>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="research.html">Research</a>
+        <a href="learning.html">Learning</a>
+        <a href="blog.html">Blog</a>
       </div>
       <button id="musicToggle" class="music-toggle" aria-label="BGMを再生"></button>
       <div id="ytPlayer"></div>
@@ -59,52 +63,22 @@
   </nav>
 
   <main id="appMain">
-  <div class="container">
-    <h2 class="page-title">Learning / 学習内容</h2>
-    <p class="page-lead">現在学習中</p>
-
-    <div class="card">
-      <h3 class="section-title" style="font-size:16px;">Learning</h3>
-      <ul class="badge-list cat-learn">
-        <li>Linux Administration</li>
-        <li>AWS Solutions Architecture</li>
-        <li>Network Design</li>
-        <li>Security</li>
-        <li>IaC</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>Terraform</li>
-      </ul>
+    <div class="showcase-wrap">
+      <section class="showcase-page-hero">
+      <div class="showcase-page-hero-inner">
+        <p class="showcase-eyebrow">CONTINUOUS LEARNING</p>
+        <h1 class="showcase-page-title">Learning</h1>
+        <p class="showcase-page-lead">現在の実務を土台に、クラウド・ネットワーク・セキュリティ・自動化を継続学習。</p>
+      </div>
+    </section>
+      <section class="showcase-section showcase-last-section">
+        <div class="learning-grid">
+          <article class="learning-card" style="--learning-accent:#4fa4ff"><p class="showcase-card-label">INFRASTRUCTURE</p><h3>Cloud & Platform</h3><p>クラウドとサーバー基盤を、設計・構築・自動化までつなげる領域。</p><div class="learning-tags"><span>Linux Administration</span><span>AWS Solutions Architecture</span><span>Network Design</span><span>Security</span><span>IaC</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span></div></article>
+          <article class="learning-card" style="--learning-accent:#a179ff"><p class="showcase-card-label">AI ENGINEERING</p><h3>AI-assisted Engineering</h3><p>AIを設計、解析、開発、安全な自動化へ組み込むための実践領域。</p><div class="learning-tags"><span>ChatGPT</span><span>GitHub Copilot</span><span>設計支援</span><span>障害解析</span><span>コードレビュー</span><span>資料作成</span><span>プロンプト設計</span><span>AI Security</span></div></article>
+          <article class="learning-card" style="--learning-accent:#48d1c5"><p class="showcase-card-label">RESEARCH</p><h3>Security & Emerging Tech</h3><p>AI・セキュリティ・新しい知能アーキテクチャを横断して調査。</p><div class="learning-tags"><span>AI</span><span>LLM</span><span>Prompt Injection</span><span>Cloud Security</span><span>Cyber Security</span><span>Synthetic Biological Intelligence</span><span>Human Augmentation</span></div></article>
+        </div>
+      </section>
     </div>
-
-    <div class="card">
-      <h3 class="section-title" style="font-size:16px;">AI Engineering</h3>
-      <p class="note" style="margin-top:-4px;">AI-assisted Engineering</p>
-      <ul class="badge-list cat-aieng">
-        <li>ChatGPT</li>
-        <li>GitHub Copilot</li>
-        <li>設計支援</li>
-        <li>障害解析</li>
-        <li>コードレビュー</li>
-        <li>資料作成</li>
-        <li>プロンプト設計</li>
-        <li>AI Security</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3 class="section-title" style="font-size:16px;">Research</h3>
-      <ul class="badge-list cat-research">
-        <li>AI</li>
-        <li>LLM</li>
-        <li>Prompt Injection</li>
-        <li>Cloud Security</li>
-        <li>Cyber Security</li>
-        <li>Synthetic Biological Intelligence</li>
-        <li>Human Augmentation</li>
-      </ul>
-    </div>
-  </div>
   </main>
 
   <script src="particles.js"></script>
