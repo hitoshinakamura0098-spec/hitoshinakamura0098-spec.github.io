@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achievements | Nakamura Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio-modern.css" />
 </head>
 
-<body>
+<body class="modern-page">
   <canvas id="bgNet"></canvas>
 
   <nav class="site-nav">
     <div class="nav-inner">
       <a class="brand" href="index.html"><img src="butterfly.png" alt="" class="brand-icon" />HITOSHI NAKAMURA</a>
       <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="skills.html">Skills</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="research.html">Research</a>
-      <a href="learning.html">Learning</a>
-      <a href="blog.html">Blog</a>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="research.html">Research</a>
+        <a href="learning.html">Learning</a>
+        <a href="blog.html">Blog</a>
       </div>
       <button id="musicToggle" class="music-toggle" aria-label="BGMを再生"></button>
       <div id="ytPlayer"></div>
@@ -59,81 +60,131 @@
   </nav>
 
   <main id="appMain">
-  <div class="container">
-    <h2 class="page-title">Achievements / 実績</h2>
-    <p class="page-lead">項目をクリックすると担当した実務の詳細が見られます。</p>
+    <div class="modern-shell">
+      <section class="modern-hero">
+        <div>
+          <p class="modern-kicker">BUILD · OPERATE · IMPROVE</p>
+          <h1>Real-world<br />Engineering.</h1>
+          <p class="hero-subtitle">障害解析、クラウド運用、保守開発、オンプレ構築。実際の現場で発生した課題を、観測・切り分け・実装・検証までつなげる。</p>
+        </div>
+        <div class="modern-hero-aside">
+          <div class="signal-line"></div>
+          <strong>CASE STUDY PORTFOLIO</strong>
+          <p>技術名の羅列ではなく、「何が起きて、どこを観測し、どう解決へ近づけたか」を中心に実績を整理しています。</p>
+        </div>
+      </section>
 
-    <div class="card">
-      <div class="skills-grid">
-        <div class="skill-box">
-          <ul class="achv-list">
-            <li class="achv-item" tabindex="0" data-detail="AWS設定の見直しを実施、本番環境にて設定経験あり。ソフト側をすべて見直してMicrosoftのIP評価と断定するまで独力調査で切り分けて解決に導く。開発案件元のサンドボックス論に対する反駁から開始してcommand操作にて環境は良好なことを確認する。その後はSESイベント通知・クエリ導入 / Lambda関数作成・ログ解析 / CloudWatch・LogStream設定・解析 / MessageID追跡・照合 / SMTPコード解析 / 配送切り分け / DMARC・SPF・DKIM設定 / VDM検証 / Proofpoint切り分け / ブラックリスト・SNDS入りを確認してMicrosoftに制限緩和・解除依頼、AWSに配送経路の調査依頼をする。日本のネット情報上で初のHotmail・Outlook個人宛てmailの制限解除の事例を達成。">SESメール遅延障害の解決</li>
-            <li class="achv-item" tabindex="0" data-detail="AWS構築(EC2、Route53、SES、IAM設定、CloudWatch、CloudTrail)を担当しつつ、Microsoft・AWS双方のサポート窓口と技術的にやり取り。自動応答からオペレータにつなぎ、情報整理、エスカレーションさせてMicrosoft・AWSの上位エンジニアに技術対応を依頼。">Microsoft・AWSとの技術連携</li>
-            <li class="achv-item" tabindex="0" data-detail="Linux導入、BIOS/UEFI設定、ネットワーク調査、仮想環境構築、構成調査、手順書作成を担当(現在進行中)。">Linuxサーバ構築</li>
-            <li class="achv-item" tabindex="0" data-detail="オンプレミス環境の構成調査、仮想環境構築、手順書作成などを一連で担当(現在進行中)。">オンプレ環境構築</li>
-            <li class="achv-item" tabindex="0" data-detail="C#コード解析、ログ解析、障害原因調査、資料作成、Teams運用を担当。">C#保守開発</li>
-            <li class="achv-item" tabindex="0" data-detail="Cost ExplorerとRDSメトリクスを用いて費用増加要因を調査。db.t4g.microのCPUクレジット消費、短周期ポーリングによる負荷、InstanceUsageを確認し、Organizations環境でのRI / Savings Plansのアカウント横断適用による請求差異も整理。Reserved DB Instancesの確認観点まで含めてコスト要因を切り分けた。">AWSコスト・RDS分析</li>
-            <li class="achv-item" tabindex="0" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。クロスアカウント制約を踏まえて複数案を比較し、通知先・責任分界・運用フローを整理した。">AWS監視設計・自動化</li>
-            <li class="achv-item" tabindex="0" data-detail="ASP.NET Razorの.cshtmlを修正し、警告文の日本語・英語表記を更新。Visual Studioでビルド・発行を実施し、発行されたRazor資材と配置対象を確認した。">ASP.NET Razor保守改修</li>
-            <li class="achv-item" tabindex="0" data-detail="ASP.NET Core / Razor（.cshtml）の表示不具合を実環境で切り分け。警告文の日本語・英語表記を複数箇所修正し、Visual StudioのRelease発行、発行資材の差分確認、デプロイ、ロールバックまで一連で対応した。変更版で発生した502 Bad Gateway、英語表示の記号化け、UIボタン無効化について、現行資材への復旧確認後、一括変更から1箇所ずつの検証へ切り替えて再現範囲を縮小。WinMerge、ブラウザF12、Console、Network Responseを観測点とし、appsettings → C# → Razor → HTTP Response → JavaScript → DOM の各層を分離して確認した。HTML Entityの &quot; が &amp;quot; へ変わる現象では、UTF-8等の文字コード問題とHTML二重エンコードを切り分け、番兵文字［］、console.log、HTTP Responseを用いた確認フローを実装。JavaScript側の処理箇所にも調査用コメントを付与して責任範囲を明確化し、2026年9月25日に実装後のテストまで完了した。Html.Rawによる単純回避はXSSリスクを考慮して採用せず、安全なエンコード設計を優先した。">Razor表示不具合・HTMLエンコード切り分け</li>
-            <li class="achv-item" tabindex="0" data-detail="Visual Studioで生成した発行資材と既存資材をWinMerge等で比較。exe / dll / config / ini / xml / csv / json / sql / txt / Razorなどの差分を確認し、バージョン差異を考慮しながら配置対象を切り分けた。">ビルド・デプロイ資材検証</li>
-            <li class="achv-item" tabindex="0" data-detail="メールテンプレートSQLとアプリ側の表示条件を確認。日本語名・英語名の組み合わせや空文字 / NULL条件を整理し、SQL側の表示仕様とアプリ変数側の不具合候補を分離して原因範囲を切り分けた。">SQL・アプリ不具合切り分け</li>
-            <li class="achv-item" tabindex="0" data-detail="外注開発の移植・接続レビューや打合せに参加し、テスト結果、不具合、仕様差異を確認。Planner / Teamsを用いたタスク・運用整理などPM補助も担当。">開発レビュー・PM補助</li>
-            <li class="achv-item" tabindex="0" data-detail="開発機器の移植動作確認とソフトのサーバー接続、テスト要項実施とレビューからバグの発見。">製品実機のソフト / サーバー接続</li>
-            <li>AI活用による設計・資料作成</li>
-            <li>アジュール開発の導入・運用設計企画</li>
-          </ul>
+      <section class="modern-section">
+        <div class="modern-section-head">
+          <div>
+            <p class="modern-section-label">FEATURED ACHIEVEMENTS</p>
+            <h2>Selected Case Studies</h2>
+          </div>
+          <p class="modern-section-note">直近の実務から、クラウド・アプリ・インフラの代表的な4ケースを抽出。</p>
         </div>
 
-        <div class="skill-box">
-          <h3>今後追加予定</h3>
-          <ul>
-            <li>Linuxサーバ構築手順</li>
-            <li>ネットワーク構成図</li>
-            <li>AWS構成図</li>
-            <li>障害解析フローチャート</li>
-            <li>CloudWatch Logs Insightsのクエリ集</li>
-            <li>AIを活用した設計・資料作成の事例</li>
-          </ul>
+        <div class="case-grid">
+          <button class="case-card" type="button" data-index="01" data-title="MAIL DELIVERY INCIDENT" data-cat="AWS SES / CloudWatch / Lambda / DNS / SMTP" data-detail="メール遅延障害を、SESイベント、Lambdaログ、CloudWatch、MessageId、SMTP応答、SPF / DKIM / DMARC、VDM、Proofpoint、SNDS等の複数観測点から切り分け。送信側環境と受信側評価を分離して確認し、Microsoft・AWS双方への技術照会とエスカレーションを実施。Microsoft側の制限解除まで追跡し、配送遅延の原因範囲を絞り込んだ。">
+            <div class="case-card-top">
+              <span class="case-icon"><img src="icons/amazonses.svg" alt="" /></span>
+              <span class="case-number">01</span>
+            </div>
+            <h3>MAIL DELIVERY<br />INCIDENT</h3>
+            <p class="case-stack">AWS SES / CloudWatch / Lambda / DNS</p>
+            <p class="case-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価までを追跡。メール遅延の責任範囲を段階的に切り分け。</p>
+            <span class="case-open">→</span>
+          </button>
+
+          <button class="case-card" type="button" data-index="02" data-title="AWS OBSERVABILITY & COST" data-cat="CloudWatch / Amazon RDS / Cost Explorer / Organizations" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。クロスアカウント制約を踏まえて通知先・責任分界・運用フローを整理した。併せてCost ExplorerとRDSメトリクスからdb.t4g.microのCPUクレジット、InstanceUsage、短周期ポーリング負荷を確認。Organizations環境でのRI / Savings Plans横断適用による請求差異も整理した。">
+            <div class="case-card-top">
+              <span class="case-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
+              <span class="case-number">02</span>
+            </div>
+            <h3>AWS OBSERVABILITY<br />&amp; COST</h3>
+            <p class="case-stack">CloudWatch / RDS / Cost Explorer</p>
+            <p class="case-summary">障害監視の自動化とRDSコスト分析を並行実施。運用通知と請求差異を、技術・責任分界の両面から整理。</p>
+            <span class="case-open">→</span>
+          </button>
+
+          <button class="case-card" type="button" data-index="03" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合を実環境で切り分け。Visual StudioのRelease発行、デプロイ、ロールバック、WinMerge差分確認まで一連で対応した。502 Bad Gateway、英語表示の記号化け、UIボタン無効化、Unexpected token、HTML Entityの二重エンコードについて、appsettings → C# → Razor → HTTP Response → JavaScript → DOMの各層を分離。F12のElements / Console / Network Responseを用いて原因位置を絞り込み、英語側エスケープ修正と二重エンコード解消、ボタン復旧まで実装・テストした。">
+            <div class="case-card-top">
+              <span class="case-icon"><img src="icons/csharp.svg" alt="" /></span>
+              <span class="case-number">03</span>
+            </div>
+            <h3>WEB APPLICATION<br />MAINTENANCE</h3>
+            <p class="case-stack">C# / ASP.NET Razor / JavaScript / SQL</p>
+            <p class="case-summary">UI不具合、JS構文、HTMLエンコード、発行資材差分を層ごとに分離。修正・再デプロイ・テストまで対応。</p>
+            <span class="case-open">→</span>
+          </button>
+
+          <button class="case-card" type="button" data-index="04" data-title="LINUX / ON-PREM SETUP" data-cat="Linux / Networking / Virtualization / Documentation" data-detail="オンプレミス環境の構成調査、Linux導入、BIOS / UEFI確認、ネットワーク接続、仮想環境構築、構成整理、手順書作成を担当。既存端末の制約や接続機器を確認しながら、導入手順と作業範囲を整理した。">
+            <div class="case-card-top">
+              <span class="case-icon"><img src="icons/linux.svg" alt="" /></span>
+              <span class="case-number">04</span>
+            </div>
+            <h3>LINUX / ON-PREM<br />SETUP</h3>
+            <p class="case-stack">Linux / Networking / Virtualization</p>
+            <p class="case-summary">オンプレ環境を調査し、Linux導入・接続・仮想化・手順化までを一連で整理。</p>
+            <span class="case-open">→</span>
+          </button>
         </div>
+      </section>
+
+      <section class="modern-section">
+        <div class="modern-section-head">
+          <div>
+            <p class="modern-section-label">SUPPORTING WORK</p>
+            <h2>Operational Depth</h2>
+          </div>
+          <p class="modern-section-note">代表4件を支える、レビュー・デプロイ・SQL・実機接続などの実務。</p>
+        </div>
+
+        <div class="support-grid">
+          <button class="support-item" type="button" data-title="Microsoft・AWSとの技術連携" data-cat="Technical Coordination" data-detail="AWS構築・障害調査を進めながら、Microsoft・AWS双方のサポート窓口と技術的にやり取り。調査情報を整理し、必要に応じて上位エンジニアへのエスカレーションを依頼した。"><strong>Microsoft / AWS 技術連携</strong><span>情報整理・照会・エスカレーション</span></button>
+          <button class="support-item" type="button" data-title="ビルド・デプロイ資材検証" data-cat="Release Engineering" data-detail="Visual Studioで生成した発行資材と既存資材をWinMerge等で比較。exe / dll / config / ini / xml / csv / json / sql / txt / Razorなどの差分を確認し、バージョン差異を考慮しながら配置対象を切り分けた。"><strong>Build / Deploy Validation</strong><span>発行・差分比較・配置範囲の切り分け</span></button>
+          <button class="support-item" type="button" data-title="SQL・アプリ不具合切り分け" data-cat="Data / Application" data-detail="メールテンプレートSQLとアプリ側表示条件を確認。日本語名・英語名の組み合わせ、NULL / 空文字条件を整理し、SQL側とアプリ変数側の責任範囲を切り分けた。"><strong>SQL / Application Isolation</strong><span>NULL・空文字・表示条件の責任分界</span></button>
+          <button class="support-item" type="button" data-title="開発レビュー・PM補助" data-cat="Review / Project Support" data-detail="外注開発の移植・接続レビューや打合せに参加し、テスト結果、不具合、仕様差異を確認。Planner / Teamsを用いたタスク・運用整理などPM補助も担当。"><strong>Review / PM Support</strong><span>仕様確認・テスト結果・運用整理</span></button>
+          <button class="support-item" type="button" data-title="製品実機のソフト / サーバー接続" data-cat="Integration Test" data-detail="開発機器の移植動作確認、ソフトのサーバー接続、テスト要項実施、レビューを通じて不具合を確認した。"><strong>Device / Server Integration</strong><span>実機・サーバー接続・テスト</span></button>
+          <button class="support-item" type="button" data-title="AI活用による設計・資料作成" data-cat="AI Assisted Engineering" data-detail="障害解析、設計補助、資料作成、コード確認などにAIを活用。出力をそのまま採用せず、実環境のログ・レスポンス・設定・コードと突合して検証する運用で使用。"><strong>AI Assisted Engineering</strong><span>解析・設計補助・資料化・検証</span></button>
+          <button class="support-item" type="button" data-title="Azure開発の導入・運用設計企画" data-cat="Planning / Cloud" data-detail="Azureを利用した開発・運用の導入方法について、既存環境との役割分担、運用方法、導入候補を整理・企画。"><strong>Azure Planning</strong><span>開発導入・運用設計の企画</span></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-overlay" id="achvModalOverlay">
+      <div class="modal-box">
+        <button class="modal-close" id="achvModalClose" aria-label="閉じる">✕</button>
+        <span class="modal-cat" id="achvModalCat"></span>
+        <h3 id="achvModalName"></h3>
+        <p id="achvModalDesc"></p>
       </div>
     </div>
-  </div>
 
-  <div class="modal-overlay" id="achvModalOverlay">
-    <div class="modal-box">
-      <button class="modal-close" id="achvModalClose" aria-label="閉じる">✕</button>
-      <h3 id="achvModalName"></h3>
-      <p id="achvModalDesc"></p>
-    </div>
-  </div>
+    <script>
+    (function(){
+      const overlay = document.getElementById('achvModalOverlay');
+      const nameEl = document.getElementById('achvModalName');
+      const catEl = document.getElementById('achvModalCat');
+      const descEl = document.getElementById('achvModalDesc');
+      if (!overlay) return;
 
-  <script>
-  (function(){
-    const overlay = document.getElementById('achvModalOverlay');
-    const nameEl = document.getElementById('achvModalName');
-    const descEl = document.getElementById('achvModalDesc');
-    if (!overlay) return;
+      function openModal(el){
+        nameEl.textContent = el.dataset.title || '';
+        catEl.textContent = el.dataset.cat || '';
+        descEl.textContent = el.dataset.detail || '';
+        overlay.classList.add('open');
+      }
+      function closeModal(){ overlay.classList.remove('open'); }
 
-    function openModal(li){
-      nameEl.textContent = li.textContent.trim();
-      descEl.textContent = li.dataset.detail || '';
-      overlay.classList.add('open');
-    }
-    function closeModal(){ overlay.classList.remove('open'); }
-
-    document.querySelectorAll('.achv-item').forEach((li) => {
-      li.addEventListener('click', () => openModal(li));
-      li.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(li); }
+      document.querySelectorAll('.case-card, .support-item').forEach((el) => {
+        el.addEventListener('click', () => openModal(el));
       });
-    });
 
-    document.getElementById('achvModalClose').addEventListener('click', closeModal);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-  })();
-  </script>
+      document.getElementById('achvModalClose').addEventListener('click', closeModal);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    })();
+    </script>
   </main>
 
   <script src="particles.js"></script>
