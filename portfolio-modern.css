@@ -140,7 +140,7 @@ body.showcase-page #bgNet{
   background:
     linear-gradient(180deg,rgba(4,12,23,.28) 0%,rgba(4,12,23,.72) 52%,#07111e 100%),
     linear-gradient(90deg,rgba(5,14,27,.90) 0%,rgba(5,14,27,.58) 68%,rgba(5,14,27,.18) 100%),
-    url("hero-bg.jpg") center 35%/cover no-repeat;
+    url("portfolio-hero.svg") center 35%/cover no-repeat;
   border-bottom:1px solid rgba(113,164,221,.13);
 }
 
