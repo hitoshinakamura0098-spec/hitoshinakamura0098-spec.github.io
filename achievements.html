@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="portfolio-modern.css" />
 </head>
-
-<body class="modern-page">
+<body class="showcase-page">
   <canvas id="bgNet"></canvas>
-
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html"><img src="butterfly.png" alt="" class="brand-icon" />HITOSHI NAKAMURA</a>
+  <nav class="showcase-nav">
+    <div class="showcase-nav-inner">
+      <a class="showcase-brand" href="index.html">
+        <span class="showcase-brand-mark">HN</span>
+        <span class="showcase-brand-name">HITOSHI NAKAMURA</span>
+      </a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="skills.html">Skills</a>
@@ -58,135 +59,119 @@
       <button id="navHamburger" class="nav-hamburger" aria-label="メニュー"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg></button>
     </div>
   </nav>
-
   <main id="appMain">
-    <div class="modern-shell">
-      <section class="modern-hero">
-        <div>
-          <p class="modern-kicker">BUILD · OPERATE · IMPROVE</p>
-          <h1>Real-world<br />Engineering.</h1>
-          <p class="hero-subtitle">障害解析、クラウド運用、保守開発、オンプレ構築。実際の現場で発生した課題を、観測・切り分け・実装・検証までつなげる。</p>
+    <div class="showcase-wrap">
+      <section class="showcase-hero">
+      <div class="showcase-hero-content">
+        <p class="showcase-eyebrow">BUILD · OPERATE · IMPROVE</p>
+        <h1 class="showcase-title">HITOSHI<br />NAKAMURA</h1>
+        <p class="showcase-role">Cloud / Infrastructure / Maintenance Engineering</p>
+        <p class="showcase-copy">障害解析、クラウド運用、保守開発、オンプレ構築。現場で起きる問題を観測し、切り分け、改善までつなげる。</p>
+        <div class="showcase-actions">
+          <a class="showcase-btn primary" href="achievements.html">View Achievements →</a>
+          <a class="showcase-btn" href="index.html">About Me</a>
         </div>
-        <div class="modern-hero-aside">
-          <div class="signal-line"></div>
-          <strong>CASE STUDY PORTFOLIO</strong>
-          <p>技術名の羅列ではなく、「何が起きて、どこを観測し、どう解決へ近づけたか」を中心に実績を整理しています。</p>
-        </div>
-      </section>
-
-      <section class="modern-section">
-        <div class="modern-section-head">
-          <div>
-            <p class="modern-section-label">FEATURED ACHIEVEMENTS</p>
-            <h2>Selected Case Studies</h2>
-          </div>
-          <p class="modern-section-note">直近の実務から、クラウド・アプリ・インフラの代表的な4ケースを抽出。</p>
-        </div>
-
-        <div class="case-grid">
-          <button class="case-card" type="button" data-index="01" data-title="MAIL DELIVERY INCIDENT" data-cat="AWS SES / CloudWatch / Lambda / DNS / SMTP" data-detail="メール遅延障害を、SESイベント、Lambdaログ、CloudWatch、MessageId、SMTP応答、SPF / DKIM / DMARC、VDM、Proofpoint、SNDS等の複数観測点から切り分け。送信側環境と受信側評価を分離して確認し、Microsoft・AWS双方への技術照会とエスカレーションを実施。Microsoft側の制限解除まで追跡し、配送遅延の原因範囲を絞り込んだ。">
-            <div class="case-card-top">
-              <span class="case-icon"><img src="icons/amazonses.svg" alt="" /></span>
-              <span class="case-number">01</span>
-            </div>
-            <h3>MAIL DELIVERY<br />INCIDENT</h3>
-            <p class="case-stack">AWS SES / CloudWatch / Lambda / DNS</p>
-            <p class="case-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価までを追跡。メール遅延の責任範囲を段階的に切り分け。</p>
-            <span class="case-open">→</span>
+      </div>
+    </section>
+      <section class="showcase-section" id="featured">
+        <div class="showcase-section-head"><div><p class="showcase-section-kicker">CASE STUDIES</p><h2 class="showcase-section-title">Featured Achievements</h2></div></div>
+        <div class="feature-grid">
+          <button class="feature-card" type="button" data-title="MAIL DELIVERY INCIDENT" data-cat="AWS SES / CloudWatch / Lambda / DNS / SMTP" data-detail="メール遅延障害を、SESイベント、Lambdaログ、CloudWatch、MessageId、SMTP応答、SPF / DKIM / DMARC、VDM、Proofpoint、SNDS等の複数観測点から切り分け。送信側環境と受信側評価を分離して確認し、Microsoft・AWS双方への技術照会とエスカレーションを実施。Microsoft側の制限解除まで追跡し、配送遅延の原因範囲を絞り込んだ。">
+            <span class="feature-icon"><img src="icons/amazonses.svg" alt="" /></span>
+            <span class="feature-card-body"><span class="feature-index">01</span><h3>MAIL DELIVERY INCIDENT</h3><p class="feature-stack">AWS SES / CloudWatch / Lambda / DNS</p><p class="feature-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価まで追跡。</p></span>
+            <span class="feature-arrow">→</span>
           </button>
-
-          <button class="case-card" type="button" data-index="02" data-title="AWS OBSERVABILITY & COST" data-cat="CloudWatch / Amazon RDS / Cost Explorer / Organizations" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。クロスアカウント制約を踏まえて通知先・責任分界・運用フローを整理した。併せてCost ExplorerとRDSメトリクスからdb.t4g.microのCPUクレジット、InstanceUsage、短周期ポーリング負荷を確認。Organizations環境でのRI / Savings Plans横断適用による請求差異も整理した。">
-            <div class="case-card-top">
-              <span class="case-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
-              <span class="case-number">02</span>
-            </div>
-            <h3>AWS OBSERVABILITY<br />&amp; COST</h3>
-            <p class="case-stack">CloudWatch / RDS / Cost Explorer</p>
-            <p class="case-summary">障害監視の自動化とRDSコスト分析を並行実施。運用通知と請求差異を、技術・責任分界の両面から整理。</p>
-            <span class="case-open">→</span>
+          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY & COST" data-cat="CloudWatch / Amazon RDS / Cost Explorer / Organizations" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。併せてCost ExplorerとRDSメトリクスからdb.t4g.microのCPUクレジット、InstanceUsage、短周期ポーリング負荷を確認。Organizations環境でのRI / Savings Plans横断適用による請求差異も整理した。">
+            <span class="feature-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
+            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / RDS / Cost Explorer</p><p class="feature-summary">監視通知の設計とRDSコスト増加・請求差異を分析。</p></span>
+            <span class="feature-arrow">→</span>
           </button>
-
-          <button class="case-card" type="button" data-index="03" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合を実環境で切り分け。Visual StudioのRelease発行、デプロイ、ロールバック、WinMerge差分確認まで一連で対応した。502 Bad Gateway、英語表示の記号化け、UIボタン無効化、Unexpected token、HTML Entityの二重エンコードについて、appsettings → C# → Razor → HTTP Response → JavaScript → DOMの各層を分離。F12のElements / Console / Network Responseを用いて原因位置を絞り込み、英語側エスケープ修正と二重エンコード解消、ボタン復旧まで実装・テストした。">
-            <div class="case-card-top">
-              <span class="case-icon"><img src="icons/csharp.svg" alt="" /></span>
-              <span class="case-number">03</span>
-            </div>
-            <h3>WEB APPLICATION<br />MAINTENANCE</h3>
-            <p class="case-stack">C# / ASP.NET Razor / JavaScript / SQL</p>
-            <p class="case-summary">UI不具合、JS構文、HTMLエンコード、発行資材差分を層ごとに分離。修正・再デプロイ・テストまで対応。</p>
-            <span class="case-open">→</span>
+          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合を実環境で切り分け。Visual StudioのRelease発行、デプロイ、ロールバック、WinMerge差分確認まで対応。502 Bad Gateway、記号化け、UIボタン無効化、Unexpected token、HTML Entity二重エンコードを、C# → Razor → HTTP Response → JavaScript → DOMの各層に分けて追跡し、修正・再テストまで完了した。">
+            <span class="feature-icon"><img src="icons/csharp.svg" alt="" /></span>
+            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">UI・JS・HTMLエンコード・発行差分を層ごとに切り分け。</p></span>
+            <span class="feature-arrow">→</span>
           </button>
-
-          <button class="case-card" type="button" data-index="04" data-title="LINUX / ON-PREM SETUP" data-cat="Linux / Networking / Virtualization / Documentation" data-detail="オンプレミス環境の構成調査、Linux導入、BIOS / UEFI確認、ネットワーク接続、仮想環境構築、構成整理、手順書作成を担当。既存端末の制約や接続機器を確認しながら、導入手順と作業範囲を整理した。">
-            <div class="case-card-top">
-              <span class="case-icon"><img src="icons/linux.svg" alt="" /></span>
-              <span class="case-number">04</span>
-            </div>
-            <h3>LINUX / ON-PREM<br />SETUP</h3>
-            <p class="case-stack">Linux / Networking / Virtualization</p>
-            <p class="case-summary">オンプレ環境を調査し、Linux導入・接続・仮想化・手順化までを一連で整理。</p>
-            <span class="case-open">→</span>
+          <button class="feature-card" type="button" data-title="LINUX / ON-PREM SETUP" data-cat="Linux / Networking / Virtualization / Documentation" data-detail="オンプレミス環境の構成調査、Linux導入、BIOS / UEFI確認、ネットワーク接続、仮想環境構築、構成整理、手順書作成を担当。既存端末の制約や接続機器を確認しながら導入手順を整理した。">
+            <span class="feature-icon"><img src="icons/linux.svg" alt="" /></span>
+            <span class="feature-card-body"><span class="feature-index">04</span><h3>LINUX / ON-PREM SETUP</h3><p class="feature-stack">Linux / Networking / Virtualization</p><p class="feature-summary">オンプレ環境を調査し、Linux導入・接続・手順化まで整理。</p></span>
+            <span class="feature-arrow">→</span>
           </button>
         </div>
       </section>
-
-      <section class="modern-section">
-        <div class="modern-section-head">
-          <div>
-            <p class="modern-section-label">SUPPORTING WORK</p>
-            <h2>Operational Depth</h2>
-          </div>
-          <p class="modern-section-note">代表4件を支える、レビュー・デプロイ・SQL・実機接続などの実務。</p>
+      <section class="showcase-section">
+        <div class="showcase-section-head"><div><p class="showcase-section-kicker">ADDITIONAL WORK</p><h2 class="showcase-section-title">Operational Depth</h2></div></div>
+        <div class="secondary-grid">
+          <button class="secondary-card" data-title="Microsoft・AWSとの技術連携" data-cat="Technical Coordination" data-detail="AWS構築・障害調査を進めながら、Microsoft・AWS双方のサポート窓口と技術的にやり取り。調査情報を整理し、必要に応じて上位エンジニアへのエスカレーションを依頼した。"><strong>Microsoft / AWS 技術連携</strong><span>情報整理・技術照会・エスカレーション</span></button>
+          <button class="secondary-card" data-title="ビルド・デプロイ資材検証" data-cat="Release Engineering" data-detail="Visual Studioで生成した発行資材と既存資材をWinMerge等で比較。exe / dll / config / ini / xml / csv / json / sql / txt / Razor等の差分を確認し、配置対象を切り分けた。"><strong>Build / Deploy Validation</strong><span>発行・差分比較・配置対象の切り分け</span></button>
+          <button class="secondary-card" data-title="SQL・アプリ不具合切り分け" data-cat="Data / Application" data-detail="メールテンプレートSQLとアプリ側表示条件を確認。日本語名・英語名、NULL / 空文字条件を整理し、SQL側とアプリ変数側の責任範囲を切り分けた。"><strong>SQL / Application Isolation</strong><span>NULL・空文字・表示条件の責任分界</span></button>
+          <button class="secondary-card" data-title="開発レビュー・PM補助" data-cat="Review / Project Support" data-detail="外注開発の移植・接続レビューや打合せに参加し、テスト結果、不具合、仕様差異を確認。Planner / Teamsを用いたタスク・運用整理などPM補助も担当。"><strong>Review / PM Support</strong><span>仕様確認・テスト結果・運用整理</span></button>
+          <button class="secondary-card" data-title="製品実機のソフト / サーバー接続" data-cat="Integration Test" data-detail="開発機器の移植動作確認、ソフトのサーバー接続、テスト要項実施、レビューを通じて不具合を確認した。"><strong>Device / Server Integration</strong><span>実機・サーバー接続・テスト</span></button>
+          <button class="secondary-card" data-title="AI活用による設計・資料作成" data-cat="AI Assisted Engineering" data-detail="障害解析、設計補助、資料作成、コード確認などにAIを活用。出力を実環境のログ・レスポンス・設定・コードと突合して検証する運用で使用。"><strong>AI Assisted Engineering</strong><span>解析・設計補助・資料化・検証</span></button>
+          <button class="secondary-card" data-title="Azure開発の導入・運用設計企画" data-cat="Planning / Cloud" data-detail="Azureを利用した開発・運用の導入方法について、既存環境との役割分担、運用方法、導入候補を整理・企画。"><strong>Azure Planning</strong><span>開発導入・運用設計の企画</span></button>
         </div>
-
-        <div class="support-grid">
-          <button class="support-item" type="button" data-title="Microsoft・AWSとの技術連携" data-cat="Technical Coordination" data-detail="AWS構築・障害調査を進めながら、Microsoft・AWS双方のサポート窓口と技術的にやり取り。調査情報を整理し、必要に応じて上位エンジニアへのエスカレーションを依頼した。"><strong>Microsoft / AWS 技術連携</strong><span>情報整理・照会・エスカレーション</span></button>
-          <button class="support-item" type="button" data-title="ビルド・デプロイ資材検証" data-cat="Release Engineering" data-detail="Visual Studioで生成した発行資材と既存資材をWinMerge等で比較。exe / dll / config / ini / xml / csv / json / sql / txt / Razorなどの差分を確認し、バージョン差異を考慮しながら配置対象を切り分けた。"><strong>Build / Deploy Validation</strong><span>発行・差分比較・配置範囲の切り分け</span></button>
-          <button class="support-item" type="button" data-title="SQL・アプリ不具合切り分け" data-cat="Data / Application" data-detail="メールテンプレートSQLとアプリ側表示条件を確認。日本語名・英語名の組み合わせ、NULL / 空文字条件を整理し、SQL側とアプリ変数側の責任範囲を切り分けた。"><strong>SQL / Application Isolation</strong><span>NULL・空文字・表示条件の責任分界</span></button>
-          <button class="support-item" type="button" data-title="開発レビュー・PM補助" data-cat="Review / Project Support" data-detail="外注開発の移植・接続レビューや打合せに参加し、テスト結果、不具合、仕様差異を確認。Planner / Teamsを用いたタスク・運用整理などPM補助も担当。"><strong>Review / PM Support</strong><span>仕様確認・テスト結果・運用整理</span></button>
-          <button class="support-item" type="button" data-title="製品実機のソフト / サーバー接続" data-cat="Integration Test" data-detail="開発機器の移植動作確認、ソフトのサーバー接続、テスト要項実施、レビューを通じて不具合を確認した。"><strong>Device / Server Integration</strong><span>実機・サーバー接続・テスト</span></button>
-          <button class="support-item" type="button" data-title="AI活用による設計・資料作成" data-cat="AI Assisted Engineering" data-detail="障害解析、設計補助、資料作成、コード確認などにAIを活用。出力をそのまま採用せず、実環境のログ・レスポンス・設定・コードと突合して検証する運用で使用。"><strong>AI Assisted Engineering</strong><span>解析・設計補助・資料化・検証</span></button>
-          <button class="support-item" type="button" data-title="Azure開発の導入・運用設計企画" data-cat="Planning / Cloud" data-detail="Azureを利用した開発・運用の導入方法について、既存環境との役割分担、運用方法、導入候補を整理・企画。"><strong>Azure Planning</strong><span>開発導入・運用設計の企画</span></button>
+      </section>
+      <section class="showcase-section">
+        <div class="showcase-section-head"><div><p class="showcase-section-kicker">CORE SKILLS</p><h2 class="showcase-section-title">Skills Behind the Work</h2></div><a class="showcase-section-link" href="skills.html">View skills →</a></div>
+        <div class="core-grid">
+          <article class="core-card" style="--core-accent:#49a6ff">
+            <div class="core-top"><span class="core-icon"><img src="icons/amazonaws.svg" alt="" /></span><div><h3>Cloud</h3><p>AWS運用・監視・メール基盤・コスト分析。</p></div></div>
+            <div class="core-list">
+              <button class="core-detail" data-title="AWS Core" data-cat="Cloud" data-detail="EC2、IAM、Route53、CloudTrailをAWS環境の構築・設定確認・運用で使用。">EC2 · IAM · Route53 <span>Foundation</span></button>
+              <button class="core-detail" data-title="Mail Pipeline" data-cat="Cloud" data-detail="SES、Lambda、SQSをメール配送障害のイベント解析・ログ追跡に使用。">SES · Lambda · SQS <span>Events</span></button>
+              <button class="core-detail" data-title="Observability & Cost" data-cat="Cloud" data-detail="CloudWatch、RDS、Cost Explorerを監視設計、負荷確認、費用分析に使用。">CloudWatch · RDS · Cost Explorer <span>Ops</span></button>
+            </div>
+          </article>
+          <article class="core-card" style="--core-accent:#42d2c2">
+            <div class="core-top"><span class="core-icon"><img src="icons/linux.svg" alt="" /></span><div><h3>Infrastructure</h3><p>Linux、オンプレ、ネットワーク、メール認証。</p></div></div>
+            <div class="core-list">
+              <button class="core-detail" data-title="Platform" data-cat="Infrastructure" data-detail="Linux導入、Windows Server環境、オンプレ構成調査、仮想化、手順書作成を経験。">Linux · Windows Server <span>Platform</span></button>
+              <button class="core-detail" data-title="Network" data-cat="Infrastructure" data-detail="DNS、TCP/IP、ネットワーク接続確認を構成調査・障害切り分けに使用。">DNS · TCP/IP <span>Network</span></button>
+              <button class="core-detail" data-title="Mail Security" data-cat="Infrastructure" data-detail="SPF、DKIM、DMARC、SMTP応答をメール配送の認証・障害解析に使用。">SPF · DKIM · DMARC · SMTP <span>Mail</span></button>
+            </div>
+          </article>
+          <article class="core-card" style="--core-accent:#6bdbbf">
+            <div class="core-top"><span class="core-icon"><img src="icons/csharp.svg" alt="" /></span><div><h3>Development</h3><p>保守改修、デバッグ、ビルド、デプロイ。</p></div></div>
+            <div class="core-list">
+              <button class="core-detail" data-title="Application" data-cat="Development" data-detail="C#、ASP.NET Razor、JavaScriptを既存Webアプリの保守改修と不具合解析に使用。">C# · Razor · JavaScript <span>App</span></button>
+              <button class="core-detail" data-title="Debug / Data" data-cat="Development" data-detail="SQLとBrowser DevToolsで表示条件、HTTP Response、DOM、アプリ変数の責任範囲を切り分け。">SQL · DevTools <span>Debug</span></button>
+              <button class="core-detail" data-title="Release Tooling" data-cat="Development" data-detail="Visual Studio、WinMerge、Git / GitHubをビルド、発行、資材比較、個人開発に使用。">Visual Studio · WinMerge · Git <span>Release</span></button>
+            </div>
+          </article>
+          <article class="core-card" style="--core-accent:#a379ff">
+            <div class="core-top"><span class="core-icon"><img src="icons/openai.svg" alt="" /></span><div><h3>AI Tools</h3><p>解析、コード支援、資料化、自動化。</p></div></div>
+            <div class="core-list">
+              <button class="core-detail" data-title="ChatGPT" data-cat="AI" data-detail="障害解析、設計補助、資料作成、コードレビューで使用。実環境のログ・設定・レスポンスとの突合を前提に活用。">ChatGPT <span>Analysis</span></button>
+              <button class="core-detail" data-title="GitHub Copilot" data-cat="AI" data-detail="コード確認、既存処理の読み解き、修正案検討、実装支援に活用。">GitHub Copilot <span>Coding</span></button>
+              <button class="core-detail" data-title="AI Workflow" data-cat="AI" data-detail="Claudeを含む複数AIの比較や、ログ分析・ドキュメント・コード確認・安全な自動化への組み込みを研究・実践。">Claude · AI Workflow <span>Automation</span></button>
+            </div>
+          </article>
         </div>
       </section>
     </div>
-
-    <div class="modal-overlay" id="achvModalOverlay">
+    <div class="modal-overlay" id="detailModal">
       <div class="modal-box">
-        <button class="modal-close" id="achvModalClose" aria-label="閉じる">✕</button>
-        <span class="modal-cat" id="achvModalCat"></span>
-        <h3 id="achvModalName"></h3>
-        <p id="achvModalDesc"></p>
+        <button class="modal-close" id="detailModalClose" aria-label="閉じる">✕</button>
+        <span class="modal-cat" id="detailModalCat"></span>
+        <h3 id="detailModalName"></h3>
+        <p id="detailModalDesc"></p>
       </div>
     </div>
-
     <script>
     (function(){
-      const overlay = document.getElementById('achvModalOverlay');
-      const nameEl = document.getElementById('achvModalName');
-      const catEl = document.getElementById('achvModalCat');
-      const descEl = document.getElementById('achvModalDesc');
-      if (!overlay) return;
-
-      function openModal(el){
-        nameEl.textContent = el.dataset.title || '';
-        catEl.textContent = el.dataset.cat || '';
-        descEl.textContent = el.dataset.detail || '';
-        overlay.classList.add('open');
-      }
-      function closeModal(){ overlay.classList.remove('open'); }
-
-      document.querySelectorAll('.case-card, .support-item').forEach((el) => {
-        el.addEventListener('click', () => openModal(el));
-      });
-
-      document.getElementById('achvModalClose').addEventListener('click', closeModal);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+      const overlay=document.getElementById('detailModal');
+      const name=document.getElementById('detailModalName');
+      const cat=document.getElementById('detailModalCat');
+      const desc=document.getElementById('detailModalDesc');
+      if(!overlay)return;
+      function open(el){name.textContent=el.dataset.title||'';cat.textContent=el.dataset.cat||'';desc.textContent=el.dataset.detail||'';overlay.classList.add('open');}
+      function close(){overlay.classList.remove('open');}
+      document.querySelectorAll('.feature-card,.core-detail,.secondary-card').forEach(el=>el.addEventListener('click',()=>open(el)));
+      document.getElementById('detailModalClose').addEventListener('click',close);
+      overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
     })();
     </script>
   </main>
-
   <script src="particles.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="music.js"></script>
