@@ -1256,3 +1256,342 @@ body.showcase-page .modal-close{
     font-size:22px;
   }
 }
+
+
+/* =========================================================
+   Reference mockup alignment — 2026-09-28
+   Home = hero / featured achievements / core skills
+   ========================================================= */
+
+.showcase-brand-name{display:none !important;}
+
+.home-showcase-hero{
+  min-height:338px;
+  align-items:center;
+  padding:28px 18px 24px;
+  background:
+    linear-gradient(90deg,rgba(3,10,20,.78) 0%,rgba(3,10,20,.56) 42%,rgba(3,10,20,.16) 78%,rgba(3,10,20,.05) 100%),
+    linear-gradient(180deg,rgba(3,10,20,.08) 0%,rgba(3,10,20,.18) 52%,rgba(3,10,20,.58) 100%),
+    url("portfolio-hero.svg") 66% 44%/cover no-repeat;
+}
+
+.home-showcase-hero .showcase-hero-content{
+  max-width:620px;
+}
+
+.home-showcase-hero .showcase-title{
+  max-width:620px;
+  font-size:clamp(43px,12vw,54px);
+  line-height:.92;
+  letter-spacing:-.045em;
+}
+
+.home-showcase-hero .showcase-role{
+  margin-top:12px;
+  max-width:530px;
+  font-size:13px;
+  line-height:1.38;
+}
+
+.home-showcase-hero .showcase-copy{
+  max-width:430px;
+  margin-top:11px;
+  color:#c1cfde;
+  font-size:11.5px;
+  line-height:1.62;
+}
+
+.home-showcase-hero .showcase-actions{
+  margin-top:16px;
+}
+
+.home-showcase-hero .showcase-btn{
+  min-height:36px;
+  padding:0 13px;
+  font-size:11px;
+}
+
+.hero-motto{
+  display:none;
+}
+
+.home-core-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+}
+
+.home-core-card{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-width:0;
+  padding:15px 14px 14px;
+  overflow:hidden;
+  border:1px solid rgba(110,165,222,.17);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(11,27,47,.94),rgba(7,18,32,.98));
+  color:#fff;
+  text-decoration:none;
+}
+
+.home-core-card::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--core-accent,#4fa4ff),transparent 82%);
+}
+
+.home-core-card:hover{
+  text-decoration:none;
+  border-color:rgba(84,166,250,.36);
+}
+
+.home-core-card .core-icon{
+  width:35px;
+  height:35px;
+}
+
+.home-core-card h3{
+  margin:0 0 5px;
+  color:#f7faff;
+  font-size:13px;
+  line-height:1.2;
+}
+
+.home-core-card p{
+  margin:0;
+  color:#a8b9ca;
+  font-size:10px;
+  line-height:1.55;
+}
+
+.home-skill-tags{
+  justify-content:flex-start;
+  padding:16px 0 0;
+}
+
+.showcase-about-strip{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:19px 17px;
+  border-top:1px solid rgba(110,165,222,.12);
+  border-bottom:1px solid rgba(110,165,222,.12);
+}
+
+.showcase-about-strip h2{
+  margin:0 0 8px;
+  color:#f7faff;
+  font-size:18px;
+  line-height:1.25;
+}
+
+.showcase-about-strip p:not(.showcase-card-label){
+  max-width:760px;
+  margin:0;
+  color:#9eb0c4;
+  font-size:11.5px;
+  line-height:1.7;
+}
+
+.about-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+}
+
+.about-links a{
+  color:#72b9ff;
+  font:700 10px/1.4 "Courier New",monospace;
+  text-decoration:none;
+}
+
+.lab-fold details{
+  border:1px solid rgba(113,164,221,.13);
+  border-radius:9px;
+  background:rgba(8,20,35,.64);
+  overflow:hidden;
+}
+
+.lab-fold summary{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 14px;
+  color:#dce7f3;
+  cursor:pointer;
+  list-style:none;
+  font-size:11px;
+}
+
+.lab-fold summary::-webkit-details-marker{display:none}
+
+.lab-fold summary span{
+  color:#68b2f9;
+  font:700 9px/1 "Courier New",monospace;
+  letter-spacing:.12em;
+}
+
+.lab-fold summary b{
+  margin-left:auto;
+  color:#6f8da9;
+  font-size:16px;
+  font-weight:400;
+}
+
+.lab-fold details[open] summary b{transform:rotate(45deg)}
+
+.lab-fold .showcase-clicker-card{
+  border:0;
+  border-top:1px solid rgba(113,164,221,.11);
+  border-radius:0;
+  background:transparent;
+}
+
+/* richer, less-flat case-study cards */
+.feature-card{
+  background:
+    radial-gradient(circle at 88% 16%,rgba(76,163,247,.13),transparent 34%),
+    linear-gradient(110deg,rgba(13,30,50,.96),rgba(7,18,32,.98));
+}
+
+.feature-card:nth-child(2){
+  background:
+    radial-gradient(circle at 82% 28%,rgba(63,133,240,.16),transparent 34%),
+    linear-gradient(110deg,rgba(13,30,50,.96),rgba(7,18,32,.98));
+}
+.feature-card:nth-child(3){
+  background:
+    radial-gradient(circle at 78% 20%,rgba(73,210,188,.11),transparent 32%),
+    linear-gradient(110deg,rgba(13,30,50,.96),rgba(7,18,32,.98));
+}
+.feature-card:nth-child(4){
+  background:
+    radial-gradient(circle at 82% 18%,rgba(139,124,255,.12),transparent 34%),
+    linear-gradient(110deg,rgba(13,30,50,.96),rgba(7,18,32,.98));
+}
+
+/* inner pages: shorter header, still using the same background */
+.showcase-page-hero{
+  min-height:154px;
+  padding:32px 18px 23px;
+  background:
+    linear-gradient(90deg,rgba(3,10,20,.78),rgba(3,10,20,.34) 64%,rgba(3,10,20,.12)),
+    linear-gradient(180deg,rgba(3,10,20,.08),rgba(3,10,20,.60)),
+    url("portfolio-hero.svg") 65% 42%/cover no-repeat;
+}
+
+.showcase-page-title{
+  font-size:clamp(30px,9vw,40px);
+}
+
+.showcase-page-lead{
+  margin-top:9px;
+  max-width:600px;
+  font-size:11.5px;
+}
+
+/* light mode retains the same structure but avoids washed-out panels */
+:root[data-theme="light"] body.showcase-page .home-core-card{
+  background:rgba(248,251,255,.94);
+  border-color:rgba(42,90,143,.15);
+}
+:root[data-theme="light"] body.showcase-page .home-core-card h3{color:#18283a}
+:root[data-theme="light"] body.showcase-page .home-core-card p{color:#52677d}
+
+@media (min-width:721px){
+  .home-showcase-hero{
+    min-height:318px;
+    padding:38px 42px 34px;
+    background:
+      linear-gradient(90deg,rgba(3,10,20,.84) 0%,rgba(3,10,20,.58) 38%,rgba(3,10,20,.12) 68%,rgba(3,10,20,.03) 100%),
+      linear-gradient(180deg,rgba(3,10,20,.04) 0%,rgba(3,10,20,.10) 56%,rgba(3,10,20,.52) 100%),
+      url("portfolio-hero.svg") center 43%/cover no-repeat;
+  }
+
+  .home-showcase-hero .showcase-title{
+    max-width:none;
+    font-size:50px;
+    line-height:.98;
+    white-space:nowrap;
+  }
+
+  .home-showcase-hero .showcase-role{
+    font-size:16px;
+  }
+
+  .home-showcase-hero .showcase-copy{
+    max-width:590px;
+    font-size:12px;
+  }
+
+  .hero-motto{
+    position:absolute;
+    z-index:2;
+    right:38px;
+    top:35px;
+    bottom:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:space-between;
+    pointer-events:none;
+  }
+
+  .hero-motto span{
+    color:rgba(235,244,252,.72);
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:12px;
+    line-height:1.85;
+    writing-mode:vertical-rl;
+    letter-spacing:.08em;
+  }
+
+  .hero-motto small{
+    color:#6faee9;
+    font:700 8px/1.4 "Courier New",monospace;
+    letter-spacing:.18em;
+    text-align:right;
+  }
+
+  .home-core-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .home-core-card{
+    min-height:116px;
+    padding:17px 15px;
+  }
+
+  .home-core-card h3{font-size:14px}
+  .home-core-card p{font-size:10.5px}
+
+  .showcase-about-strip{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    padding:22px 20px;
+  }
+
+  .about-links{
+    flex:0 0 auto;
+    justify-content:flex-end;
+  }
+
+  .showcase-page-hero{
+    min-height:172px;
+    padding:38px 42px 27px;
+  }
+}
+
+@media (min-width:1050px){
+  .home-showcase-hero{
+    border-radius:0 0 18px 18px;
+  }
+}
