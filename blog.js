@@ -3,7 +3,7 @@
   const filters = document.getElementById('blogFilters');
   if (!list || typeof BLOG_POSTS === 'undefined') return;
 
-  const posts = [...BLOG_POSTS].sort((a, b) => (a.date === b.date ? 0 : a.date < b.date ? 1 : -1));
+  const posts = [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
 
   if (posts.length === 0){
     list.innerHTML = '<p class="note">まだ投稿はありません。</p>';
