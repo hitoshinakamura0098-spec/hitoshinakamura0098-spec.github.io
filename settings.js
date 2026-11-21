@@ -1,36 +1,31 @@
 (function(){
   const toggle = document.getElementById('settingsToggle');
   const panel = document.getElementById('settingsPanel');
-  const volumeSlider = document.getElementById('volumeSlider');
   const themeBtns = document.querySelectorAll('.theme-btn');
   if (!toggle || !panel) return;
 
+  function setPanelOpen(open){
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+  }
+
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    panel.hidden = !panel.hidden;
-    if (!panel.hidden && typeof window.updateTrackName === 'function'){
-      window.updateTrackName();
-    }
+    setPanelOpen(panel.hidden);
   });
 
   document.addEventListener('click', (e) => {
-    if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle){
-      panel.hidden = true;
+    if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target)){
+      setPanelOpen(false);
     }
   });
 
-  const savedVolume = localStorage.getItem('bgmVolume');
-  if (volumeSlider){
-    volumeSlider.value = savedVolume !== null ? parseInt(savedVolume, 10) : 50;
-
-    volumeSlider.addEventListener('input', () => {
-      const v = parseInt(volumeSlider.value, 10);
-      localStorage.setItem('bgmVolume', String(v));
-      if (window.ytPlayer && typeof ytPlayer.setVolume === 'function'){
-        ytPlayer.setVolume(v);
-      }
-    });
-  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.hidden){
+      setPanelOpen(false);
+      toggle.focus();
+    }
+  });
 
   function updateThemeButtons(){
     themeBtns.forEach((b) => {
