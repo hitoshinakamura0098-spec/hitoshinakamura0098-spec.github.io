@@ -264,7 +264,7 @@ h1.crt-title{
   gap: 10px;
 }
 
-.music-toggle{
+.settings-toggle{
   background: none;
   border: none;
   padding: 6px;
@@ -278,7 +278,7 @@ h1.crt-title{
   transition: all 0.15s ease;
 }
 
-.music-toggle:hover{
+.settings-toggle:hover{
   background: rgba(47,111,237,0.08);
   color: var(--accent);
 }
@@ -316,58 +316,6 @@ h1.crt-title{
   margin-top: 14px;
 }
 
-.settings-track{
-  font-size: 13px;
-  color: var(--text-main);
-  line-height: 20px;
-  height: 20px;
-  margin-bottom: 6px;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.settings-track span{
-  display: inline-block;
-  white-space: nowrap;
-}
-
-@keyframes marqueeMove{
-  from { transform: translateX(var(--marquee-start, 100%)); }
-  to { transform: translateX(var(--marquee-end, -100%)); }
-}
-
-.seek-wrap{
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.seek-time{
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--text-sub);
-  margin-top: 2px;
-  font-family: 'Courier New', monospace;
-}
-
-.settings-slider{
-  width: 100%;
-  accent-color: var(--accent);
-}
-
-.settings-select{
-  width: 100%;
-  padding: 6px 8px;
-  margin-bottom: 4px;
-  border-radius: 8px;
-  border: 1px solid var(--card-border);
-  background: rgba(255,255,255,0.8);
-  color: var(--text-main);
-  font-size: 13px;
-}
-
 .theme-switch{
   display: flex;
   gap: 8px;
@@ -401,15 +349,6 @@ h1.crt-title{
   background: var(--accent);
   border-color: var(--accent);
   color: #ffffff;
-}
-
-#ytPlayer{
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  overflow: hidden;
-  opacity: 0.01;
-  pointer-events: none;
 }
 
 .page-title{
