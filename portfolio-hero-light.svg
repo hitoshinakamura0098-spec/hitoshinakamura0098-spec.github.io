@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CCE5F5"/>
+      <stop offset=".49" stop-color="#E6F2FA"/>
+      <stop offset="1" stop-color="#F4F8FC"/>
+    </linearGradient>
+    <radialGradient id="daylight" cx="0" cy="0" r="1" gradientTransform="translate(1180 160) rotate(90) scale(360 540)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFCED" stop-opacity=".95"/>
+      <stop offset=".4" stop-color="#FFFEF8" stop-opacity=".64"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="far" x1="950" y1="210" x2="950" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A6C6DC"/>
+      <stop offset="1" stop-color="#D5E6EF"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="1040" y1="315" x2="1040" y2="670" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6B9EBC"/>
+      <stop offset=".6" stop-color="#91B8CF"/>
+      <stop offset="1" stop-color="#C7DFEA"/>
+    </linearGradient>
+    <linearGradient id="near" x1="1200" y1="450" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#77A5BE"/>
+      <stop offset="1" stop-color="#A3C5D8"/>
+    </linearGradient>
+    <linearGradient id="buildings" x1="1300" y1="370" x2="1300" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#648DA8"/>
+      <stop offset="1" stop-color="#A6C7DA"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="800" y1="490" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F9FC" stop-opacity="0"/>
+      <stop offset=".64" stop-color="#F4F9FC" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#F4F9FC"/>
+    </linearGradient>
+    <linearGradient id="leftFade" x1="0" y1="350" x2="1190" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFF"/>
+      <stop offset=".42" stop-color="#F7FBFF" stop-opacity=".91"/>
+      <stop offset=".74" stop-color="#F7FBFF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#F7FBFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cloudBlur" x="-30%" y="-100%" width="160%" height="300%">
+      <feGaussianBlur stdDeviation="21"/>
+    </filter>
+    <pattern id="windows" width="13" height="17" patternUnits="userSpaceOnUse">
+      <path d="M4 4H8V10H4Z" fill="#EDF8FF" fill-opacity=".56"/>
+    </pattern>
+    <clipPath id="cityClip">
+      <path d="M1020 553V489H1042V467H1067V534H1082V446H1121V420H1147V513H1170V455H1193V392H1228V366H1245V392H1261V514H1278V450H1306V425H1337V470H1354V399H1366V380H1398V399H1411V474H1426V447H1457V510H1475V470H1501V520H1524V486H1560V566H1600V650H1020Z"/>
+    </clipPath>
+  </defs>
+
+  <path fill="url(#sky)" d="M0 0H1600V720H0Z"/>
+  <path fill="url(#daylight)" d="M0 0H1600V720H0Z"/>
+
+  <g filter="url(#cloudBlur)" fill="#FFFFFF" opacity=".67">
+    <ellipse cx="1110" cy="180" rx="255" ry="22"/>
+    <ellipse cx="1370" cy="240" rx="210" ry="18"/>
+    <ellipse cx="630" cy="226" rx="250" ry="14"/>
+  </g>
+
+  <path d="M240 527L380 416L454 448L589 302L680 357L783 232L832 277L885 244L1018 382L1070 341L1194 430L1290 334L1405 428L1490 382L1600 468V720H240Z" fill="url(#far)"/>
+  <path d="M589 302L680 357L650 346L626 361L610 334L587 348L559 338Z" fill="#F4FAFD" opacity=".75"/>
+  <path d="M783 232L832 277L885 244L936 297L903 283L884 272L863 291L841 281L824 295L807 270L786 276L772 266L740 284Z" fill="#F7FCFF" opacity=".86"/>
+  <path d="M783 232L797 328L843 385L746 339L685 402L612 422L677 356Z" fill="#7FA8C3" opacity=".23"/>
+
+  <path d="M0 645L173 541L290 573L421 472L502 507L634 410L721 469L859 333L914 394L967 366L1071 458L1137 423L1237 505L1354 431L1485 493L1600 455V720H0Z" fill="url(#ridge)"/>
+  <path d="M859 333L914 394L967 366L1016 410L971 396L949 410L920 414L891 382L870 392L849 368L817 390Z" fill="#EDF7FC" opacity=".84"/>
+  <path d="M859 333L836 442L883 512L770 482L721 469Z" fill="#527F9E" opacity=".26"/>
+  <path d="M967 366L974 438L1071 458L1027 471L985 453L943 439Z" fill="#5D89A8" opacity=".3"/>
+
+  <g filter="url(#cloudBlur)" fill="#F8FCFF">
+    <ellipse cx="1085" cy="482" rx="405" ry="24" opacity=".71"/>
+    <ellipse cx="630" cy="539" rx="375" ry="33" opacity=".7"/>
+  </g>
+
+  <g clip-path="url(#cityClip)" opacity=".7">
+    <path fill="url(#buildings)" d="M1000 350H1600V650H1000Z"/>
+    <path fill="url(#windows)" d="M1000 350H1600V650H1000Z"/>
+    <path d="M1121 420H1127V650H1121ZM1228 366H1234V650H1228ZM1366 380H1372V650H1366Z" fill="#D5EDF7" fill-opacity=".55"/>
+  </g>
+  <path d="M0 698C236 630 352 604 514 621C676 637 747 578 893 577C1041 576 1093 616 1234 600C1382 582 1491 575 1600 606V720H0Z" fill="url(#near)" opacity=".63"/>
+  <path d="M0 690C291 646 494 668 707 637C916 607 1103 629 1318 615C1420 608 1511 606 1600 622" stroke="#E8F6FC" stroke-width="2" opacity=".7"/>
+  <path fill="url(#mist)" d="M0 480H1600V720H0Z"/>
+  <path fill="url(#leftFade)" d="M0 0H1600V720H0Z"/>
+</svg>

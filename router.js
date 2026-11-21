@@ -9,10 +9,13 @@
 
   function setActiveNav(pathname){
     const file = fileName(pathname);
-    document.querySelectorAll('.site-nav a[href]').forEach((a) => {
+    document.querySelectorAll('.showcase-nav .nav-links a[href], .site-nav a[href]').forEach((a) => {
       const href = a.getAttribute('href');
       if (!href || !href.endsWith('.html')) return;
-      a.classList.toggle('active', href === file);
+      const active = href === file;
+      a.classList.toggle('active', active);
+      if (active) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
     });
   }
 

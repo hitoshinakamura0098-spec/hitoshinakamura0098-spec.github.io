@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nakamura Portfolio</title>
+  <script src="theme-init.js?v=20261122"></script>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="portfolio-modern.css" />
+  <link rel="stylesheet" href="portfolio-modern.css?v=20261122" />
 </head>
 
 <body class="showcase-page">
@@ -68,8 +69,8 @@
         <div class="showcase-hero-content">
           <p class="showcase-eyebrow">BUILD · OPERATE · IMPROVE</p>
           <h1 class="showcase-title">HITOSHI NAKAMURA</h1>
-          <p class="showcase-role">Cloud / Infrastructure / Maintenance Engineering</p>
-          <p class="showcase-copy">I solve real-world problems through infrastructure, operations, and continuous improvement.</p>
+          <p class="showcase-role">Cloud / Infrastructure / Systems Engineering</p>
+          <p class="showcase-copy">Designing systems, investigating complex issues, and turning findings into clear operational knowledge.</p>
           <div class="showcase-actions">
             <a class="showcase-btn primary" href="achievements.html">View Achievements →</a>
             <a class="showcase-btn" href="#about">About Me</a>
@@ -92,19 +93,19 @@
             <span class="feature-card-body"><span class="feature-index">01</span><h3>MAIL DELIVERY INCIDENT</h3><p class="feature-stack">AWS SES / CloudWatch / Lambda / DNS</p><p class="feature-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価まで追跡。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY & COST" data-cat="CloudWatch / Amazon RDS / Cost Explorer / Organizations" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。併せてCost ExplorerとRDSメトリクスからdb.t4g.microのCPUクレジット、InstanceUsage、短周期ポーリング負荷を確認。Organizations環境でのRI / Savings Plans横断適用による請求差異も整理した。">
+          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY &amp; COST" data-cat="CloudWatch / SNS / Amazon RDS / Cost Explorer" data-detail="CloudWatchとSNSを用いた監視・通知設定に対応。メトリクス、アラーム条件、通知経路を整理し、運用上の確認点を記録した。RDSの負荷やCPUクレジットとCost Explorerの利用明細も突き合わせ、コスト増加や請求差異を調査。監視設定と費用分析の両面から環境の状態を確認した。">
             <span class="feature-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / RDS / Cost Explorer</p><p class="feature-summary">監視通知の設計とRDSコスト増加・請求差異を分析。</p></span>
+            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / SNS / RDS / Cost Explorer</p><p class="feature-summary">CloudWatchとSNSの監視通知を設定。RDSの負荷と利用明細を照合し、コスト変動を調査。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合を実環境で切り分け。Visual StudioのRelease発行、デプロイ、ロールバック、WinMerge差分確認まで対応。502 Bad Gateway、記号化け、UIボタン無効化、Unexpected token、HTML Entity二重エンコードを、C# → Razor → HTTP Response → JavaScript → DOMの各層に分けて追跡し、修正・再テストまで完了した。">
+          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="C# / ASP.NET Razor / JavaScript / SQLを横断し、既存Webアプリの表示・入力・接続に関する不具合を調査。HTTP応答、DOM、変数、ソース差分を照合し、処理のどの段階で差が生じるかを追跡した。Visual Studioでの発行資材作成や配置対象の確認、修正後の再確認にも対応。">
             <span class="feature-icon"><img src="icons/csharp.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">UI・JS・HTMLエンコード・発行差分を層ごとに切り分け。</p></span>
+            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">C#からHTTP応答・画面表示まで値を追跡し、ソース差分と照合して不具合の範囲を切り分け。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="LINUX / ON-PREM SETUP" data-cat="Linux / Networking / Virtualization / Documentation" data-detail="オンプレミス環境の構成調査、Linux導入、BIOS / UEFI確認、ネットワーク接続、仮想環境構築、構成整理、手順書作成を担当。既存端末の制約や接続機器を確認しながら導入手順を整理した。">
+          <button class="feature-card" type="button" data-title="ON-PREM SYSTEM ENGINEERING" data-cat="Linux / Nginx / .NET / PostgreSQL / systemd / SELinux" data-detail="Linux上にWeb・アプリ・DBの検証環境を設計・構築。Nginx、.NET、PostgreSQLを組み合わせ、systemdのサービス管理やSELinuxの制御を含めて起動・接続を確認した。通信経路、サービス設定、ログを照合しながら問題を切り分け、構成と作業手順を整理。運用に向けた確認事項を継続して管理している。">
             <span class="feature-icon"><img src="icons/linux.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">04</span><h3>LINUX / ON-PREM SETUP</h3><p class="feature-stack">Linux / Networking / Virtualization</p><p class="feature-summary">オンプレ環境を調査し、Linux導入・接続・手順化まで整理。</p></span>
+            <span class="feature-card-body"><span class="feature-index">04</span><h3>ON-PREM SYSTEM ENGINEERING</h3><p class="feature-stack">Linux / Nginx / .NET / PostgreSQL</p><p class="feature-summary">Linux上にWeb・アプリ・DBの検証環境を構築し、サービス起動・接続・アクセス制御を確認。</p></span>
             <span class="feature-arrow">→</span>
           </button>
         </div>
@@ -118,23 +119,23 @@
         <div class="home-core-grid">
           <a class="home-core-card" href="skills.html" style="--core-accent:#49a6ff">
             <span class="core-icon"><img src="icons/amazonaws.svg" alt="" /></span>
-            <div><h3>Cloud</h3><p>AWS (EC2, RDS, SES, Lambda), CloudWatch, IAM, Route 53, Cost Explorer</p></div>
+            <div><h3>Cloud</h3><p>AWS (EC2, RDS, SES, Lambda), CloudWatch, SNS, IAM, Cost Explorer</p></div>
           </a>
           <a class="home-core-card" href="skills.html" style="--core-accent:#8b7cff">
             <span class="core-icon"><img src="icons/linux.svg" alt="" /></span>
-            <div><h3>Infrastructure</h3><p>Linux, Windows Server, Networking, Virtualization, DNS, Security, Operations</p></div>
+            <div><h3>Infrastructure</h3><p>Linux, Nginx, PostgreSQL, systemd, Networking, DNS, Security</p></div>
           </a>
           <a class="home-core-card" href="skills.html" style="--core-accent:#52d3b8">
             <span class="core-icon"><img src="icons/csharp.svg" alt="" /></span>
-            <div><h3>Development</h3><p>C#, ASP.NET Razor, JavaScript, SQL, Git, Debugging, Deployment</p></div>
+            <div><h3>Development</h3><p>C#, ASP.NET Razor, JavaScript, SQL, Git, DevTools, API Testing</p></div>
           </a>
           <a class="home-core-card" href="skills.html" style="--core-accent:#a679ff">
             <span class="core-icon"><img src="icons/openai.svg" alt="" /></span>
-            <div><h3>AI Tools</h3><p>ChatGPT, GitHub Copilot, Claude, Documentation, Automation, Productivity</p></div>
+            <div><h3>AI Tools</h3><p>ChatGPT, GitHub Copilot, Claude, Analysis, Documentation, Design Support</p></div>
           </a>
         </div>
         <div class="skill-tags home-skill-tags">
-          <span class="skill-tag">TROUBLESHOOTING</span><span class="skill-tag">AWS</span><span class="skill-tag">C#</span><span class="skill-tag">MONITORING</span><span class="skill-tag">OPERATIONS</span>
+          <span class="skill-tag">TROUBLESHOOTING</span><span class="skill-tag">AWS</span><span class="skill-tag">LINUX</span><span class="skill-tag">C#</span><span class="skill-tag">MONITORING</span><span class="skill-tag">OPERATIONS</span>
         </div>
       </section>
 
@@ -143,7 +144,7 @@
           <div>
             <p class="showcase-card-label">ABOUT / CURRENT DIRECTION</p>
             <h2>Infrastructure × Development × Automation</h2>
-            <p>AWS・サーバー・ネットワーク・セキュリティと保守開発を横断し、AIをログ分析・設計・資料化・安全な自動化へ組み込むエンジニアリングを進めています。</p>
+            <p>AWSの運用とLinux基盤の設計・検証、Webアプリの保守開発に取り組んでいます。ログ・通信・ソースコードを照合し、調査結果を構成図や手順書にまとめ、次の運用へつなげます。</p>
           </div>
           <div class="about-links"><a href="research.html">Research →</a><a href="learning.html">Learning →</a><a href="blog.html">Blog →</a><a href="https://github.com/hitoshinakamura0098-spec" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
         </div>
@@ -171,14 +172,37 @@
         </details>
       </section>
     </div>
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-box">
+        <button class="modal-close" id="detailModalClose" aria-label="閉じる">✕</button>
+        <span class="modal-cat" id="detailModalCat"></span>
+        <h3 id="detailModalName"></h3>
+        <p id="detailModalDesc"></p>
+      </div>
+    </div>
+    <script>
+    (function(){
+      const overlay=document.getElementById('detailModal');
+      const name=document.getElementById('detailModalName');
+      const cat=document.getElementById('detailModalCat');
+      const desc=document.getElementById('detailModalDesc');
+      if(!overlay)return;
+      function open(el){name.textContent=el.dataset.title||'';cat.textContent=el.dataset.cat||'';desc.textContent=el.dataset.detail||'';overlay.classList.add('open');}
+      function close(){overlay.classList.remove('open');}
+      document.querySelectorAll('.feature-card,.core-detail,.secondary-card').forEach(el=>el.addEventListener('click',()=>open(el)));
+      document.getElementById('detailModalClose').addEventListener('click',close);
+      overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    })();
+    </script>
     <script src="clicker.js"></script>
   </main>
 
   <script src="particles.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="music.js"></script>
-  <script src="settings.js"></script>
+  <script src="settings.js?v=20261122"></script>
   <script src="nav.js"></script>
-  <script src="router.js"></script>
+  <script src="router.js?v=20261122"></script>
 </body>
 </html>

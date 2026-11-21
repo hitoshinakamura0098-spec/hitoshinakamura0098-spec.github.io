@@ -1,5 +1,4 @@
-/* Mockup-faithful portfolio redesign
-   Mobile-first. Used only by Achievements / Skills. */
+/* Shared portfolio design. Mobile-first; used by all six public pages. */
 
 body.showcase-page{
   margin:0;
@@ -1114,70 +1113,6 @@ body.showcase-page .modal-close{
   color:#68b3fb;
 }
 
-/* light theme keeps the same visual language */
-:root[data-theme="light"] body.showcase-page{
-  background:#dfe8f2;
-  color:#172436;
-}
-
-:root[data-theme="light"] body.showcase-page::before,
-:root[data-theme="light"] body.showcase-page::after{
-  display:none !important;
-}
-
-:root[data-theme="light"] body.showcase-page .showcase-nav{
-  background:rgba(235,242,250,.94);
-  border-bottom-color:rgba(39,87,137,.15);
-}
-
-:root[data-theme="light"] body.showcase-page .showcase-brand-mark,
-:root[data-theme="light"] body.showcase-page .showcase-nav .nav-links a.active{
-  color:#176fc8;
-}
-
-:root[data-theme="light"] body.showcase-page .showcase-brand-name,
-:root[data-theme="light"] body.showcase-page .showcase-nav .music-toggle,
-:root[data-theme="light"] body.showcase-page .showcase-nav .nav-hamburger{
-  color:#31465e;
-}
-
-:root[data-theme="light"] body.showcase-page .feature-card,
-:root[data-theme="light"] body.showcase-page .core-card,
-:root[data-theme="light"] body.showcase-page .secondary-card,
-:root[data-theme="light"] body.showcase-page .home-focus-card,
-:root[data-theme="light"] body.showcase-page .showcase-wide-card,
-:root[data-theme="light"] body.showcase-page .showcase-link-card,
-:root[data-theme="light"] body.showcase-page .showcase-clicker-card,
-:root[data-theme="light"] body.showcase-page .research-card,
-:root[data-theme="light"] body.showcase-page .learning-card,
-:root[data-theme="light"] body.showcase-page .blog-post.card{
-  background:rgba(248,251,255,.94);
-  border-color:rgba(42,90,143,.15);
-}
-
-:root[data-theme="light"] body.showcase-page .feature-card h3,
-:root[data-theme="light"] body.showcase-page .core-card h3,
-:root[data-theme="light"] body.showcase-page .home-focus-card h3,
-:root[data-theme="light"] body.showcase-page .showcase-wide-card h3,
-:root[data-theme="light"] body.showcase-page .showcase-link-card h3,
-:root[data-theme="light"] body.showcase-page .research-card h3,
-:root[data-theme="light"] body.showcase-page .learning-card h3,
-:root[data-theme="light"] body.showcase-page .blog-post .section-title{
-  color:#18283a;
-}
-
-:root[data-theme="light"] body.showcase-page .feature-summary,
-:root[data-theme="light"] body.showcase-page .core-card p,
-:root[data-theme="light"] body.showcase-page .home-focus-card p,
-:root[data-theme="light"] body.showcase-page .showcase-wide-card p:not(.showcase-card-label),
-:root[data-theme="light"] body.showcase-page .showcase-link-card p:not(.showcase-card-label),
-:root[data-theme="light"] body.showcase-page .research-card p:not(.showcase-card-label),
-:root[data-theme="light"] body.showcase-page .learning-card > p:not(.showcase-card-label),
-:root[data-theme="light"] body.showcase-page .blog-post .note,
-:root[data-theme="light"] body.showcase-page .blog-body{
-  color:#50657c;
-}
-
 @media (min-width:721px){
   .showcase-page-hero{
     min-height:220px;
@@ -1495,14 +1430,6 @@ body.showcase-page .modal-close{
   font-size:11.5px;
 }
 
-/* light mode retains the same structure but avoids washed-out panels */
-:root[data-theme="light"] body.showcase-page .home-core-card{
-  background:rgba(248,251,255,.94);
-  border-color:rgba(42,90,143,.15);
-}
-:root[data-theme="light"] body.showcase-page .home-core-card h3{color:#18283a}
-:root[data-theme="light"] body.showcase-page .home-core-card p{color:#52677d}
-
 @media (min-width:721px){
   .home-showcase-hero{
     min-height:318px;
@@ -1593,5 +1520,445 @@ body.showcase-page .modal-close{
 @media (min-width:1050px){
   .home-showcase-hero{
     border-radius:0 0 18px 18px;
+  }
+}
+
+/* =========================================================
+   Daylight theme — shared surfaces, typography and controls
+   Scoped to light so the existing night palette is preserved.
+   ========================================================= */
+
+:root[data-theme="light"]{
+  color-scheme:light;
+  --day-ink:#15324b;
+  --day-text:#40596f;
+  --day-muted:#586f83;
+  --day-blue:#1266b6;
+  --day-blue-strong:#075598;
+  --day-tint:#eaf3fc;
+  --day-border:#d6e3ef;
+  --day-line:#e2ebf3;
+  --day-panel:#fff;
+  --day-shadow:0 3px 6px rgba(35,75,111,.025),0 12px 28px rgba(35,75,111,.045);
+  --text-main:var(--day-ink);
+  --text-sub:var(--day-text);
+  --accent:var(--day-blue);
+  --card-bg:var(--day-panel);
+  --card-border:var(--day-border);
+  --nav-bg:rgba(250,253,255,.9);
+}
+
+:root[data-theme="light"] body.showcase-page{
+  color:var(--day-ink);
+  background:
+    radial-gradient(ellipse at 92% 6%,rgba(183,216,244,.18),transparent 43%),
+    linear-gradient(180deg,#f9fcff 0%,#f3f7fb 65%,#edf4fa 100%);
+}
+
+:root[data-theme="light"] .showcase-page #bgNet{
+  opacity:.07;
+}
+
+:root[data-theme="light"] .showcase-page ::selection{
+  color:#0a365d;
+  background:#cde6ff;
+}
+
+/* A clear, floating navigation surface. */
+:root[data-theme="light"] .showcase-page .showcase-nav{
+  background:var(--nav-bg);
+  border-bottom-color:var(--day-border);
+  box-shadow:0 2px 14px rgba(30,69,105,.035);
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-brand,.showcase-brand-name){
+  color:var(--day-ink);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-brand-mark{
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-nav .nav-links{
+  background:rgba(250,253,255,.98);
+  border-bottom-color:var(--day-border);
+  box-shadow:0 12px 18px rgba(35,75,111,.06);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-nav .nav-links a{
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-nav .nav-links a:hover,
+:root[data-theme="light"] .showcase-page .showcase-nav .nav-links a.active{
+  color:var(--day-blue-strong);
+  background:var(--day-tint);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-nav :is(.music-toggle,.nav-hamburger){
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-nav :is(.music-toggle,.nav-hamburger):hover{
+  color:var(--day-blue-strong);
+  background:var(--day-tint);
+}
+
+/* The illustration stays visible; the left fade protects the copy. */
+:root[data-theme="light"] .showcase-page :is(.showcase-hero,.showcase-page-hero){
+  border-bottom-color:#d5e6f2;
+  background:
+    linear-gradient(90deg,rgba(247,251,255,.75) 0%,rgba(247,251,255,.36) 50%,rgba(247,251,255,.03) 100%),
+    url("portfolio-hero-light.svg") 62% 47%/cover no-repeat;
+}
+
+:root[data-theme="light"] .showcase-page .home-showcase-hero{
+  background:
+    linear-gradient(90deg,rgba(247,251,255,.54) 0%,rgba(247,251,255,.18) 64%,rgba(247,251,255,.03) 100%),
+    url("portfolio-hero-light.svg") 64% 47%/cover no-repeat;
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-title,.showcase-page-title,.showcase-section-title){
+  color:var(--day-ink);
+  text-shadow:none;
+}
+
+:root[data-theme="light"] .showcase-page .showcase-role{
+  color:#2d4d68;
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-copy,.showcase-page-lead){
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-eyebrow,.showcase-section-kicker,.showcase-card-label){
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page .hero-motto span{
+  color:#3d607a;
+}
+
+:root[data-theme="light"] .showcase-page .hero-motto small{
+  color:var(--day-blue-strong);
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-section-link,.about-links a,.home-contact-row a){
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-section-link,.about-links a,.home-contact-row a):hover{
+  color:var(--day-blue-strong);
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+:root[data-theme="light"] .showcase-page .showcase-btn{
+  color:var(--day-blue-strong);
+  background:rgba(255,255,255,.88);
+  border-color:#b9cfe2;
+  box-shadow:0 2px 5px rgba(35,75,111,.04);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-btn.primary{
+  color:#fff;
+  border-color:#176dbb;
+  background:linear-gradient(180deg,#1b73c3,#1265b5);
+  box-shadow:0 5px 15px rgba(22,105,182,.18);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-btn:hover{
+  filter:none;
+  border-color:var(--day-blue);
+  box-shadow:0 5px 18px rgba(22,105,182,.13);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-btn.primary:hover{
+  background:linear-gradient(180deg,#1b72c0,#0b59a3);
+}
+
+/* One surface system for every page. */
+:root[data-theme="light"] .showcase-page :is(.feature-card,.core-card,.secondary-card,.home-core-card,.home-focus-card,.showcase-wide-card,.showcase-link-card,.showcase-clicker-card,.research-card,.learning-card,.blog-post.card){
+  color:var(--day-ink);
+  border-color:var(--day-border);
+  border-radius:12px;
+  background:var(--day-panel);
+  box-shadow:var(--day-shadow);
+}
+
+:root[data-theme="light"] .showcase-page .feature-card{
+  background:linear-gradient(140deg,#fff 50%,#f3f8fe 100%);
+}
+
+:root[data-theme="light"] .showcase-page .feature-card::after{
+  background:radial-gradient(ellipse at 100% 0%,rgba(88,162,229,.065),transparent 60%);
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-card,.home-core-card,.secondary-card,.home-focus-card){
+  transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-card,.home-core-card,.secondary-card,.home-focus-card):hover{
+  color:var(--day-ink);
+  border-color:#91b9df;
+  background:linear-gradient(140deg,#fff,#eff7ff);
+  box-shadow:0 5px 10px rgba(35,75,111,.04),0 15px 30px rgba(35,75,111,.075);
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-card h3,.core-card h3,.home-core-card h3,.secondary-card strong,.home-focus-card h3,.showcase-wide-card h3,.showcase-link-card h3,.research-card h3,.learning-card h3,.blog-post .section-title,.showcase-about-strip h2){
+  color:var(--day-ink);
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-summary,.core-card p,.home-core-card p,.home-focus-card p,.showcase-wide-card p:not(.showcase-card-label),.showcase-link-card p:not(.showcase-card-label),.research-card p:not(.showcase-card-label),.learning-card > p:not(.showcase-card-label),.showcase-about-strip p:not(.showcase-card-label),.blog-post .note,.blog-body){
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-stack,.feature-index,.secondary-card span,.home-focus-index,.research-no){
+  color:var(--day-muted);
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-icon,.core-icon){
+  border-color:#d1e4f5;
+  background:#eaf4ff;
+}
+
+:root[data-theme="light"] .showcase-page :is(.feature-icon img,.core-icon img){
+  filter:brightness(0) saturate(100%) invert(30%) sepia(85%) saturate(1674%) hue-rotate(188deg) brightness(91%) contrast(96%);
+  opacity:1;
+}
+
+:root[data-theme="light"] .showcase-page .feature-arrow{
+  color:var(--day-blue);
+  background:#f0f7fe;
+  border-color:#d5e6f5;
+}
+
+:root[data-theme="light"] .showcase-page .core-detail{
+  color:var(--day-text);
+  border-top-color:var(--day-line);
+}
+
+:root[data-theme="light"] .showcase-page .core-detail span{
+  color:var(--day-muted);
+}
+
+:root[data-theme="light"] .showcase-page .core-detail:hover{
+  color:var(--day-blue-strong);
+  background:#f3f8fe;
+}
+
+:root[data-theme="light"] .showcase-page .core-detail:hover span{
+  color:var(--day-blue-strong);
+}
+
+:root[data-theme="light"] .showcase-page :is(.skill-tag,.learning-tags span,.status-chip,.blog-post .badge-list li){
+  color:#345d7e;
+  background:#edf5fd;
+  border-color:#d7e6f3;
+}
+
+:root[data-theme="light"] .showcase-page .research-card::after{
+  color:rgba(38,106,169,.05);
+}
+
+:root[data-theme="light"] .showcase-page .home-focus-card::after{
+  background:radial-gradient(circle,rgba(70,149,221,.12),transparent 68%);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-about-strip{
+  border-color:var(--day-border);
+  background:rgba(255,255,255,.38);
+}
+
+/* Blog remains readable in collapsed and expanded states. */
+:root[data-theme="light"] .showcase-page .blog-date{
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page .blog-filter-btn{
+  color:var(--day-text);
+  background:rgba(255,255,255,.9);
+  border-color:var(--day-border);
+}
+
+:root[data-theme="light"] .showcase-page .blog-filter-btn:hover{
+  color:var(--day-blue-strong);
+  border-color:#9bbfdf;
+}
+
+:root[data-theme="light"] .showcase-page .blog-filter-btn.is-active{
+  color:#fff;
+  background:var(--day-blue);
+  border-color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page .blog-read-more{
+  color:var(--day-blue-strong);
+  background:rgba(231,242,253,.96);
+}
+
+:root[data-theme="light"] .showcase-page .blog-read-more:hover{
+  background:#dbeeff;
+}
+
+:root[data-theme="light"] .showcase-page .blog-link{
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page :is(.blog-media-img,.blog-media-video,.blog-video-wrap,.blog-text-divider){
+  border-color:var(--day-border);
+}
+
+/* Overlays and controls use the same light palette as the page. */
+:root[data-theme="light"] body.showcase-page .modal-overlay{
+  background:rgba(31,59,83,.3);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-box{
+  color:var(--day-ink);
+  border-color:#c8ddeb;
+  background:linear-gradient(145deg,#fff,#f6faff);
+  box-shadow:0 24px 80px rgba(32,63,91,.2);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-box h3{
+  color:var(--day-ink);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-box p{
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-cat{
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-close{
+  color:var(--day-muted);
+}
+
+:root[data-theme="light"] body.showcase-page .modal-close:hover{
+  color:var(--day-blue-strong);
+}
+
+:root[data-theme="light"] .showcase-page .settings-panel{
+  color:var(--day-ink);
+  border-color:var(--day-border);
+  background:rgba(255,255,255,.98);
+  box-shadow:0 16px 44px rgba(35,75,111,.16);
+}
+
+:root[data-theme="light"] .showcase-page :is(.settings-label,.seek-time,.settings-note){
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page .settings-track{
+  color:var(--day-ink);
+}
+
+:root[data-theme="light"] .showcase-page :is(.seek-wrap,.settings-note){
+  border-color:var(--day-line);
+}
+
+:root[data-theme="light"] .showcase-page :is(.settings-select,.theme-btn,.admin-input){
+  color:var(--day-ink);
+  background:#f7faff;
+  border-color:var(--day-border);
+}
+
+:root[data-theme="light"] .showcase-page .theme-btn.active{
+  color:#fff;
+  background:var(--day-blue);
+  border-color:var(--day-blue);
+}
+
+/* The folded experiment belongs to the same page, including its open state. */
+:root[data-theme="light"] .showcase-page .lab-fold details{
+  border-color:var(--day-border);
+  background:rgba(255,255,255,.76);
+}
+
+:root[data-theme="light"] .showcase-page .lab-fold summary{
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page .lab-fold summary :is(span,b){
+  color:var(--day-blue);
+}
+
+:root[data-theme="light"] .showcase-page .lab-fold .showcase-clicker-card{
+  border-top-color:var(--day-line);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+
+:root[data-theme="light"] .showcase-page .showcase-clicker-card .clicker-count{
+  color:var(--day-ink);
+}
+
+:root[data-theme="light"] .showcase-page :is(.showcase-clicker-card .clicker-message,.appeal-result){
+  color:var(--day-text);
+}
+
+:root[data-theme="light"] .showcase-page .showcase-clicker-card :is(.appeal-link,.appeal-btn){
+  color:var(--day-blue-strong);
+  background:#edf5fd;
+  border-color:#d1e3f2;
+}
+
+:root[data-theme="light"] .showcase-page .showcase-clicker-card :is(.appeal-link,.appeal-btn):hover{
+  color:var(--day-blue-strong);
+  background:#e0efff;
+  border-color:#a9c9e5;
+}
+
+:root[data-theme="light"] .showcase-page :is(a,button,summary,input,select):focus-visible{
+  outline:2px solid var(--day-blue);
+  outline-offset:3px;
+}
+
+@media (min-width:721px){
+  :root[data-theme="light"] .showcase-page .showcase-nav .nav-links{
+    background:transparent;
+    box-shadow:none;
+  }
+
+  :root[data-theme="light"] .showcase-page .home-showcase-hero{
+    background:
+      linear-gradient(90deg,rgba(247,251,255,.12),rgba(247,251,255,0) 68%),
+      url("portfolio-hero-light.svg") center 46%/cover no-repeat;
+  }
+
+  :root[data-theme="light"] .showcase-page .feature-card{
+    min-height:266px;
+    padding-bottom:58px;
+  }
+
+  :root[data-theme="light"] .showcase-page .feature-icon{
+    margin-bottom:25px;
+  }
+
+  :root[data-theme="light"] .showcase-page .feature-card-body{
+    position:static;
+  }
+
+  :root[data-theme="light"] .showcase-page .feature-index{
+    top:22px;
+    right:20px;
+  }
+
+  :root[data-theme="light"] .showcase-page .feature-arrow{
+    left:auto;
+    right:18px;
+    bottom:17px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  :root[data-theme="light"] .showcase-page :is(.feature-card,.home-core-card,.secondary-card,.home-focus-card){
+    transition:none;
   }
 }
