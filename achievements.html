@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="dark">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achievements | Nakamura Portfolio</title>
+  <script src="theme-init.js?v=20261122"></script>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="portfolio-modern.css" />
+  <link rel="stylesheet" href="portfolio-modern.css?v=20261122" />
 </head>
 <body class="showcase-page">
   <canvas id="bgNet"></canvas>
@@ -65,7 +66,7 @@
       <div class="showcase-page-hero-inner">
         <p class="showcase-eyebrow">CASE STUDIES</p>
         <h1 class="showcase-page-title">Achievements</h1>
-        <p class="showcase-page-lead">現場で発生した課題を、観測・切り分け・実装・検証までつなげた実務記録。</p>
+        <p class="showcase-page-lead">運用・障害調査・検証環境づくり。対応範囲と確認できた内容をまとめた実務記録。</p>
       </div>
     </section>
       <section class="showcase-section" id="featured">
@@ -76,19 +77,19 @@
             <span class="feature-card-body"><span class="feature-index">01</span><h3>MAIL DELIVERY INCIDENT</h3><p class="feature-stack">AWS SES / CloudWatch / Lambda / DNS</p><p class="feature-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価まで追跡。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY & COST" data-cat="CloudWatch / Amazon RDS / Cost Explorer / Organizations" data-detail="CloudWatchでTimeout / Bounceを監視し、Alarmから共有メールへ通知する運用を設計。併せてCost ExplorerとRDSメトリクスからdb.t4g.microのCPUクレジット、InstanceUsage、短周期ポーリング負荷を確認。Organizations環境でのRI / Savings Plans横断適用による請求差異も整理した。">
+          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY &amp; COST" data-cat="CloudWatch / SNS / Amazon RDS / Cost Explorer" data-detail="CloudWatchとSNSを用いた監視・通知設定に対応。メトリクス、アラーム条件、通知経路を整理し、運用上の確認点を記録した。RDSの負荷やCPUクレジットとCost Explorerの利用明細も突き合わせ、コスト増加や請求差異を調査。監視設定と費用分析の両面から環境の状態を確認した。">
             <span class="feature-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / RDS / Cost Explorer</p><p class="feature-summary">監視通知の設計とRDSコスト増加・請求差異を分析。</p></span>
+            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / SNS / RDS / Cost Explorer</p><p class="feature-summary">CloudWatchとSNSの監視通知を設定。RDSの負荷と利用明細を照合し、コスト変動を調査。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合を実環境で切り分け。Visual StudioのRelease発行、デプロイ、ロールバック、WinMerge差分確認まで対応。502 Bad Gateway、記号化け、UIボタン無効化、Unexpected token、HTML Entity二重エンコードを、C# → Razor → HTTP Response → JavaScript → DOMの各層に分けて追跡し、修正・再テストまで完了した。">
+          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="C# / ASP.NET Razor / JavaScript / SQLを横断し、既存Webアプリの表示・入力・接続に関する不具合を調査。HTTP応答、DOM、変数、ソース差分を照合し、処理のどの段階で差が生じるかを追跡した。Visual Studioでの発行資材作成や配置対象の確認、修正後の再確認にも対応。">
             <span class="feature-icon"><img src="icons/csharp.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">UI・JS・HTMLエンコード・発行差分を層ごとに切り分け。</p></span>
+            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">C#からHTTP応答・画面表示まで値を追跡し、ソース差分と照合して不具合の範囲を切り分け。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="LINUX / ON-PREM SETUP" data-cat="Linux / Networking / Virtualization / Documentation" data-detail="オンプレミス環境の構成調査、Linux導入、BIOS / UEFI確認、ネットワーク接続、仮想環境構築、構成整理、手順書作成を担当。既存端末の制約や接続機器を確認しながら導入手順を整理した。">
+          <button class="feature-card" type="button" data-title="ON-PREM SYSTEM ENGINEERING" data-cat="Linux / Nginx / .NET / PostgreSQL / systemd / SELinux" data-detail="Linux上にWeb・アプリ・DBの検証環境を設計・構築。Nginx、.NET、PostgreSQLを組み合わせ、systemdのサービス管理やSELinuxの制御を含めて起動・接続を確認した。通信経路、サービス設定、ログを照合しながら問題を切り分け、構成と作業手順を整理。運用に向けた確認事項を継続して管理している。">
             <span class="feature-icon"><img src="icons/linux.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">04</span><h3>LINUX / ON-PREM SETUP</h3><p class="feature-stack">Linux / Networking / Virtualization</p><p class="feature-summary">オンプレ環境を調査し、Linux導入・接続・手順化まで整理。</p></span>
+            <span class="feature-card-body"><span class="feature-index">04</span><h3>ON-PREM SYSTEM ENGINEERING</h3><p class="feature-stack">Linux / Nginx / .NET / PostgreSQL</p><p class="feature-summary">Linux上にWeb・アプリ・DBの検証環境を構築し、サービス起動・接続・アクセス制御を確認。</p></span>
             <span class="feature-arrow">→</span>
           </button>
         </div>
@@ -102,7 +103,10 @@
           <button class="secondary-card" data-title="ソースコード差分調査" data-cat="Source Review / Change Analysis" data-detail="旧版と変更版のソースコードをWinMerge等で比較し、C# / Razor / JavaScript / SQLを層ごとに確認。変更箇所と不具合発生点の対応関係を追跡し、1箇所ずつの再デプロイや実機確認と組み合わせて原因範囲を切り分けた。"><strong>Source Code Diff Analysis</strong><span>C# / Razor / JavaScript / SQL の変更点調査</span></button>
           <button class="secondary-card" data-title="SQL・アプリ不具合切り分け" data-cat="Data / Application" data-detail="メールテンプレートSQLとアプリ側表示条件を確認。日本語名・英語名、NULL / 空文字条件を整理し、SQL側とアプリ変数側の責任範囲を切り分けた。"><strong>SQL / Application Isolation</strong><span>NULL・空文字・表示条件の責任分界</span></button>
           <button class="secondary-card" data-title="開発レビュー・PM補助" data-cat="Review / Project Support" data-detail="外注開発の移植・接続レビューや打合せに参加し、テスト結果、不具合、仕様差異を確認。Planner / Teamsを用いたタスク・運用整理などPM補助も担当。"><strong>Review / PM Support</strong><span>仕様確認・テスト結果・運用整理</span></button>
-          <button class="secondary-card" data-title="製品実機のソフト / サーバー接続" data-cat="Integration Test" data-detail="開発機器の移植動作確認、ソフトのサーバー接続、テスト要項実施、レビューを通じて不具合を確認した。"><strong>Device / Server Integration</strong><span>実機・サーバー接続・テスト</span></button>
+          <button class="secondary-card" data-title="実機・サーバー間の通信調査" data-cat="HTTP / WebSocket / Logs" data-detail="実機とサーバー間の接続を、HTTP / WebSocketの要求・応答、通信経路、各層のログから調査。接続のどの段階で差が生じるかを比較し、端末・ネットワーク・アプリの確認範囲を切り分けた。確認できた通信条件と残る課題を整理し、後続の設定確認や再検証につなげた。"><strong>Device / Server Investigation</strong><span>HTTP / WebSocketの要求・応答とログを照合し、実機・ネットワーク・サーバーの問題を切り分け。</span></button>
+          <button class="secondary-card" data-title="運用手順・技術資料の整備" data-cat="Documentation / Operations" data-detail="API Testerの操作手順書を改訂し、提出まで対応。操作の前提、手順、確認点を整理するとともに、環境構築や運用に関する手順書・設計資料・課題一覧を整備した。調査で確認できた事項と未確認事項を区別し、再確認や引き継ぎに使える形へまとめた。"><strong>Operational Documentation</strong><span>API Testerの操作手順書を改訂・提出。構成・運用手順・課題を整理して、確認や引き継ぎを支援。</span></button>
+          <button class="secondary-card" data-title="メール通知・認証構成の調査" data-cat="Mail Architecture / DNS" data-detail="メール送信、バウンス処理、運用通知の役割を整理し、通知経路とDNS認証の設定を調査。SESのイベント、SMTP応答、SPF / DKIM / DMARCの情報を照合し、送信処理と監視通知の確認範囲を分けた。構成上の役割と調査時の観測点を整理し、運用設計の検討材料としてまとめた。"><strong>Mail Architecture Review</strong><span>送信・バウンス処理・運用通知の役割とDNS認証を調査し、構成と確認すべき観測点を整理。</span></button>
+          <button class="secondary-card" data-title="高可用性構成の調査・検討" data-cat="Architecture / Research" data-detail="高可用性を持たせる構成について、Web・アプリ・DB各層の役割と冗長化の考え方を調査。障害時の影響範囲や切り替え時に確認すべき条件、監視・運用上の論点を設計検討として整理した。現段階の範囲は構成調査と設計上の比較であり、本番導入やフェイルオーバーの実証は含まない。"><strong>High Availability Research</strong><span>Web・アプリ・DBの冗長化と障害時の影響を調査。構成比較と運用条件を整理する設計検討。</span></button>
           <button class="secondary-card" data-title="AI活用による設計・資料作成" data-cat="AI Assisted Engineering" data-detail="障害解析、設計補助、資料作成、コード確認などにAIを活用。出力を実環境のログ・レスポンス・設定・コードと突合して検証する運用で使用。"><strong>AI Assisted Engineering</strong><span>解析・設計補助・資料化・検証</span></button>
           <button class="secondary-card" data-title="Azure開発の導入・運用設計企画" data-cat="Planning / Cloud" data-detail="Azureを利用した開発・運用の導入方法について、既存環境との役割分担、運用方法、導入候補を整理・企画。"><strong>Azure Planning</strong><span>開発導入・運用設計の企画</span></button>
         </div>
@@ -135,8 +139,8 @@
   <script src="particles.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="music.js"></script>
-  <script src="settings.js"></script>
+  <script src="settings.js?v=20261122"></script>
   <script src="nav.js"></script>
-  <script src="router.js"></script>
+  <script src="router.js?v=20261122"></script>
 </body>
 </html>

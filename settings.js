@@ -34,11 +34,13 @@
 
   function updateThemeButtons(){
     themeBtns.forEach((b) => {
-      b.classList.toggle('active', b.dataset.theme === document.documentElement.dataset.theme);
+      const selected = b.dataset.theme === document.documentElement.dataset.theme;
+      b.classList.toggle('active', selected);
+      b.setAttribute('aria-pressed', String(selected));
     });
   }
 
-  const savedTheme = localStorage.getItem('siteTheme') || 'dark';
+  const savedTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
   document.documentElement.dataset.theme = savedTheme;
   updateThemeButtons();
 
