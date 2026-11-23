@@ -28,6 +28,9 @@
       <stop stop-color="#F1F6FC" stop-opacity="0"/><stop offset="1" stop-color="#F1F6FC" stop-opacity=".82"/>
     </linearGradient>
     <clipPath id="planetClip"><circle cx="1130" cy="350" r="139"/></clipPath>
+    <radialGradient id="networkNodeGlow">
+      <stop stop-color="#3989C4" stop-opacity=".3"/><stop offset="1" stop-color="#3989C4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <path d="M0 0H1600V720H0Z" fill="url(#space)"/>
   <path d="M0 0H1600V720H0Z" fill="url(#nebula)"/>
@@ -133,6 +136,105 @@
   </g>
   <g fill="#F9FDFF">
     <circle cx="1360" cy="208" r="2"/><circle cx="1454" cy="369" r="1.5"/><circle cx="952" cy="149" r="1.4"/>
+  </g>
+  <g id="network-mesh">
+    <g fill="#3989C4" opacity=".045">
+      <polygon points="716,414 799,472 849,344"/>
+      <polygon points="799,472 947,522 824,560"/>
+      <polygon points="1322,300 1430,350 1278,407"/>
+      <polygon points="1430,350 1522,292 1571,420"/>
+      <polygon points="1318,500 1441,460 1513,551"/>
+    </g>
+    <g stroke="#3989C4" stroke-width="1.6" stroke-opacity=".46" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M610 492L716 414"/>
+      <path d="M610 492L728 552"/>
+      <path d="M716 414L799 472"/>
+      <path d="M716 414L849 344"/>
+      <path d="M799 472L849 344"/>
+      <path d="M799 472L925 405"/>
+      <path d="M799 472L824 560"/>
+      <path d="M849 344L925 405"/>
+      <path d="M849 344L965 278"/>
+      <path d="M925 405L947 522"/>
+      <path d="M947 522L824 560"/>
+      <path d="M824 560L728 552"/>
+      <path d="M716 414L728 552"/>
+      <path d="M947 522L1040 506"/>
+      <path d="M1040 506L1165 554"/>
+      <path d="M1165 554L1318 500"/>
+      <path d="M965 278L1060 181"/>
+      <path d="M1060 181L1214 164"/>
+      <path d="M1214 164L1348 188"/>
+      <path d="M1348 188L1322 300"/>
+      <path d="M1322 300L1430 350"/>
+      <path d="M1322 300L1278 407"/>
+      <path d="M1430 350L1522 292"/>
+      <path d="M1522 292L1571 420"/>
+      <path d="M1430 350L1571 420"/>
+      <path d="M1430 350L1441 460"/>
+      <path d="M1278 407L1441 460"/>
+      <path d="M1278 407L1318 500"/>
+      <path d="M1318 500L1441 460"/>
+      <path d="M1441 460L1513 551"/>
+      <path d="M1441 460L1571 420"/>
+      <path d="M1571 420L1592 508"/>
+      <path d="M1513 551L1592 508"/>
+      <path d="M1318 500L1513 551"/>
+    </g>
+    <g stroke="#3989C4" stroke-width="2.2" stroke-opacity=".34" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="610,492 716,414 849,344 925,405 947,522 1040,506 1165,554 1318,500 1441,460 1571,420"/>
+      <polyline points="1278,407 1322,300 1430,350 1522,292"/>
+    </g>
+    <g>
+      <circle cx="716" cy="414" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="716" cy="414" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="849" cy="344" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="849" cy="344" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="947" cy="522" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="947" cy="522" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="1322" cy="300" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="1322" cy="300" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="1430" cy="350" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="1430" cy="350" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="1441" cy="460" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="1441" cy="460" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+      <circle cx="1571" cy="420" r="13" fill="url(#networkNodeGlow)"/>
+      <circle cx="1571" cy="420" r="7" stroke="#3989C4" stroke-opacity=".24"/>
+    </g>
+    <g fill="#287FBF" fill-opacity=".72">
+      <circle cx="610" cy="492" r="2.6"/>
+      <circle cx="716" cy="414" r="3.5"/>
+      <circle cx="799" cy="472" r="2.6"/>
+      <circle cx="849" cy="344" r="3.5"/>
+      <circle cx="925" cy="405" r="2.6"/>
+      <circle cx="947" cy="522" r="3.5"/>
+      <circle cx="824" cy="560" r="2.6"/>
+      <circle cx="728" cy="552" r="2.6"/>
+      <circle cx="965" cy="278" r="2.6"/>
+      <circle cx="1040" cy="506" r="2.6"/>
+      <circle cx="1165" cy="554" r="2.6"/>
+      <circle cx="1318" cy="500" r="2.6"/>
+      <circle cx="1278" cy="407" r="2.6"/>
+      <circle cx="1322" cy="300" r="3.5"/>
+      <circle cx="1430" cy="350" r="3.5"/>
+      <circle cx="1522" cy="292" r="2.6"/>
+      <circle cx="1571" cy="420" r="3.5"/>
+      <circle cx="1441" cy="460" r="3.5"/>
+      <circle cx="1513" cy="551" r="2.6"/>
+      <circle cx="1592" cy="508" r="2.6"/>
+      <circle cx="1348" cy="188" r="2.6"/>
+      <circle cx="1214" cy="164" r="2.6"/>
+      <circle cx="1060" cy="181" r="2.6"/>
+    </g>
+    <g fill="#F5FCFF" opacity=".9">
+      <circle cx="716" cy="414" r="1.15"/>
+      <circle cx="849" cy="344" r="1.15"/>
+      <circle cx="947" cy="522" r="1.15"/>
+      <circle cx="1322" cy="300" r="1.15"/>
+      <circle cx="1430" cy="350" r="1.15"/>
+      <circle cx="1441" cy="460" r="1.15"/>
+      <circle cx="1571" cy="420" r="1.15"/>
+    </g>
   </g>
   <circle cx="860" cy="224" r="34" fill="url(#moon)" opacity=".77"/>
   <circle cx="860" cy="224" r="33.5" stroke="#F9FCFF" stroke-opacity=".42"/>
