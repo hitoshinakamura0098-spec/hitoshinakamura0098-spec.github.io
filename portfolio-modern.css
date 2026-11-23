@@ -139,7 +139,7 @@ body.showcase-page #bgNet{
   background:
     linear-gradient(180deg,rgba(4,12,23,.28) 0%,rgba(4,12,23,.72) 52%,#07111e 100%),
     linear-gradient(90deg,rgba(5,14,27,.90) 0%,rgba(5,14,27,.58) 68%,rgba(5,14,27,.18) 100%),
-    url("portfolio-hero.svg") center 35%/cover no-repeat;
+    url("portfolio-cosmos-dark.svg") center 35%/cover no-repeat;
   border-bottom:1px solid rgba(113,164,221,.13);
 }
 
@@ -707,7 +707,7 @@ body.showcase-page .modal-close{
   background:
     linear-gradient(180deg,rgba(4,12,23,.34),rgba(4,12,23,.90)),
     linear-gradient(90deg,rgba(5,14,27,.92),rgba(5,14,27,.50)),
-    url("portfolio-hero.svg") center 38%/cover no-repeat;
+    url("portfolio-cosmos-dark.svg") center 38%/cover no-repeat;
   border-bottom:1px solid rgba(113,164,221,.13);
 }
 
@@ -1207,7 +1207,7 @@ body.showcase-page .modal-close{
   background:
     linear-gradient(90deg,rgba(3,10,20,.78) 0%,rgba(3,10,20,.56) 42%,rgba(3,10,20,.16) 78%,rgba(3,10,20,.05) 100%),
     linear-gradient(180deg,rgba(3,10,20,.08) 0%,rgba(3,10,20,.18) 52%,rgba(3,10,20,.58) 100%),
-    url("portfolio-hero.svg") 66% 44%/cover no-repeat;
+    url("portfolio-cosmos-dark.svg") 66% 44%/cover no-repeat;
 }
 
 .home-showcase-hero .showcase-hero-content{
@@ -1417,7 +1417,7 @@ body.showcase-page .modal-close{
   background:
     linear-gradient(90deg,rgba(3,10,20,.78),rgba(3,10,20,.34) 64%,rgba(3,10,20,.12)),
     linear-gradient(180deg,rgba(3,10,20,.08),rgba(3,10,20,.60)),
-    url("portfolio-hero.svg") 65% 42%/cover no-repeat;
+    url("portfolio-cosmos-dark.svg") 65% 42%/cover no-repeat;
 }
 
 .showcase-page-title{
@@ -1437,7 +1437,7 @@ body.showcase-page .modal-close{
     background:
       linear-gradient(90deg,rgba(3,10,20,.84) 0%,rgba(3,10,20,.58) 38%,rgba(3,10,20,.12) 68%,rgba(3,10,20,.03) 100%),
       linear-gradient(180deg,rgba(3,10,20,.04) 0%,rgba(3,10,20,.10) 56%,rgba(3,10,20,.52) 100%),
-      url("portfolio-hero.svg") center 43%/cover no-repeat;
+      url("portfolio-cosmos-dark.svg") center 43%/cover no-repeat;
   }
 
   .home-showcase-hero .showcase-title{
@@ -1609,13 +1609,13 @@ body.showcase-page .modal-close{
   border-bottom-color:#d5e6f2;
   background:
     linear-gradient(90deg,rgba(247,251,255,.75) 0%,rgba(247,251,255,.36) 50%,rgba(247,251,255,.03) 100%),
-    url("portfolio-hero-light.svg") 62% 47%/cover no-repeat;
+    url("portfolio-cosmos-light.svg") 62% 47%/cover no-repeat;
 }
 
 :root[data-theme="light"] .showcase-page .home-showcase-hero{
   background:
     linear-gradient(90deg,rgba(247,251,255,.54) 0%,rgba(247,251,255,.18) 64%,rgba(247,251,255,.03) 100%),
-    url("portfolio-hero-light.svg") 64% 47%/cover no-repeat;
+    url("portfolio-cosmos-light.svg") 64% 47%/cover no-repeat;
 }
 
 :root[data-theme="light"] .showcase-page :is(.showcase-title,.showcase-page-title,.showcase-section-title){
@@ -1925,7 +1925,7 @@ body.showcase-page .modal-close{
   :root[data-theme="light"] .showcase-page .home-showcase-hero{
     background:
       linear-gradient(90deg,rgba(247,251,255,.12),rgba(247,251,255,0) 68%),
-      url("portfolio-hero-light.svg") center 46%/cover no-repeat;
+      url("portfolio-cosmos-light.svg") center 46%/cover no-repeat;
   }
 
   :root[data-theme="light"] .showcase-page .feature-card{
@@ -1950,6 +1950,21 @@ body.showcase-page .modal-close{
     left:auto;
     right:18px;
     bottom:17px;
+  }
+}
+
+/* Keep copy legible when the planet crops behind mobile hero text. */
+@media (max-width:720px){
+  :root[data-theme="dark"] .showcase-page :is(.home-showcase-hero,.showcase-page-hero){
+    background:
+      linear-gradient(90deg,rgba(3,10,20,.9),rgba(3,10,20,.76) 60%,rgba(3,10,20,.65)),
+      url("portfolio-cosmos-dark.svg") 64% 47%/cover no-repeat;
+  }
+
+  :root[data-theme="light"] .showcase-page :is(.home-showcase-hero,.showcase-page-hero){
+    background:
+      linear-gradient(90deg,rgba(247,251,255,.91),rgba(247,251,255,.79) 58%,rgba(247,251,255,.67)),
+      url("portfolio-cosmos-light.svg") 64% 47%/cover no-repeat;
   }
 }
 
