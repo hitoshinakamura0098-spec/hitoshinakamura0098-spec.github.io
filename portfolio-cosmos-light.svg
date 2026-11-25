@@ -29,9 +29,49 @@
     </linearGradient>
     <clipPath id="planetClip"><circle cx="1130" cy="350" r="139"/></clipPath>
   </defs>
+  <style>
+    .cosmos-glow { opacity: .85; }
+    .planet-halo { opacity: .9; }
+    .network-signal { opacity: 0; }
+    @keyframes planet-float {
+      0%, 100% { transform: translate(0, 3px); }
+      50% { transform: translate(0, -8px); }
+    }
+    @keyframes halo-breathe {
+      0%, 100% { opacity: .75; }
+      50% { opacity: 1; }
+    }
+    @keyframes cosmos-glow {
+      0%, 100% { opacity: .62; }
+      50% { opacity: 1; }
+    }
+    @keyframes signal-left {
+      0% { transform: translate(0, 0); opacity: 0; }
+      4% { opacity: .8; }
+      18.4% { transform: translate(50px, -30px); }
+      39.8% { transform: translate(105px, 10px); }
+      55% { opacity: .8; }
+      60%, 100% { transform: translate(65px, 60px); opacity: 0; }
+    }
+    @keyframes signal-right {
+      0% { transform: translate(0, 0); opacity: 0; }
+      4% { opacity: .8; }
+      17.7% { transform: translate(42px, -25px); }
+      42.3% { transform: translate(97px, 15px); }
+      58% { opacity: .8; }
+      62%, 100% { transform: translate(60px, 55px); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .planet-float { animation: planet-float 18s ease-in-out infinite; }
+      .planet-halo { animation: halo-breathe 11s ease-in-out infinite; }
+      .cosmos-glow { animation: cosmos-glow 14s ease-in-out infinite; }
+      .network-signal-left { animation: signal-left 8s linear -1.2s infinite; }
+      .network-signal-right { animation: signal-right 10s linear -4.6s infinite; }
+    }
+  </style>
   <path d="M0 0H1600V720H0Z" fill="url(#space)"/>
   <path d="M0 0H1600V720H0Z" fill="url(#nebula)"/>
-  <path d="M0 0H1600V720H0Z" fill="url(#nebulaBlue)"/>
+  <path class="cosmos-glow" d="M0 0H1600V720H0Z" fill="url(#nebulaBlue)"/>
   <g stroke="#759BCD" stroke-width="1" opacity=".17">
     <ellipse cx="1120" cy="385" rx="610" ry="197" transform="rotate(-24 1120 385)"/>
     <path d="M628 596C855 448 1170 438 1560 485"/>
@@ -155,28 +195,38 @@
       <circle cx="1425" cy="385" r="1.8"/>
       <circle cx="1388" cy="425" r="1.8"/>
     </g>
+    <g class="network-signal network-signal-left" fill="#2499C9">
+      <circle cx="850" cy="330" r="5" fill-opacity=".12"/>
+      <circle cx="850" cy="330" r="2.2"/>
+    </g>
+    <g class="network-signal network-signal-right" fill="#2499C9">
+      <circle cx="1328" cy="370" r="5" fill-opacity=".12"/>
+      <circle cx="1328" cy="370" r="2.2"/>
+    </g>
   </g>
   <circle cx="860" cy="224" r="34" fill="url(#moon)" opacity=".77"/>
   <circle cx="860" cy="224" r="33.5" stroke="#F9FCFF" stroke-opacity=".42"/>
-  <circle cx="1125" cy="340" r="240" fill="url(#halo)"/>
-  <g transform="rotate(-22 1130 350)" opacity=".54">
-    <ellipse cx="1130" cy="350" rx="273" ry="65" stroke="url(#ring)" stroke-width="12"/>
-    <ellipse cx="1130" cy="350" rx="289" ry="70" stroke="#9AB9DE" stroke-width="1.3"/>
-    <ellipse cx="1130" cy="350" rx="255" ry="60" stroke="#F5FAFF" stroke-width="2"/>
-  </g>
-  <circle cx="1130" cy="350" r="139" fill="url(#planet)"/>
-  <g clip-path="url(#planetClip)" transform="rotate(-22 1130 350)">
-    <path d="M972 283C1080 314 1190 308 1294 277" stroke="#FAFDFF" stroke-width="13" opacity=".13"/>
-    <path d="M976 324C1090 357 1190 352 1293 320" stroke="#587FAF" stroke-width="17" opacity=".07"/>
-    <path d="M975 346C1079 375 1192 372 1286 342" stroke="#FAFDFF" stroke-width="4" opacity=".15"/>
-    <path d="M976 393C1081 423 1189 417 1290 382" stroke="#FAFDFF" stroke-width="19" opacity=".1"/>
-    <path d="M996 441C1090 464 1188 453 1277 426" stroke="#587FAF" stroke-width="8" opacity=".08"/>
-  </g>
-  <circle cx="1130" cy="350" r="138.5" stroke="#FAFDFF" stroke-opacity=".35"/>
-  <g transform="rotate(-22 1130 350)" opacity=".82">
-    <path d="M857 350A273 65 0 0 0 1403 350" stroke="url(#ring)" stroke-width="12"/>
-    <path d="M841 350A289 70 0 0 0 1419 350" stroke="#9AB9DE" stroke-width="1.3" opacity=".75"/>
-    <path d="M875 350A255 60 0 0 0 1385 350" stroke="#F5FAFF" stroke-width="2" opacity=".72"/>
+  <g class="planet-float">
+    <circle class="planet-halo" cx="1125" cy="340" r="240" fill="url(#halo)"/>
+    <g transform="rotate(-22 1130 350)" opacity=".54">
+      <ellipse cx="1130" cy="350" rx="273" ry="65" stroke="url(#ring)" stroke-width="12"/>
+      <ellipse cx="1130" cy="350" rx="289" ry="70" stroke="#9AB9DE" stroke-width="1.3"/>
+      <ellipse cx="1130" cy="350" rx="255" ry="60" stroke="#F5FAFF" stroke-width="2"/>
+    </g>
+    <circle cx="1130" cy="350" r="139" fill="url(#planet)"/>
+    <g clip-path="url(#planetClip)" transform="rotate(-22 1130 350)">
+      <path d="M972 283C1080 314 1190 308 1294 277" stroke="#FAFDFF" stroke-width="13" opacity=".13"/>
+      <path d="M976 324C1090 357 1190 352 1293 320" stroke="#587FAF" stroke-width="17" opacity=".07"/>
+      <path d="M975 346C1079 375 1192 372 1286 342" stroke="#FAFDFF" stroke-width="4" opacity=".15"/>
+      <path d="M976 393C1081 423 1189 417 1290 382" stroke="#FAFDFF" stroke-width="19" opacity=".1"/>
+      <path d="M996 441C1090 464 1188 453 1277 426" stroke="#587FAF" stroke-width="8" opacity=".08"/>
+    </g>
+    <circle cx="1130" cy="350" r="138.5" stroke="#FAFDFF" stroke-opacity=".35"/>
+    <g transform="rotate(-22 1130 350)" opacity=".82">
+      <path d="M857 350A273 65 0 0 0 1403 350" stroke="url(#ring)" stroke-width="12"/>
+      <path d="M841 350A289 70 0 0 0 1419 350" stroke="#9AB9DE" stroke-width="1.3" opacity=".75"/>
+      <path d="M875 350A255 60 0 0 0 1385 350" stroke="#F5FAFF" stroke-width="2" opacity=".72"/>
+    </g>
   </g>
   <g fill="#4F7EB5" opacity=".55"><circle cx="1398" cy="483" r="3"/><circle cx="1016" cy="534" r="1.8"/><circle cx="1512" cy="261" r="1.8"/></g>
   <path d="M0 0H1600V720H0Z" fill="url(#leftFade)"/>
