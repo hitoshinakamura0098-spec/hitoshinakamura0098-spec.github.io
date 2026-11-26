@@ -47,7 +47,7 @@
           <p class="showcase-eyebrow">BUILD · OPERATE · IMPROVE</p>
           <h1 class="showcase-title">HITOSHI NAKAMURA</h1>
           <p class="showcase-role">Cloud / Infrastructure / Systems Engineering</p>
-          <p class="showcase-copy">Designing systems, investigating complex issues, and turning findings into clear operational knowledge.</p>
+          <p class="showcase-copy">Resolving complex incidents, building systems, and delivering fixes across infrastructure and applications.</p>
           <div class="showcase-actions">
             <a class="showcase-btn primary" href="achievements.html">View Achievements →</a>
             <a class="showcase-btn" href="#about">About Me</a>
@@ -65,24 +65,24 @@
           <a class="showcase-section-link" href="achievements.html">View all →</a>
         </div>
         <div class="feature-grid">
-          <button class="feature-card" type="button" data-title="MAIL DELIVERY INCIDENT" data-cat="AWS SES / CloudWatch / Lambda / DNS / SMTP" data-detail="メール遅延障害を、SESイベント、Lambdaログ、CloudWatch、MessageId、SMTP応答、SPF / DKIM / DMARC、VDM、Proofpoint、SNDS等の複数観測点から切り分け。送信側環境と受信側評価を分離して確認し、Microsoft・AWS双方への技術照会とエスカレーションを実施。Microsoft側の制限解除まで追跡し、配送遅延の原因範囲を絞り込んだ。">
+          <button class="feature-card" type="button" data-title="メール配送障害の解決" data-cat="AWS SES / CloudWatch / Lambda / DNS / SMTP" data-detail="AWSの設定からアプリ、DNS認証、配送ログまで独力で調査し、メール遅延の原因をMicrosoft側のIP評価に特定。SESイベント、Lambdaログ、CloudWatch、MessageId、SMTP応答、SPF / DKIM / DMARCを横断して検証した。調査結果を根拠に、Microsoftへ制限緩和・解除を、AWSへ配送経路の調査を依頼。Outlook / Hotmail個人宛てメールの制限解除を実現した。">
             <span class="feature-icon"><img src="icons/amazonses.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">01</span><h3>MAIL DELIVERY INCIDENT</h3><p class="feature-stack">AWS SES / CloudWatch / Lambda / DNS</p><p class="feature-summary">MessageIdとSMTP応答を軸に、送信基盤から受信側評価まで追跡。</p></span>
+            <span class="feature-card-body"><span class="feature-index">01</span><h3>メール配送障害の解決</h3><p class="feature-stack">AWS SES / CloudWatch / Lambda / DNS</p><p class="feature-summary">独力で原因を受信側のIP評価に特定。Microsoft・AWSと連携し、Outlook / Hotmail宛ての制限解除を実現。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="AWS OBSERVABILITY &amp; COST" data-cat="CloudWatch / SNS / Amazon RDS / Cost Explorer" data-detail="CloudWatchとSNSを用いた監視・通知設定に対応。メトリクス、アラーム条件、通知経路を整理し、運用上の確認点を記録した。RDSの負荷やCPUクレジットとCost Explorerの利用明細も突き合わせ、コスト増加や請求差異を調査。監視設定と費用分析の両面から環境の状態を確認した。">
+          <button class="feature-card" type="button" data-title="AWS監視設計・コスト分析" data-cat="CloudWatch / SNS / Amazon RDS / Cost Explorer" data-detail="CloudWatch・SNSで、Timeout / Bounceの検知から担当者への通知までを設計・実装。クロスアカウントの制約を踏まえ、通知経路・責任分界・運用フローを組み立てた。併せてRDSのCPUクレジットやポーリング負荷をCost Explorerの利用明細と照合。RI / Savings Plansの適用範囲も含め、コスト増加と請求差異の要因を切り分けた。">
             <span class="feature-icon"><img src="icons/amazoncloudwatch.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS OBSERVABILITY &amp; COST</h3><p class="feature-stack">CloudWatch / SNS / RDS / Cost Explorer</p><p class="feature-summary">CloudWatchとSNSの監視通知を設定。RDSの負荷と利用明細を照合し、コスト変動を調査。</p></span>
+            <span class="feature-card-body"><span class="feature-index">02</span><h3>AWS監視設計・コスト分析</h3><p class="feature-stack">CloudWatch / SNS / RDS / Cost Explorer</p><p class="feature-summary">異常検知から通知までを設計・実装。RDSの負荷と請求明細を照合し、コスト増加・請求差異の要因を分析。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="WEB APPLICATION MAINTENANCE" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="C# / ASP.NET Razor / JavaScript / SQLを横断し、既存Webアプリの表示・入力・接続に関する不具合を調査。HTTP応答、DOM、変数、ソース差分を照合し、処理のどの段階で差が生じるかを追跡した。Visual Studioでの発行資材作成や配置対象の確認、修正後の再確認にも対応。">
+          <button class="feature-card" type="button" data-title="Web不具合の修正・検証" data-cat="C# / ASP.NET Razor / JavaScript / SQL / DevTools" data-detail="ASP.NET Core / Razorの表示不具合に対し、原因調査から修正・デプロイ・再テストまで一連で担当。記号化け、UIボタンの無効化、JavaScriptエラーなどを、C# → Razor → HTTP応答 → JavaScript → DOMの各層で追跡した。ソース・発行資材の差分と実際の挙動を照合し、文字コード問題とHTMLの二重エンコードを切り分け、修正後のテストまで完了。Visual StudioでのRelease発行、配置対象の検証、ロールバックも実施した。">
             <span class="feature-icon"><img src="icons/csharp.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">03</span><h3>WEB APPLICATION MAINTENANCE</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">C#からHTTP応答・画面表示まで値を追跡し、ソース差分と照合して不具合の範囲を切り分け。</p></span>
+            <span class="feature-card-body"><span class="feature-index">03</span><h3>Web不具合の修正・検証</h3><p class="feature-stack">C# / ASP.NET Razor / JavaScript / SQL</p><p class="feature-summary">C#・Razor・JavaScriptを横断して原因を究明。表示不具合の修正・デプロイ・再テストまで一連で完了。</p></span>
             <span class="feature-arrow">→</span>
           </button>
-          <button class="feature-card" type="button" data-title="ON-PREM SYSTEM ENGINEERING" data-cat="Linux / Nginx / .NET / PostgreSQL / systemd / SELinux" data-detail="Linux上にWeb・アプリ・DBの検証環境を設計・構築。Nginx、.NET、PostgreSQLを組み合わせ、systemdのサービス管理やSELinuxの制御を含めて起動・接続を確認した。通信経路、サービス設定、ログを照合しながら問題を切り分け、構成と作業手順を整理。運用に向けた確認事項を継続して管理している。">
+          <button class="feature-card" type="button" data-title="Linux検証基盤の設計・構築" data-cat="Linux / Nginx / .NET / PostgreSQL / systemd / SELinux" data-detail="Linux上にNginx・.NET・PostgreSQLを組み合わせ、Web・アプリ・DBの検証環境を設計・構築。systemdによるサービス管理、SELinuxのアクセス制御を含め、起動・接続を検証した。通信経路・サービス設定・ログを横断して問題を切り分け、構成と作業手順まで整備。基盤づくりから検証、運用に向けた手順化までを担っている。">
             <span class="feature-icon"><img src="icons/linux.svg" alt="" /></span>
-            <span class="feature-card-body"><span class="feature-index">04</span><h3>ON-PREM SYSTEM ENGINEERING</h3><p class="feature-stack">Linux / Nginx / .NET / PostgreSQL</p><p class="feature-summary">Linux上にWeb・アプリ・DBの検証環境を構築し、サービス起動・接続・アクセス制御を確認。</p></span>
+            <span class="feature-card-body"><span class="feature-index">04</span><h3>Linux検証基盤の設計・構築</h3><p class="feature-stack">Linux / Nginx / .NET / PostgreSQL</p><p class="feature-summary">Web・アプリ・DBの検証環境を構築。サービスの起動・接続から、systemdとSELinuxの制御まで検証。</p></span>
             <span class="feature-arrow">→</span>
           </button>
         </div>
@@ -121,7 +121,7 @@
           <div>
             <p class="showcase-card-label">ABOUT / CURRENT DIRECTION</p>
             <h2>Infrastructure × Development × Automation</h2>
-            <p>AWSの運用とLinux基盤の設計・検証、Webアプリの保守開発に取り組んでいます。ログ・通信・ソースコードを照合し、調査結果を構成図や手順書にまとめ、次の運用へつなげます。</p>
+            <p>AWSの障害解析・監視設計、Linux基盤の構築、Webアプリの保守改修を横断して担当。メール配送障害では受信側の制限解除へつなげ、Web不具合では原因調査から修正・再テストまで完了。現場で得た知見をテスト要項・構成資料・運用手順に落とし込んでいます。</p>
           </div>
           <div class="about-links"><a href="research.html">Research →</a><a href="learning.html">Learning →</a><a href="blog.html">Blog →</a><a href="https://github.com/hitoshinakamura0098-spec" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
         </div>
